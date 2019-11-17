@@ -38,7 +38,7 @@ class Required extends AbstractFilter implements FilterInterface
     public function validate(): bool
     {
         // Validating whether the field actually exists
-        if (isset($values[0])) {
+        if (isset($this->values[0])) {
             // Validating whether the value of the field is identical to false
             if ($this->values[0] === false) {
                 return true;
