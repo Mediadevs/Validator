@@ -8,7 +8,7 @@ use Mediadevs\Validator\Helpers\Registry;
 class FilterFactory
 {
     /**
-     * Creating the factory and loading
+     * Applying the filter with the thresholds to the values
      * @param string $filter
      * @param        $values
      * @param array  $thresholds

@@ -2,15 +2,30 @@
 
 namespace Mediadevs\Validator\Helpers;
 
+use Mediadevs\Validator\Factories\RegistryFactory;
+
 class Registry extends Singleton
 {
+    /**
+     * The registry types for this library, these are de default properties for each filter class
+     */
     public const REGISTRY_TYPES = array('filters', 'aliases', 'messages');
 
     /**
-     * The data which this registry will handle
+     * All the registered classes will be stored in here
      * @var array
      */
-    private static $data = array();
+    private static $registry = array();
+
+    /**
+     * Loading all the registries
+     *
+     * @return void
+     */
+    public static function loadRegistries(): void
+    {
+        (new RegistryFactory())->build();
+    }
 
     /**
      * Registering the class in the $data array
@@ -52,7 +67,9 @@ class Registry extends Singleton
      */
     private static function handleIdentifier(string $index, $data): void
     {
-        self::$data[self::REGISTRY_TYPES[0]] = array_merge(self::$data[self::REGISTRY_TYPES[0]], [$index => $data]);
+        $registry = array($index => $data);
+
+        self::$registry[self::REGISTRY_TYPES[0]] = array_merge(self::$registry[self::REGISTRY_TYPES[0]], $registry);
     }
 
     /**
@@ -64,14 +81,14 @@ class Registry extends Singleton
      */
     private static function handleAliases(string $index, $data): void
     {
-        $aliases = array();
+        $registry = array();
 
         // Parsing through the data (in this case the aliases) and assigning the correct class to it.
         foreach ($data as $alias) {
-            $aliases[$alias] = self::getRegistry(self::REGISTRY_TYPES[1], $index);
+            $registry[$alias] = self::getRegistry(self::REGISTRY_TYPES[1], $index);
         }
 
-        self::$data[self::REGISTRY_TYPES[0]] = array_merge(self::$data[self::REGISTRY_TYPES[0]], $aliases);
+        self::$registry[self::REGISTRY_TYPES[0]] = array_merge(self::$registry[self::REGISTRY_TYPES[0]], $registry);
     }
 
     /**
@@ -83,7 +100,9 @@ class Registry extends Singleton
      */
     private static function handleMessages(string $index, $data): void
     {
-        self::$data[self::REGISTRY_TYPES[2]] = array_merge(self::$data[self::REGISTRY_TYPES[2]], [$index => $data]);
+        $registry = array($index => $data);
+
+        self::$registry[self::REGISTRY_TYPES[2]] = array_merge(self::$registry[self::REGISTRY_TYPES[2]], $registry);
     }
 
     /**
@@ -134,7 +153,7 @@ class Registry extends Singleton
     {
         // Whether the given type is a valid one.
         if (self::isValidType($type)) {
-            return (bool) array_key_exists($type, self::$data) ? true : false;
+            return (bool) array_key_exists($type, self::$registry) ? true : false;
         }
 
         return (bool) false;
@@ -150,7 +169,7 @@ class Registry extends Singleton
     public static function hasIndex(string $type, string $index): bool
     {
         if (self::hasType($type)) {
-            return (bool) array_key_exists($index, self::$data[$type]) ? true : false;
+            return (bool) array_key_exists($index, self::$registry[$type]) ? true : false;
         }
 
         return (bool) false;
@@ -167,7 +186,7 @@ class Registry extends Singleton
     {
         if (self::hasType($type)) {
             // Reversing the data array; ['key' => 'value'] will now be ['value' => 'key']
-            $reverseData = array_flip(self::$data[$type]);
+            $reverseData = array_flip(self::$registry[$type]);
 
             return (bool) (isset($reverseData[$value])) ? true : false;
         }
@@ -185,7 +204,7 @@ class Registry extends Singleton
     public static function indexHasValue(string $type, string $index): bool
     {
         if (self::hasType($type) && self::hasIndex($type, $index)) {
-            return (bool) !empty(self::$data[$type][$index]) ? true : false;
+            return (bool) !empty(self::$registry[$type][$index]) ? true : false;
         }
 
         return (bool) false;
@@ -202,7 +221,7 @@ class Registry extends Singleton
     {
         if (self::hasType($type) && self::hasValue($type, $value)) {
             // Reversing the data array; ['key' => 'value'] will now be ['value' => 'key']
-            $reverseData = array_flip(self::$data[$type]);
+            $reverseData = array_flip(self::$registry[$type]);
 
             return $reverseData[$type][$value];
         }
@@ -218,7 +237,7 @@ class Registry extends Singleton
     public static function getValuesByIndex(string $type, string $index)
     {
         if (self::hasType($type) && self::hasIndex($type, $index) && self::indexHasValue($type, $index)) {
-            return self::$data[$type][$index];
+            return self::$registry[$type][$index];
         }
     }
 }
