@@ -9,7 +9,7 @@ class FilterProvider
      * The classes are grouped by validation type and sorted alphabetically.
      * @var array
      */
-    private $providers = array(
+    public $providers = array(
         /*----[ Basic validation ]------------------------------------------------------------------------------------*/
         \Mediadevs\Validator\Filters\Basic\RegularExpression::class,
         \Mediadevs\Validator\Filters\Basic\Required::class,

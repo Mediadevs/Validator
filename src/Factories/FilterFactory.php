@@ -2,38 +2,29 @@
 
 namespace Mediadevs\Validator\Factories;
 
+
+use Mediadevs\Validator\Helpers\Registry;
+
 class FilterFactory
 {
     /**
-     * The properties which any filter class must have
-     * @var array
+     * Creating the factory and loading
+     * @return array
      */
-    private $properties = array('identifier', 'aliases', 'messages');
-
-    public function build()
+    public function build(string $filter, $values, array $thresholds = array()): array
     {
+        Registry::getInstance();
 
-    }
+        // Loading the Registry
+        $filters = registry::getRegistry('filters', $filter);
+        $aliases = registry::getRegistry('aliases', $filter);
 
-    private function loadClass()
-    {
-        /**
-         * Todo: Loading the class based upon the namespace
-         * Todo: Dissect the namespace and take the classname, this classname should also be the filename
-         * Todo: Require the filename once the make sure that classes outside the registry can also be used
-         * Todo: Validate whether the directory / class exists
-         */
-    }
+        // The final class name of the registered item
+        $class = $this->getFilter($filter, $filters, $aliases);
 
-    private function classHasProperty(string $property): bool
-    {
-        /**
-         * Todo: Validate whether the class has the given property
-         */
-    }
-
-    private function getPropertiesFromClass()
-    {
-
+        // Executing the sanitization for the called sanitization class.
+        return (bool) (new Validation(
+            new $class($values, $thresholds)
+        ))->validate();
     }
 }

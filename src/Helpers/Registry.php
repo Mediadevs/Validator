@@ -2,10 +2,10 @@
 
 namespace Mediadevs\Validator\Helpers;
 
-use Mediadevs\Validator\Helpers\Singleton;
-
 class Registry extends Singleton
 {
+    public const REGISTRY_TYPES = array('filters', 'aliases', 'messages');
+
     /**
      * The data which this registry will handle
      * @var array
@@ -13,118 +13,155 @@ class Registry extends Singleton
     private static $data = array();
 
     /**
-     * Collecting the registry based upon the given target
-     * @param string $index
+     * Registering the class in the $data array
+     * @param string $type
+     * @param array  $data
      *
-     * @return string|void
+     * @return void
      */
-    public static function getRegistry(string $index): string
+    public static function register(string $type, array $data): void
     {
-        if (self::hasIndex($index)) {
-            return self::$data[$index];
+        if (self::hasType($type)) {
+            self::$data = array_merge(self::$data[$type], $data);
+        } else {
+            self::$data[$type] = $data;
         }
     }
 
     /**
-     * Registering the class in the $data array
-     * @param string $class
+     * Collecting the registry based upon the given target
+     * @param string $type
+     * @param string $index
      *
-     * @return void
+     * @return string|void
      */
-    public static function register(string $class): void
+    public static function getRegistry(string $type, string $index): string
     {
-        /**
-         * Todo: Write logic which handles the registry of the class
-         */
+        $targetIndex = null;
+
+        // Whether the type exists inside the $data array
+        if (self::hasType($type)) {
+            // Whether the $data array has the given index
+            if (self::hasIndex($type, $index)) {
+                $targetIndex = $index;
+            // In this case the $data array has no index of $index, now we'll try to reverse search by value
+            } elseif (self::hasValue($type, $index)) {
+                $targetIndex = self::getIndexByValue($type, $index);
+            } else {
+                // Index doesn't exist at all.
+                return;
+            }
+        }
+
+        return self::getValuesByIndex($type, $targetIndex);
     }
 
     /**
-     * Loading the registry based on the given registries
-     * @param array $registries
+     * Whether the given type is a valid one.
+     * @param string $type
      *
-     * @return void
+     * @return bool
      */
-    public static function loadRegistries(array $registries): void
+    public static function isValidType(string $type): bool
     {
-        /**
-         * Todo: Load Services\FilterProvider and assign the data into the $data array
-         */
+        return (bool) in_array($type, self::REGISTRY_TYPES) ? true : false;
+    }
+
+    /**
+     * Validating whether registry contains the given type
+     * @param string $type
+     *
+     * @return bool
+     */
+    public static function hasType(string $type): bool
+    {
+        // Whether the given type is a valid one.
+        if (self::isValidType($type)) {
+            return (bool) array_key_exists($type, self::$data) ? true : false;
+        }
+
+        return (bool) false;
     }
 
     /**
      * Validating whether the data contains the given index
+     * @param string $type
      * @param string $index
      *
      * @return bool
      */
-    public static function hasIndex(string $index): bool
+    public static function hasIndex(string $type, string $index): bool
     {
-        /**
-         * Todo: Validate whether the $data array contains the given index
-         */
+        if (self::hasType($type)) {
+            return (bool) array_key_exists($index, self::$data[$type]) ? true : false;
+        }
+
+        return (bool) false;
     }
 
     /**
      * Validating whether the data contains the given value
+     * @param string $type
      * @param string $value
+     *
      * @return bool
      */
-    public static function hasValue(string $value): bool
+    public static function hasValue(string $type, string $value): bool
     {
-        /**
-         * Todo: Validate whether the $data array contains the given value
-         */
+        if (self::hasType($type)) {
+            // Reversing the data array; ['key' => 'value'] will now be ['value' => 'key']
+            $reverseData = array_flip(self::$data[$type]);
+
+            return (bool) (isset($reverseData[$value])) ? true : false;
+        }
+
+        return (bool) false;
     }
 
     /**
      * Validating whether the given index has a value
+     * @param string $type
      * @param string $index
      *
      * @return bool
      */
-    public static function indexHasValue(string $index): bool
+    public static function indexHasValue(string $type, string $index): bool
     {
-        /**
-         * Todo: Validate the data array has a value based on the given index, also implement hasIndex to improve the validation
-         */
-    }
+        if (self::hasType($type) && self::hasIndex($type, $index)) {
+            return (bool) !empty(self::$data[$type][$index]) ? true : false;
+        }
 
-    /**
-     * Collecting the value of the registry based upon the given index
-     * @param string $index
-     *
-     * @return string
-     */
-    public static function getValueByIndex(string $index): string
-    {
-        /**
-         * Todo: Collect the value based upon the given index, also validate whether the index has a value
-         */
+        return (bool) false;
     }
 
     /**
      * Collecting the index by the given value
+     * @param string $type
      * @param string $value
      *
-     * @return string
+     * @return string|void
      */
-    public static function getIndexByValue(string $value): string
+    public static function getIndexByValue(string $type, string $value)
     {
-        /**
-         * Todo: Collect the index based upon the given value, make sure the value exists inside the index array
-         */
+        if (self::hasType($type) && self::hasValue($type, $value)) {
+            // Reversing the data array; ['key' => 'value'] will now be ['value' => 'key']
+            $reverseData = array_flip(self::$data[$type]);
+
+            return $reverseData[$type][$value];
+        }
     }
 
     /**
      * Collecting multiple values based on the given index
+     * @param string $type
      * @param string $index
      *
-     * @return array
+     * @return array|void
      */
-    public static function getValuesByIndex(string $index): array
+    public static function getValuesByIndex(string $type, string $index)
     {
-        /**
-         * Todo: Collect an array of values based on the given index, validate whether the values and index exist inside the data array
-         */
+        if (self::hasType($type) && self::hasIndex($type, $index) && self::indexHasValue($type, $index)) {
+            return self::$data[$type][$index];
+        }
     }
 }
