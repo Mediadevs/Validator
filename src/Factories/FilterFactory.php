@@ -2,25 +2,25 @@
 
 namespace Mediadevs\Validator\Factories;
 
-
+use Mediadevs\Validator\Validation;
 use Mediadevs\Validator\Helpers\Registry;
 
 class FilterFactory
 {
     /**
      * Creating the factory and loading
-     * @return array
+     * @param string $filter
+     * @param        $values
+     * @param array  $thresholds
+     *
+     * @return bool
      */
-    public function build(string $filter, $values, array $thresholds = array()): array
+    public function build(string $filter, $values, array $thresholds = array()): bool
     {
         Registry::getInstance();
 
         // Loading the Registry
-        $filters = registry::getRegistry('filters', $filter);
-        $aliases = registry::getRegistry('aliases', $filter);
-
-        // The final class name of the registered item
-        $class = $this->getFilter($filter, $filters, $aliases);
+        $class = registry::getRegistry('filters', $filter);
 
         // Executing the sanitization for the called sanitization class.
         return (bool) (new Validation(

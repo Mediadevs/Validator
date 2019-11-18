@@ -15,17 +15,75 @@ class Registry extends Singleton
     /**
      * Registering the class in the $data array
      * @param string $type
-     * @param array  $data
+     * @param string $index
+     * @param        $data ($data has no strict type, it can be either an array or a string)
      *
      * @return void
      */
-    public static function register(string $type, array $data): void
+    public static function register(string $type, string $index, $data): void
     {
-        if (self::hasType($type)) {
-            self::$data = array_merge(self::$data[$type], $data);
-        } else {
-            self::$data[$type] = $data;
+        if (self::isValidType($type)) {
+            // Which type should be handled, the types are simple the required properties for a filter
+            switch ($type) {
+                // 'identifiers'
+                case self::REGISTRY_TYPES[0]:
+                    self::handleIdentifier($index, $data);
+                    break;
+
+                // 'aliases'
+                case self::REGISTRY_TYPES[1]:
+                    self::handleAliases($index, $data);
+                    break;
+
+                // 'messages'
+                case self::REGISTRY_TYPES[2]:
+                    self::handleMessages($index, $data);
+                    break;
+            }
         }
+    }
+
+    /**
+     * Registering the filters inside the $data array
+     * @param string $index
+     * @param        $data
+     *
+     * @return void
+     */
+    private static function handleIdentifier(string $index, $data): void
+    {
+        self::$data[self::REGISTRY_TYPES[0]] = array_merge(self::$data[self::REGISTRY_TYPES[0]], [$index => $data]);
+    }
+
+    /**
+     * Registering the filters inside the $data array
+     * @param string $index
+     * @param        $data
+     *
+     * @return void
+     */
+    private static function handleAliases(string $index, $data): void
+    {
+        $aliases = array();
+
+        // Parsing through the data (in this case the aliases) and assigning the correct class to it.
+        foreach ($data as $alias) {
+            $aliases[$alias] = self::getRegistry(self::REGISTRY_TYPES[1], $index);
+        }
+
+        self::$data[self::REGISTRY_TYPES[0]] = array_merge(self::$data[self::REGISTRY_TYPES[0]], $aliases);
+    }
+
+    /**
+     * Registering the filters inside the $data array
+     * @param string $index
+     * @param        $data
+     *
+     * @return void
+     */
+    private static function handleMessages(string $index, $data): void
+    {
+        self::$data[self::REGISTRY_TYPES[2]] = array_merge(self::$data[self::REGISTRY_TYPES[2]], [$index => $data]);
     }
 
     /**
