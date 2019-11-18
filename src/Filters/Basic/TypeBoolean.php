@@ -11,14 +11,14 @@ class TypeBoolean extends AbstractFilter implements FilterInterface
      * The identifier for this filter
      * @var string
      */
-    protected $identifier = 'bool';
+    protected $identifier = 'boolean';
 
     /**
      * The aliases for this filter
      * @var array
      */
     protected $aliases = array(
-        'boolean',
+        'bool',
     );
 
     /**
