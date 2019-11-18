@@ -102,12 +102,11 @@ class Registry extends Singleton
             // Whether the $data array has the given index
             if (self::hasIndex($type, $index)) {
                 $targetIndex = $index;
+            }
+
             // In this case the $data array has no index of $index, now we'll try to reverse search by value
-            } elseif (self::hasValue($type, $index)) {
+            if (self::hasValue($type, $index)) {
                 $targetIndex = self::getIndexByValue($type, $index);
-            } else {
-                // Index doesn't exist at all.
-                return;
             }
         }
 
