@@ -2,14 +2,14 @@
 
 namespace Mediadevs\Validator\Tests\Unit;
 
+use Exception;
 use PHPUnit\Framework\TestCase;
-use Mediadevs\Validator\Filters\Website\ReachableAddress;
 
 final class FiltersWebsiteTest extends TestCase
 {
     /**
      * @test Whether the string is a valid domain
-     * @throws \Exception
+     * @throws Exception
      */
     public function testDomain()
     {
@@ -26,9 +26,9 @@ final class FiltersWebsiteTest extends TestCase
 
     /**
      * @test Whether the string is a valid ip address
-     * @throws \Exception
+     * @throws Exception
      */
-    public function testIP()
+    public function testValidIP()
     {
         // Testing valid
         $valid = '127.0.0.1';
@@ -43,7 +43,7 @@ final class FiltersWebsiteTest extends TestCase
 
     /**
      * @test Whether the string is a valid ipv4 address
-     * @throws \Exception
+     * @throws Exception
      */
     public function testIPv4()
     {
@@ -60,7 +60,7 @@ final class FiltersWebsiteTest extends TestCase
 
     /**
      * @test Whether the string is a valid ipv6 address
-     * @throws \Exception
+     * @throws Exception
      */
     public function testIPv6()
     {
@@ -78,7 +78,7 @@ final class FiltersWebsiteTest extends TestCase
 
     /**
      * @test Whether the string is a valid mac address
-     * @throws \Exception
+     * @throws Exception
      */
     public function testMAC()
     {
@@ -96,7 +96,7 @@ final class FiltersWebsiteTest extends TestCase
 
     /**
      * @test Whether the string is a reachable address
-     * @throws \Exception
+     * @throws Exception
      */
     public function testReachableAddress()
     {
@@ -114,7 +114,7 @@ final class FiltersWebsiteTest extends TestCase
 
     /**
      * @test Whether the string is an url
-     * @throws \Exception
+     * @throws Exception
      */
     public function testUrl()
     {

@@ -2,13 +2,14 @@
 
 namespace Mediadevs\Validator\Tests\Unit;
 
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 final class FilterDateTest extends TestCase
 {
     /**
      * @test Whether the date is past the threshold date
-     * @throws \Exception
+     * @throws Exception
      */
     public function testAfter()
     {
@@ -27,7 +28,7 @@ final class FilterDateTest extends TestCase
 
     /**
      * @test Whether the date is before the threshold date
-     * @throws \Exception
+     * @throws Exception
      */
     public function testBefore()
     {
@@ -47,7 +48,7 @@ final class FilterDateTest extends TestCase
     /**
      * @test Whether the date is between the two threshold dates.
      *       The order of the Threshold date is not important.
-     * @throws \Exception
+     * @throws Exception
      */
     public function testBetween()
     {

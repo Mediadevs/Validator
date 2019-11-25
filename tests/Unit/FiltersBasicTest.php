@@ -2,13 +2,14 @@
 
 namespace Mediadevs\Validator\Tests\Unit;
 
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 final class FiltersBasicTest extends TestCase
 {
     /**
      * @test Whether the field is set
-     * @throws \Exception
+     * @throws Exception
      */
     public function testRequired()
     {
@@ -25,7 +26,7 @@ final class FiltersBasicTest extends TestCase
 
     /**
      * @test Whether the value matches the regular expression pattern
-     * @throws \Exception
+     * @throws Exception
      */
     public function testRegularExpression()
     {
@@ -45,7 +46,7 @@ final class FiltersBasicTest extends TestCase
 
     /**
      * @test Whether the value type is an array
-     * @throws \Exception
+     * @throws Exception
      */
     public function testArray()
     {
@@ -62,7 +63,7 @@ final class FiltersBasicTest extends TestCase
 
     /**
      * Whether the value type is a boolean
-     * @throws \Exception
+     * @throws Exception
      */
     public function testBoolean()
     {
@@ -79,7 +80,7 @@ final class FiltersBasicTest extends TestCase
 
     /**
      * Whether the value type is a float
-     * @throws \Exception
+     * @throws Exception
      */
     public function testFloat()
     {
@@ -96,7 +97,7 @@ final class FiltersBasicTest extends TestCase
 
     /**
      * Whether the value type is an integer
-     * @throws \Exception
+     * @throws Exception
      */
     public function testInteger()
     {
@@ -113,7 +114,7 @@ final class FiltersBasicTest extends TestCase
 
     /**
      * Whether the value type is null
-     * @throws \Exception
+     * @throws Exception
      */
     public function testNull()
     {
@@ -130,7 +131,7 @@ final class FiltersBasicTest extends TestCase
 
     /**
      * Whether the value type is numeric
-     * @throws \Exception
+     * @throws Exception
      */
     public function testNumeric()
     {

@@ -2,13 +2,14 @@
 
 namespace Mediadevs\Validator\Tests\Unit;
 
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 final class FilterEmailTest extends TestCase
 {
     /**
      * @test Whether the email is in the list of allowed providers
-     * @throws \Exception
+     * @throws Exception
      */
     public function testAllowedEmailProviders()
     {
@@ -33,7 +34,7 @@ final class FilterEmailTest extends TestCase
 
     /**
      * @test Whether the email is in the list of blocked providers
-     * @throws \Exception
+     * @throws Exception
      */
     public function testBlockedEmailProviders()
     {
@@ -58,7 +59,7 @@ final class FilterEmailTest extends TestCase
 
     /**
      * @test Whether the given string is a valid email address
-     * @throws \Exception
+     * @throws Exception
      */
     public function testEmail()
     {
@@ -77,7 +78,7 @@ final class FilterEmailTest extends TestCase
     /**
      * @test Whether the given email provider exists, the provider will be pinged
      *       the email will be noted as valid when the correct http code is returned
-     * @throws \Exception
+     * @throws Exception
      */
     public function testEmailProviderExists()
     {
