@@ -8,20 +8,24 @@ use Mediadevs\Validator\Filters\FilterInterface;
 class IPv6 extends AbstractFilter implements FilterInterface
 {
     /**
-     * The identifier for this filter
+     * The identifier for this filter.
+     *
      * @var string
      */
     protected $identifier = 'ipv6';
 
     /**
-     * The aliases for this filter
+     * The aliases for this filter.
+     *
      * @var array
      */
     protected $aliases = array(
         'ipv6_address',
     );
+
     /**
      * Website\IPv6 constructor.
+     *
      * @param array $values
      * @param array $parameters
      */
@@ -31,7 +35,8 @@ class IPv6 extends AbstractFilter implements FilterInterface
     }
 
     /**
-     * Executing the logic for the filter
+     * Executing the logic for the filter.
+     *
      * @return bool
      */
     public function validate(): bool

@@ -5,10 +5,11 @@ namespace Mediadevs\Validator\Tests\Unit;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
-final class FiltersBasicTest extends TestCase
+final class BasicTest extends TestCase
 {
     /**
      * @test Whether the field is set
+     *
      * @throws Exception
      */
     public function testRequired()
@@ -26,12 +27,13 @@ final class FiltersBasicTest extends TestCase
 
     /**
      * @test Whether the value matches the regular expression pattern
+     *
      * @throws Exception
      */
     public function testRegularExpression()
     {
         // Current test
-        $pattern  = '/[A-z].*/';
+        $pattern = '/[A-z].*/';
 
         // Testing valid
         $valid = 'Hello World!';
@@ -46,6 +48,7 @@ final class FiltersBasicTest extends TestCase
 
     /**
      * @test Whether the value type is an array
+     *
      * @throws Exception
      */
     public function testArray()
@@ -62,7 +65,8 @@ final class FiltersBasicTest extends TestCase
     }
 
     /**
-     * Whether the value type is a boolean
+     * Whether the value type is a boolean.
+     *
      * @throws Exception
      */
     public function testBoolean()
@@ -79,7 +83,8 @@ final class FiltersBasicTest extends TestCase
     }
 
     /**
-     * Whether the value type is a float
+     * Whether the value type is a float.
+     *
      * @throws Exception
      */
     public function testFloat()
@@ -96,7 +101,8 @@ final class FiltersBasicTest extends TestCase
     }
 
     /**
-     * Whether the value type is an integer
+     * Whether the value type is an integer.
+     *
      * @throws Exception
      */
     public function testInteger()
@@ -113,7 +119,8 @@ final class FiltersBasicTest extends TestCase
     }
 
     /**
-     * Whether the value type is null
+     * Whether the value type is null.
+     *
      * @throws Exception
      */
     public function testNull()
@@ -130,7 +137,8 @@ final class FiltersBasicTest extends TestCase
     }
 
     /**
-     * Whether the value type is numeric
+     * Whether the value type is numeric.
+     *
      * @throws Exception
      */
     public function testNumeric()

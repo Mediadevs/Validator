@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Mediadevs\Validator;
-
 
 use Mediadevs\Validator\Filters\FilterInterface;
 
@@ -24,7 +22,8 @@ class Validation
     }
 
     /**
-     * Validating the assigned filter and returning output
+     * Validating the assigned filter and returning output.
+     *
      * @return string
      */
     public function validate(): string

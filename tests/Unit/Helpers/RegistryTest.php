@@ -8,7 +8,7 @@ use Mediadevs\Validator\Helpers\Registry;
 final class RegistryTest extends TestCase
 {
     /**
-     * Whether registering a new filter works
+     * Whether registering a new filter works.
      */
     public function testNewRegistry()
     {
@@ -16,7 +16,7 @@ final class RegistryTest extends TestCase
 
         // Registering one of the test classes
         Registry::register([
-            \Mediadevs\Validator\Examples\OptionA\Filters\FilterExample::class
+            \Mediadevs\Validator\Examples\OptionA\Filters\FilterExample::class,
         ]);
     }
 }

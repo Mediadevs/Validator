@@ -11,13 +11,15 @@ class AllowedEmailProviders extends AbstractFilter implements FilterInterface
     use EmailTrait;
 
     /**
-     * The identifier for this filter
+     * The identifier for this filter.
+     *
      * @var string
      */
     protected $identifier = 'allowed_email_providers';
 
     /**
-     * The aliases for this filter
+     * The aliases for this filter.
+     *
      * @var array
      */
     protected $aliases = array(
@@ -30,6 +32,7 @@ class AllowedEmailProviders extends AbstractFilter implements FilterInterface
 
     /**
      * Email\AllowedEmailProviders constructor.
+     *
      * @param array $values
      * @param array $parameters
      */
@@ -39,7 +42,8 @@ class AllowedEmailProviders extends AbstractFilter implements FilterInterface
     }
 
     /**
-     * Executing the logic for the filter
+     * Executing the logic for the filter.
+     *
      * @return bool
      */
     public function validate(): bool

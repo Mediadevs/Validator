@@ -5,7 +5,8 @@ namespace Mediadevs\Validator\Traits;
 trait EmailTrait
 {
     /**
-     * Uses regex to extract the domain name + tld from an email address
+     * Uses regex to extract the domain name + tld from an email address.
+     *
      * @param string $email
      *
      * @return string

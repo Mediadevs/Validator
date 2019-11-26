@@ -8,21 +8,24 @@ use Mediadevs\Validator\Filters\FilterInterface;
 class TypeString extends AbstractFilter implements FilterInterface
 {
     /**
-     * The identifier for this filter
+     * The identifier for this filter.
+     *
      * @var string
      */
     protected $identifier = 'string';
 
     /**
-     * The aliases for this filter
+     * The aliases for this filter.
+     *
      * @var array
      */
     protected $aliases = array(
-        'str'
+        'str',
     );
 
     /**
      * Basic\TypeString constructor.
+     *
      * @param array $values
      * @param array $parameters
      */
@@ -32,7 +35,8 @@ class TypeString extends AbstractFilter implements FilterInterface
     }
 
     /**
-     * Executing the logic for the filter
+     * Executing the logic for the filter.
+     *
      * @return bool
      */
     public function validate(): bool
