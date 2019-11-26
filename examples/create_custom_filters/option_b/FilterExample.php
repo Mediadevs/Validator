@@ -8,22 +8,24 @@ use Mediadevs\Validator\Filters\FilterInterface;
 class FilterExample extends AbstractFilter implements FilterInterface
 {
     /**
-     * The identifier for this filter
+     * The identifier for this filter.
+     *
      * @var string
      */
     protected $identifier = '';
 
     /**
-     * The aliases for this filter
+     * The aliases for this filter.
+     *
      * @var array
      */
-    protected $aliases = array(/** Write your filters in here */);
+    protected $aliases = array(/* Write your filters in here */);
 
     /**
      * FilterExample constructor.
      *
-     * @param array  $values
-     * @param array  $parameters
+     * @param array $values
+     * @param array $parameters
      */
     public function __construct(array $values, array $parameters = array())
     {
@@ -31,8 +33,9 @@ class FilterExample extends AbstractFilter implements FilterInterface
     }
 
     /**
-     * Executing the logic for the filter
-     * @return boolean
+     * Executing the logic for the filter.
+     *
+     * @return bool
      */
     public function validate(): bool
     {

@@ -7,6 +7,7 @@ class FilterProvider
     /**
      * The filters / providers for the Validator package
      * The classes are grouped by validation type and sorted alphabetically.
+     *
      * @var array
      */
     public $providers = array(

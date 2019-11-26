@@ -5,10 +5,11 @@ namespace Mediadevs\Validator\Tests\Unit;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
-final class FilterPaymentTest extends TestCase
+final class PaymentTest extends TestCase
 {
     /**
      * @test Whether the entered credit card number is valid
+     *
      * @throws Exception
      */
     public function testCreditCard()
@@ -26,6 +27,7 @@ final class FilterPaymentTest extends TestCase
 
     /**
      * @test Whether the entered IBAN number is valid
+     *
      * @throws Exception
      */
     public function testIBAN()

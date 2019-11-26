@@ -5,7 +5,8 @@ namespace Mediadevs\Validator\Traits;
 trait RegularExpresionTrait
 {
     /**
-     * Parsing through the expressions and generating a fitting output for the RegularExpression filter
+     * Parsing through the expressions and generating a fitting output for the RegularExpression filter.
+     *
      * @param array $regularExpressions
      *
      * @return array

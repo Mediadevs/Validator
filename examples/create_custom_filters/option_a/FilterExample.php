@@ -8,13 +8,15 @@ use Mediadevs\Validator\Filters\FilterInterface;
 class FilterExample extends AbstractFilter implements FilterInterface
 {
     /**
-     * The identifier for this filter, this will be used for calling the filter
+     * The identifier for this filter, this will be used for calling the filter.
+     *
      * @var string
      */
     public $identifier = 'my_custom_sanitization_filter';
 
     /**
-     * The aliases for this filter, these are alternative identifiers for calling this filter
+     * The aliases for this filter, these are alternative identifiers for calling this filter.
+     *
      * @var array
      */
     public $aliases = array(
@@ -24,7 +26,8 @@ class FilterExample extends AbstractFilter implements FilterInterface
     );
 
     /**
-     * The response message for your custom filter
+     * The response message for your custom filter.
+     *
      * @var string
      */
     public $message = array(
@@ -46,8 +49,8 @@ class FilterExample extends AbstractFilter implements FilterInterface
     /**
      * ValidationFilterExample constructor.
      *
-     * @param array  $values
-     * @param array  $parameters
+     * @param array $values
+     * @param array $parameters
      */
     public function __construct(array $values, array $parameters = array())
     {
@@ -55,8 +58,9 @@ class FilterExample extends AbstractFilter implements FilterInterface
     }
 
     /**
-     * Validating the assigned filter and returning whether it passes or not
-     * @return boolean
+     * Validating the assigned filter and returning whether it passes or not.
+     *
+     * @return bool
      */
     public function validate(): bool
     {

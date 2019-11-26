@@ -8,19 +8,22 @@ use Mediadevs\Validator\Filters\FilterInterface;
 class TypeNull extends AbstractFilter implements FilterInterface
 {
     /**
-     * The identifier for this filter
+     * The identifier for this filter.
+     *
      * @var string
      */
     protected $identifier = 'null';
 
     /**
-     * The aliases for this filter
+     * The aliases for this filter.
+     *
      * @var array
      */
     protected $aliases = array();
 
     /**
      * Basic\TypeNull constructor.
+     *
      * @param array $values
      * @param array $parameters
      */
@@ -30,7 +33,8 @@ class TypeNull extends AbstractFilter implements FilterInterface
     }
 
     /**
-     * Executing the logic for the filter
+     * Executing the logic for the filter.
+     *
      * @return bool
      */
     public function validate(): bool

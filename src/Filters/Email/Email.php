@@ -11,13 +11,15 @@ class Email extends AbstractFilter implements FilterInterface
     use EmailTrait;
 
     /**
-     * The identifier for this filter
+     * The identifier for this filter.
+     *
      * @var string
      */
     protected $identifier = 'email';
 
     /**
-     * The aliases for this filter
+     * The aliases for this filter.
+     *
      * @var array
      */
     protected $aliases = array(
@@ -27,6 +29,7 @@ class Email extends AbstractFilter implements FilterInterface
 
     /**
      * Email\Email constructor.
+     *
      * @param array $values
      * @param array $parameters
      */
@@ -36,7 +39,8 @@ class Email extends AbstractFilter implements FilterInterface
     }
 
     /**
-     * Executing the logic for the filter
+     * Executing the logic for the filter.
+     *
      * @return bool
      */
     public function validate(): bool

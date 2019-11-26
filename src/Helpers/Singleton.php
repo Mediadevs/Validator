@@ -7,7 +7,8 @@ use Exception;
 class Singleton
 {
     /**
-     * Singleton instances will be stored in this register
+     * Singleton instances will be stored in this register.
+     *
      * @var array
      */
     private static $instances = array();
@@ -34,7 +35,7 @@ class Singleton
      */
     public function __wakeup()
     {
-        throw new Exception("Cannot unserialize singleton");
+        throw new Exception('Cannot unserialize singleton');
     }
 
     /**

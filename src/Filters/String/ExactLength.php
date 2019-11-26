@@ -8,13 +8,15 @@ use Mediadevs\Validator\Filters\FilterInterface;
 class ExactLength extends AbstractFilter implements FilterInterface
 {
     /**
-     * The identifier for this filter
+     * The identifier for this filter.
+     *
      * @var string
      */
     protected $identifier = 'exact_length';
 
     /**
-     * The aliases for this filter
+     * The aliases for this filter.
+     *
      * @var array
      */
     protected $aliases = array(
@@ -23,6 +25,7 @@ class ExactLength extends AbstractFilter implements FilterInterface
 
     /**
      * String\ExactLength constructor.
+     *
      * @param array $values
      * @param array $parameters
      */
@@ -32,7 +35,8 @@ class ExactLength extends AbstractFilter implements FilterInterface
     }
 
     /**
-     * Executing the logic for the filter
+     * Executing the logic for the filter.
+     *
      * @return bool
      */
     public function validate(): bool

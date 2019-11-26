@@ -5,10 +5,11 @@ namespace Mediadevs\Validator\Tests\Unit;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
-final class FiltersStringTest extends TestCase
+final class StringTest extends TestCase
 {
     /**
      * @test Whether the string contains the threshold
+     *
      * @throws Exception
      */
     public function testContains()
@@ -28,6 +29,7 @@ final class FiltersStringTest extends TestCase
 
     /**
      * @test Whether the string ends with the given threshold
+     *
      * @throws Exception
      */
     public function testEndsWith()
@@ -47,6 +49,7 @@ final class FiltersStringTest extends TestCase
 
     /**
      * @test Whether the string has an exact length which is equal to the threshold
+     *
      * @throws Exception
      */
     public function testExactLength()
@@ -66,6 +69,7 @@ final class FiltersStringTest extends TestCase
 
     /**
      * @test Whether the string contains less characters than given threshold
+     *
      * @throws Exception
      */
     public function testMaximumLength()
@@ -85,6 +89,7 @@ final class FiltersStringTest extends TestCase
 
     /**
      * @test Whether the string contains more characters than given threshold
+     *
      * @throws Exception
      */
     public function testMinimumLength()
@@ -102,9 +107,9 @@ final class FiltersStringTest extends TestCase
         $this->assertFalse($assertsFalse);
     }
 
-
     /**
      * @test Whether the string starts with the given threshold
+     *
      * @throws Exception
      */
     public function testStartsWith()
