@@ -1,7 +1,6 @@
 preset: recommended
 enabled:
     - length_ordered_imports
-    - no_trailing_comma_in_singleline_array
 disabled:
     - normalize_index_brace
     - alpha_ordered_imports
