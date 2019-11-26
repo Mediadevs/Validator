@@ -1,1 +1,10 @@
-preset: recommended
+php:
+    preset: recommended
+    finder:
+        exclude:
+            - modules
+            - node_modules
+            - storage
+            - vendor
+        name: "*.php"
+        not-name: "*.blade.php"git
