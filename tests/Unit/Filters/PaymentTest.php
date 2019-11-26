@@ -16,12 +16,12 @@ final class FilterPaymentTest extends TestCase
         // Testing valid
         $valid = null; /** Todo: Create test for credit card validation */
         $assertsTrue = (new \Mediadevs\Validator\Filters\Payment\CreditCard([$valid]))->validate();
-        $this->assertTrue($assertsTrue = true);
+        $this->assertTrue($assertsTrue);
 
         // Testing Invalid
         $invalid = null; /** Todo: Create test for credit card validation */
         $assertsFalse = (new \Mediadevs\Validator\Filters\Payment\CreditCard([$invalid]))->validate();
-        $this->assertFalse($assertsFalse = false);
+        $this->assertFalse($assertsFalse);
     }
 
     /**
@@ -33,7 +33,7 @@ final class FilterPaymentTest extends TestCase
         // Testing valid
         $valid = null; /** Todo: Create test for IBAN validation */
         $assertsTrue = (new \Mediadevs\Validator\Filters\Payment\IBAN([$valid]))->validate();
-        $this->assertTrue($assertsTrue = true);
+        $this->assertTrue($assertsTrue);
 
         // Testing Invalid
         $invalid = null; /** Todo: Create test for IBAN validation */

@@ -36,5 +36,6 @@ class IBAN extends AbstractFilter implements FilterInterface
     public function validate(): bool
     {
         // TODO: Implement validate() method.
+        return (bool) false;
     }
 }
