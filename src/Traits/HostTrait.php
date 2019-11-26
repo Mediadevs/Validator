@@ -22,23 +22,29 @@ trait HostTrait
         // Initializing curl
         $curlHandle = curl_init($host);
 
-        // Calling the host for a response
-        curl_setopt_array($curlHandle, array(
-            CURLOPT_HEADER          => true,
-            CURLOPT_NOBODY          => true,
-            CURLOPT_RETURNTRANSFER  => true,
-            CURLOPT_TIMEOUT         => 10,
-            CURLOPT_USERAGENT       => 'page-check/1.0',
-        ));
+        // Validating whether the curl handle can reach the host, else returning false.
+        if ($curlHandle) {
+            // Calling the host for a response
+            curl_setopt_array($curlHandle, array(
+                CURLOPT_HEADER          => true,
+                CURLOPT_NOBODY          => true,
+                CURLOPT_RETURNTRANSFER  => true,
+                CURLOPT_TIMEOUT         => 10,
+                CURLOPT_USERAGENT       => 'page-check/1.0',
+            ));
 
-        // Executing request
-        curl_exec($curlHandle);
+            // Executing request
+            curl_exec($curlHandle);
 
-        // Collecting the status code and casting it to an integer
-        $status = (int) curl_getinfo($curlHandle, CURLINFO_HTTP_CODE);
+            // Collecting the status code and casting it to an integer
+            $status = (int) curl_getinfo($curlHandle, CURLINFO_HTTP_CODE);
 
-        // Closing curl
-        curl_close($curlHandle);
+            // Closing curl
+            curl_close($curlHandle);
+
+        } else {
+            return false;
+        }
 
         // Validating whether the http status is inside the allowed statuses array (Whether the page is live or not)
         return in_array($status, $statuses) ? true : false;

@@ -30,7 +30,7 @@ class Registry extends Singleton
      *
      * @return string|void
      */
-    public static function getRegistry(string $index): string
+    public static function getRegistry(string $index)
     {
         $targetIndex = null;
 

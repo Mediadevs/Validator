@@ -21,7 +21,7 @@ class FilterFactory
         Registry::getInstance();
 
         // Loading the Registry
-        $class = registry::getRegistry('filters', $filter);
+        $class = registry::getRegistry($filter);
 
         // Executing the sanitization for the called sanitization class.
         return (bool) (new Validation(
