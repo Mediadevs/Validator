@@ -7,4 +7,4 @@ php:
             - storage
             - vendor
         name: "*.php"
-        not-name: "*.blade.php"git
+        not-name: "*.blade.php"
