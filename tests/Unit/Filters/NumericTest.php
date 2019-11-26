@@ -5,11 +5,12 @@ namespace Mediadevs\Validator\Tests\Unit;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
-final class FiltersNumericTest extends TestCase
+final class NumericTest extends TestCase
 {
     /**
      * @test Whether the numeric value is between the two numeric threshold values.
      *       The order of the numeric threshold values is not important.
+     *
      * @throws Exception
      */
     public function testBetween()
@@ -29,6 +30,7 @@ final class FiltersNumericTest extends TestCase
 
     /**
      * @test Whether the value is equal to the threshold
+     *
      * @throws Exception
      */
     public function testEqual()
@@ -48,6 +50,7 @@ final class FiltersNumericTest extends TestCase
 
     /**
      * @test Whether the value is greater than the threshold
+     *
      * @throws Exception
      */
     public function testGreaterThan()
@@ -67,6 +70,7 @@ final class FiltersNumericTest extends TestCase
 
     /**
      * @test Whether the value is greater than or equal to the threshold
+     *
      * @throws Exception
      */
     public function testGreaterThanOrEqualTo()
@@ -97,6 +101,7 @@ final class FiltersNumericTest extends TestCase
 
     /**
      * @test Whether the value is less than the threshold
+     *
      * @throws Exception
      */
     public function testLessThan()
@@ -116,6 +121,7 @@ final class FiltersNumericTest extends TestCase
 
     /**
      * @test Whether the value is less than or equal to the threshold
+     *
      * @throws Exception
      */
     public function testLessThanOrEqualTo()
@@ -146,6 +152,7 @@ final class FiltersNumericTest extends TestCase
 
     /**
      * @test Whether the value is less than the maximum threshold
+     *
      * @throws Exception
      */
     public function testMaximum()
@@ -165,6 +172,7 @@ final class FiltersNumericTest extends TestCase
 
     /**
      * @test Whether the value is more than the minimum threshold
+     *
      * @throws Exception
      */
     public function testMinimum()
@@ -184,6 +192,7 @@ final class FiltersNumericTest extends TestCase
 
     /**
      * @test Whether the value is not equal to the threshold
+     *
      * @throws Exception
      */
     public function testNotEqual()

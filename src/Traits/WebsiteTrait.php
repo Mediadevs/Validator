@@ -5,7 +5,8 @@ namespace Mediadevs\Validator\Traits;
 trait WebsiteTrait
 {
     /**
-     * Pinging the hostname to see if it is live / an actual working hostname
+     * Pinging the hostname to see if it is live / an actual working hostname.
+     *
      * @param string $host
      *
      * @return bool
@@ -27,7 +28,7 @@ trait WebsiteTrait
             CURLOPT_NOBODY          => true,
             CURLOPT_RETURNTRANSFER  => true,
             CURLOPT_TIMEOUT         => 10,
-            CURLOPT_USERAGENT       => 'page-check/1.0'
+            CURLOPT_USERAGENT       => 'page-check/1.0',
         ));
 
         // Executing request

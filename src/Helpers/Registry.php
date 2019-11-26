@@ -5,13 +5,15 @@ namespace Mediadevs\Validator\Helpers;
 class Registry extends Singleton
 {
     /**
-     * All the registered classes will be stored in here
+     * All the registered classes will be stored in here.
+     *
      * @var array
      */
     private static $registry = array();
 
     /**
-     * Registering the class in the $data array
+     * Registering the class in the $data array.
+     *
      * @param array $registries
      *
      * @return void
@@ -22,7 +24,8 @@ class Registry extends Singleton
     }
 
     /**
-     * Collecting the registry based upon the given target
+     * Collecting the registry based upon the given target.
+     *
      * @param string $index
      *
      * @return string|void
@@ -45,7 +48,8 @@ class Registry extends Singleton
     }
 
     /**
-     * Validating whether the data contains the given index
+     * Validating whether the data contains the given index.
+     *
      * @param string $index
      *
      * @return bool
@@ -56,7 +60,8 @@ class Registry extends Singleton
     }
 
     /**
-     * Validating whether the data contains the given value
+     * Validating whether the data contains the given value.
+     *
      * @param string $value
      *
      * @return bool
@@ -70,7 +75,8 @@ class Registry extends Singleton
     }
 
     /**
-     * Validating whether the given index has a value
+     * Validating whether the given index has a value.
+     *
      * @param string $index
      *
      * @return bool
@@ -85,7 +91,8 @@ class Registry extends Singleton
     }
 
     /**
-     * Collecting the index by the given value
+     * Collecting the index by the given value.
+     *
      * @param string $value
      *
      * @return string|void
@@ -101,7 +108,8 @@ class Registry extends Singleton
     }
 
     /**
-     * Collecting multiple values based on the given index
+     * Collecting multiple values based on the given index.
+     *
      * @param string $index
      *
      * @return array|void
