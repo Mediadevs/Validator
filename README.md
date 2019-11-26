@@ -43,9 +43,10 @@ Mediadevs\Validator\Validator::validate($clean, [
  */
 ``` 
 ### Validation filters
+
+##### Basic
 | Filter | Aliases | Functionality | Arguments | Category |
 |---:|---|:---:|---|:---|
-||| **Basic** |||
 | `equal` | `equals` `equal_to` `equals_to` | Whether the value of the field equals the value of the threshold. | `true` | **Basic** |
 | `not_equal` | `not_equal_to` | Whether the value of the field does not equal the value of the threshold. | `true` | **Basic** |
 | `regular_expression` | `regex` `expression` | Whether the value of the field matches the regular expression threshold pattern.  | `true` | **Basic** |
@@ -57,20 +58,32 @@ Mediadevs\Validator\Validator::validate($clean, [
 | `null` | | Whether the value of the field is null**. | `false` | **Basic** |
 | `numeric` | `num` | Whether the value of the field is numeric. | `false` | **Basic** |
 | `string` | `str` | Whether the value of the field is a string. | `false` | **Basic** |
-||| **Date** |||
+
+##### Date
+| Filter | Aliases | Functionality | Arguments | Category |
+|---:|---|:---:|---|:---|
 | `date_after` | `after_date` `pre_date` | Whether the value of the field is after the threshold date. | `true` |  **Date** |
 | `date_before` | `before_date` `post_date` | Whether the value of the field is before the threshold date. | `true` | **Date** |
 | `date_between` | `between_dates` | Whether the value of the field between the two threshold dates. | `true` | **Date** |
-||| **Email** |||
+
+##### Email
+| Filter | Aliases | Functionality | Arguments | Category |
+|---:|---|:---:|---|:---|
 | `allowed_email_providers` | `allowed_providers` `email_allowed` `provider_allowed` `email_provider_allowed` `email_whitelist` | Whether the domain of the email address is from an allowed / whitelisted provider. | `true` | **Email** |
 | `blocked_email_providers` | `blocked_providers` `email_blocked` `provider_blocked` `email_provider_blocked` `email_blacklist` | Whether the domain of the email address is from an blocked / blacklisted provider. | `true` | **Email** |
 | `email` | `valid_email` `email_valid` | Whether the value of the field is an email. | `false` | **Email** |
 | `email_provider_exist` | `provider_exists` | Whether the provider of the email exists and is a reachable host. | `false` | **Email** |
-||| **File** |||
+
+##### File
+| Filter | Aliases | Functionality | Arguments | Category |
+|---:|---|:---:|---|:---|
 | `allowed_file_extensions` | `allowed_extensions` `file_extensions` | Whether the file has an allowed extension. | `true` | **File** |
 | `allowed_file_mime_type` | `allowed_mime_type` `allowed_file_type`  `file_mime_type` | Whether the file has an allowed mime-type. | `true` | **File** |
 | `maximum_file_size` | `max_file_size` `maximum_size`  `file_size`  `max_size` | Whether the file is lesser or equal to the maximal file size. | `true` | **File** |
-||| **Host** |||
+
+##### Host
+| Filter | Aliases | Functionality | Arguments | Category |
+|---:|---|:---:|---|:---|
 | `domain` | | Whether the value of the field is a domain name.| `false` | **Host** |
 | `ip` | `ip_address` | Whether the value of the field is an IP address. | `false` | **Host** |
 | `ipv4` | `ipv4_address` | Whether the value of the field is an IPv4 address. | `false` | **Host** |
@@ -78,7 +91,10 @@ Mediadevs\Validator\Validator::validate($clean, [
 | `mac` | `mac_address` | Whether the value of the field is an MAC address | `false` | **Host** |
 | `reachable_address` | `website_live` `test_host` | Whether the entered domain name / ip address is reachable. | `false` | **Host** |
 | `url` | | Whether the value of the field is an url. | `false` | **Host** |
-||| **Numeric** |||
+
+##### Numeric
+| Filter | Aliases | Functionality | Arguments | Category |
+|---:|---|:---:|---|:---|
 | `between` | `numeric_between` `num_between` | Whether the numeric value is between the two numeric threshold values. The order of the numeric threshold values is not important. | `true` | **Numeric** |
 | `greater_than` | `gt` | Whether the value of the field is greater than the threshold. | `true` | **Numeric** |
 | `greater_than_or_equal_to` | `gte` | Whether the value of the field is greater or equal to the threshold. | `true` | **Numeric** |
@@ -86,10 +102,16 @@ Mediadevs\Validator\Validator::validate($clean, [
 | `less_than_or_equal_to` | `lte` | Whether the value of the field is lesser or equal to the threshold. | `true` | **Numeric** |
 | `maximum` | `max` | Whether the value of the field has less than the maximum value of the threshold.| `true` | **Numeric** |
 | `minimum` | `min` | Whether the value of the field has the minimum value of the threshold. | `true` | **Numeric** |
-||| **Payment** |||
+
+##### Payment
+| Filter | Aliases | Functionality | Arguments | Category |
+|---:|---|:---:|---|:---|
 | `credit_card` | `cc` | Whether the credit card which the user has entered is valid. | `false` | **Payment** |
 | `iban` | | Whether the IBan number which the user has entered is valid. | `false` | **Payment** |
-||| **String** |||
+
+##### String
+| Filter | Aliases | Functionality | Arguments | Category |
+|---:|---|:---:|---|:---|
 | `contains` | | Whether the value of the field contains the threshold substring. | `true` | **String** |
 | `ends_with` | `ends` | Whether the value of the field ends with the threshold substring. | `true` | **String** |
 | `exact_length` | `exact` | Whether the value of the field matches the exact threshold length. | `true` | **String** |
