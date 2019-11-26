@@ -29,26 +29,6 @@ final class NumericTest extends TestCase
     }
 
     /**
-     * @test Whether the value is equal to the threshold
-     *
-     * @throws Exception
-     */
-    public function testEqual()
-    {
-        $threshold = 10;
-
-        // Testing valid
-        $valid = 10;
-        $assertsTrue = (new \Mediadevs\Validator\Filters\Numeric\Equal([$valid], [$threshold]))->validate();
-        $this->assertTrue($assertsTrue);
-
-        // Testing Invalid
-        $invalid = 1;
-        $assertsFalse = (new \Mediadevs\Validator\Filters\Numeric\Equal([$invalid], [$threshold]))->validate();
-        $this->assertFalse($assertsFalse);
-    }
-
-    /**
      * @test Whether the value is greater than the threshold
      *
      * @throws Exception
@@ -187,26 +167,6 @@ final class NumericTest extends TestCase
         // Testing Invalid
         $invalid = 5;
         $assertsFalse = (new \Mediadevs\Validator\Filters\Numeric\Minimum([$invalid], [$threshold]))->validate();
-        $this->assertFalse($assertsFalse);
-    }
-
-    /**
-     * @test Whether the value is not equal to the threshold
-     *
-     * @throws Exception
-     */
-    public function testNotEqual()
-    {
-        $threshold = 10;
-
-        // Testing valid
-        $valid = 15;
-        $assertsTrue = (new \Mediadevs\Validator\Filters\Numeric\NotEqual([$valid], [$threshold]))->validate();
-        $this->assertTrue($assertsTrue);
-
-        // Testing Invalid
-        $invalid = 10;
-        $assertsFalse = (new \Mediadevs\Validator\Filters\Numeric\NotEqual([$invalid], [$threshold]))->validate();
         $this->assertFalse($assertsFalse);
     }
 }

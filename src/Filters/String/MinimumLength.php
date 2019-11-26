@@ -21,6 +21,7 @@ class MinimumLength extends AbstractFilter implements FilterInterface
      */
     protected $aliases = array(
         'min_length',
+        'minlen',
     );
 
     /**

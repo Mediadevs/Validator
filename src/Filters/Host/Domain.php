@@ -1,30 +1,28 @@
 <?php
 
-namespace Mediadevs\Validator\Filters\Website;
+namespace Mediadevs\Validator\Filters\Host;
 
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 
-class IP extends AbstractFilter implements FilterInterface
+class Domain extends AbstractFilter implements FilterInterface
 {
     /**
      * The identifier for this filter.
      *
      * @var string
      */
-    protected $identifier = 'ip';
+    protected $identifier = 'domain';
 
     /**
      * The aliases for this filter.
      *
      * @var array
      */
-    protected $aliases = array(
-        'ip_address',
-    );
+    protected $aliases = array();
 
     /**
-     * Website\IP constructor.
+     * Website\Domain constructor.
      *
      * @param array $values
      * @param array $parameters
@@ -41,6 +39,6 @@ class IP extends AbstractFilter implements FilterInterface
      */
     public function validate(): bool
     {
-        return filter_var($this->values[0], FILTER_VALIDATE_IP);
+        return filter_var($this->values[0], FILTER_VALIDATE_DOMAIN);
     }
 }

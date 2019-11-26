@@ -1,18 +1,18 @@
 <?php
 
-namespace Mediadevs\Validator\Filters\Numeric;
+namespace Mediadevs\Validator\Filters\Host;
 
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 
-class Equal extends AbstractFilter implements FilterInterface
+class IP extends AbstractFilter implements FilterInterface
 {
     /**
      * The identifier for this filter.
      *
      * @var string
      */
-    protected $identifier = 'equal';
+    protected $identifier = 'ip';
 
     /**
      * The aliases for this filter.
@@ -20,13 +20,11 @@ class Equal extends AbstractFilter implements FilterInterface
      * @var array
      */
     protected $aliases = array(
-        'equals',
-        'equal_to',
-        'equals_to',
+        'ip_address',
     );
 
     /**
-     * Numeric\Equal constructor.
+     * Website\IP constructor.
      *
      * @param array $values
      * @param array $parameters
@@ -43,6 +41,6 @@ class Equal extends AbstractFilter implements FilterInterface
      */
     public function validate(): bool
     {
-        return $this->values[0] == $this->parameters[0];
+        return filter_var($this->values[0], FILTER_VALIDATE_IP);
     }
 }

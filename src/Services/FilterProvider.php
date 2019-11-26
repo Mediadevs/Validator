@@ -12,6 +12,8 @@ class FilterProvider
      */
     public $providers = array(
         /*----[ Basic validation ]------------------------------------------------------------------------------------*/
+        \Mediadevs\Validator\Filters\Basic\Equal::class,
+        \Mediadevs\Validator\Filters\Basic\NotEqual::class,
         \Mediadevs\Validator\Filters\Basic\RegularExpression::class,
         \Mediadevs\Validator\Filters\Basic\Required::class,
         \Mediadevs\Validator\Filters\Basic\TypeArray::class,
@@ -38,16 +40,23 @@ class FilterProvider
         \Mediadevs\Validator\Filters\File\AllowedFileMimeTypes::class,
         \Mediadevs\Validator\Filters\File\MaximumFileSize::class,
 
+        /*----[ Host validation ]-------------------------------------------------------------------------------------*/
+        \Mediadevs\Validator\Filters\Host\Domain::class,
+        \Mediadevs\Validator\Filters\Host\IP::class,
+        \Mediadevs\Validator\Filters\Host\IPv4::class,
+        \Mediadevs\Validator\Filters\Host\IPv6::class,
+        \Mediadevs\Validator\Filters\Host\MAC::class,
+        \Mediadevs\Validator\Filters\Host\ReachableAddress::class,
+        \Mediadevs\Validator\Filters\Host\Url::class,
+
         /*----[ Numeric validation ]----------------------------------------------------------------------------------*/
         \Mediadevs\Validator\Filters\Numeric\Between::class,
-        \Mediadevs\Validator\Filters\Numeric\Equal::class,
         \Mediadevs\Validator\Filters\Numeric\GreaterThan::class,
         \Mediadevs\Validator\Filters\Numeric\GreaterThanOrEqualTo::class,
         \Mediadevs\Validator\Filters\Numeric\LessThan::class,
         \Mediadevs\Validator\Filters\Numeric\LessThanOrEqualTo::class,
         \Mediadevs\Validator\Filters\Numeric\Maximum::class,
         \Mediadevs\Validator\Filters\Numeric\Minimum::class,
-        \Mediadevs\Validator\Filters\Numeric\NotEqual::class,
 
         /*----[ Payment validation ]----------------------------------------------------------------------------------*/
         \Mediadevs\Validator\Filters\Payment\CreditCard::class,
@@ -60,14 +69,5 @@ class FilterProvider
         \Mediadevs\Validator\Filters\String\MaximumLength::class,
         \Mediadevs\Validator\Filters\String\MinimumLength::class,
         \Mediadevs\Validator\Filters\String\StartsWith::class,
-
-        /*----[ Website validation ]----------------------------------------------------------------------------------*/
-        \Mediadevs\Validator\Filters\Website\Domain::class,
-        \Mediadevs\Validator\Filters\Website\IP::class,
-        \Mediadevs\Validator\Filters\Website\IPv4::class,
-        \Mediadevs\Validator\Filters\Website\IPv6::class,
-        \Mediadevs\Validator\Filters\Website\MAC::class,
-        \Mediadevs\Validator\Filters\Website\ReachableAddress::class,
-        \Mediadevs\Validator\Filters\Website\Url::class,
     );
 }

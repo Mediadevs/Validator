@@ -8,20 +8,42 @@ use PHPUnit\Framework\TestCase;
 final class BasicTest extends TestCase
 {
     /**
-     * @test Whether the field is set
+     * @test Whether the value is equal to the threshold
      *
      * @throws Exception
      */
-    public function testRequired()
+    public function testEqual()
     {
+        $threshold = 10;
+
         // Testing valid
-        $valid = 'Hello World!';
-        $assertsTrue = (new \Mediadevs\Validator\Filters\Basic\Required([$valid]))->validate();
+        $valid = 10;
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Basic\Equal([$valid], [$threshold]))->validate();
         $this->assertTrue($assertsTrue);
 
         // Testing Invalid
-        $invalid = '';
-        $assertsFalse = (new \Mediadevs\Validator\Filters\Basic\Required([$invalid]))->validate();
+        $invalid = 1;
+        $assertsFalse = (new \Mediadevs\Validator\Filters\Basic\Equal([$invalid], [$threshold]))->validate();
+        $this->assertFalse($assertsFalse);
+    }
+
+    /**
+     * @test Whether the value is not equal to the threshold
+     *
+     * @throws Exception
+     */
+    public function testNotEqual()
+    {
+        $threshold = 10;
+
+        // Testing valid
+        $valid = 15;
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Basic\NotEqual([$valid], [$threshold]))->validate();
+        $this->assertTrue($assertsTrue);
+
+        // Testing Invalid
+        $invalid = 10;
+        $assertsFalse = (new \Mediadevs\Validator\Filters\Basic\NotEqual([$invalid], [$threshold]))->validate();
         $this->assertFalse($assertsFalse);
     }
 
@@ -43,6 +65,24 @@ final class BasicTest extends TestCase
         // Testing Invalid
         $invalid = '123456';
         $assertsFalse = (new \Mediadevs\Validator\Filters\Basic\RegularExpression([$invalid], [$pattern]))->validate();
+        $this->assertFalse($assertsFalse);
+    }
+
+    /**
+     * @test Whether the field is set
+     *
+     * @throws Exception
+     */
+    public function testRequired()
+    {
+        // Testing valid
+        $valid = 'Hello World!';
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Basic\Required([$valid]))->validate();
+        $this->assertTrue($assertsTrue);
+
+        // Testing Invalid
+        $invalid = '';
+        $assertsFalse = (new \Mediadevs\Validator\Filters\Basic\Required([$invalid]))->validate();
         $this->assertFalse($assertsFalse);
     }
 

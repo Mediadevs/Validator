@@ -1,30 +1,28 @@
 <?php
 
-namespace Mediadevs\Validator\Filters\Website;
+namespace Mediadevs\Validator\Filters\Host;
 
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 
-class MAC extends AbstractFilter implements FilterInterface
+class Url extends AbstractFilter implements FilterInterface
 {
     /**
      * The identifier for this filter.
      *
      * @var string
      */
-    protected $identifier = 'mac';
+    protected $identifier = 'url';
 
     /**
      * The aliases for this filter.
      *
      * @var array
      */
-    protected $aliases = array(
-        'mac_address',
-    );
+    protected $aliases = array();
 
     /**
-     * Website\Mac constructor.
+     * Website\Url constructor.
      *
      * @param array $values
      * @param array $parameters
@@ -41,6 +39,6 @@ class MAC extends AbstractFilter implements FilterInterface
      */
     public function validate(): bool
     {
-        return filter_var($this->values[0], FILTER_VALIDATE_MAC);
+        return filter_var($this->values[0], FILTER_VALIDATE_URL);
     }
 }

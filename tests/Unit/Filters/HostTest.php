@@ -5,7 +5,7 @@ namespace Mediadevs\Validator\Tests\Unit;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
-final class WebsiteTest extends TestCase
+final class HostTest extends TestCase
 {
     /**
      * @test Whether the string is a valid domain
@@ -16,12 +16,12 @@ final class WebsiteTest extends TestCase
     {
         // Testing valid
         $valid = 'mediadevs.nl';
-        $assertsTrue = (new \Mediadevs\Validator\Filters\Website\Domain([$valid]))->validate();
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Host\Domain([$valid]))->validate();
         $this->assertTrue($assertsTrue);
 
         // Testing Invalid
         $invalid = '';
-        $assertsFalse = (new \Mediadevs\Validator\Filters\Website\Domain([$invalid]))->validate();
+        $assertsFalse = (new \Mediadevs\Validator\Filters\Host\Domain([$invalid]))->validate();
         $this->assertFalse($assertsFalse);
     }
 
@@ -34,12 +34,12 @@ final class WebsiteTest extends TestCase
     {
         // Testing valid
         $valid = '127.0.0.1';
-        $assertsTrue = (new \Mediadevs\Validator\Filters\Website\IP([$valid]))->validate();
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Host\IP([$valid]))->validate();
         $this->assertTrue($assertsTrue);
 
         // Testing Invalid
         $invalid = '';
-        $assertsFalse = (new \Mediadevs\Validator\Filters\Website\IP([$invalid]))->validate();
+        $assertsFalse = (new \Mediadevs\Validator\Filters\Host\IP([$invalid]))->validate();
         $this->assertFalse($assertsFalse);
     }
 
@@ -52,12 +52,12 @@ final class WebsiteTest extends TestCase
     {
         // Testing valid
         $valid = '127.0.0.1';
-        $assertsTrue = (new \Mediadevs\Validator\Filters\Website\IPv4([$valid]))->validate();
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Host\IPv4([$valid]))->validate();
         $this->assertTrue($assertsTrue);
 
         // Testing Invalid
         $invalid = '';
-        $assertsFalse = (new \Mediadevs\Validator\Filters\Website\IPv4([$invalid]))->validate();
+        $assertsFalse = (new \Mediadevs\Validator\Filters\Host\IPv4([$invalid]))->validate();
         $this->assertFalse($assertsFalse);
     }
 
@@ -70,12 +70,12 @@ final class WebsiteTest extends TestCase
     {
         // Testing valid
         $valid = '2001:0db8:0000:0000:0000:8a2e:0370:7334';
-        $assertsTrue = (new \Mediadevs\Validator\Filters\Website\IPv6([$valid]))->validate();
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Host\IPv6([$valid]))->validate();
         $this->assertTrue($assertsTrue);
 
         // Testing Invalid
         $invalid = '';
-        $assertsFalse = (new \Mediadevs\Validator\Filters\Website\IPv6([$invalid]))->validate();
+        $assertsFalse = (new \Mediadevs\Validator\Filters\Host\IPv6([$invalid]))->validate();
         $this->assertFalse($assertsFalse);
     }
 
@@ -88,12 +88,12 @@ final class WebsiteTest extends TestCase
     {
         // Testing valid
         $valid = '00:00:00:a1:2b:cc';
-        $assertsTrue = (new \Mediadevs\Validator\Filters\Website\MAC([$valid]))->validate();
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Host\MAC([$valid]))->validate();
         $this->assertTrue($assertsTrue);
 
         // Testing Invalid
         $invalid = '';
-        $assertsFalse = (new \Mediadevs\Validator\Filters\Website\MAC([$invalid]))->validate();
+        $assertsFalse = (new \Mediadevs\Validator\Filters\Host\MAC([$invalid]))->validate();
         $this->assertFalse($assertsFalse);
     }
 
@@ -106,12 +106,12 @@ final class WebsiteTest extends TestCase
     {
         // Testing valid
         $valid = 'mediadevs.nl';
-        $assertsTrue = (new \Mediadevs\Validator\Filters\Website\ReachableAddress([$valid]))->validate();
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Host\ReachableAddress([$valid]))->validate();
         $this->assertTrue($assertsTrue);
 
         // Testing Invalid
         $invalid = '';
-        $assertsFalse = (new \Mediadevs\Validator\Filters\Website\ReachableAddress([$invalid]))->validate();
+        $assertsFalse = (new \Mediadevs\Validator\Filters\Host\ReachableAddress([$invalid]))->validate();
         $this->assertFalse($assertsFalse);
     }
 
@@ -124,12 +124,12 @@ final class WebsiteTest extends TestCase
     {
         // Testing valid
         $valid = 'https://mediadevs.nl/';
-        $assertsTrue = (new \Mediadevs\Validator\Filters\Website\Url([$valid]))->validate();
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Host\Url([$valid]))->validate();
         $this->assertTrue($assertsTrue);
 
         // Testing Invalid
         $invalid = '';
-        $assertsFalse = (new \Mediadevs\Validator\Filters\Website\Url([$invalid]))->validate();
+        $assertsFalse = (new \Mediadevs\Validator\Filters\Host\Url([$invalid]))->validate();
         $this->assertFalse($assertsFalse);
     }
 }

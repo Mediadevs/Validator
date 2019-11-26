@@ -1,25 +1,31 @@
 <?php
 
-namespace Mediadevs\Validator\Filters\Website;
+namespace Mediadevs\Validator\Filters\Host;
 
+use Mediadevs\Validator\Traits\HostTrait;
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 
-class Domain extends AbstractFilter implements FilterInterface
+class ReachableAddress extends AbstractFilter implements FilterInterface
 {
+    use HostTrait;
+
     /**
      * The identifier for this filter.
      *
      * @var string
      */
-    protected $identifier = 'domain';
+    protected $identifier = 'reachable_address';
 
     /**
      * The aliases for this filter.
      *
      * @var array
      */
-    protected $aliases = array();
+    protected $aliases = array(
+        'website_live',
+        'test_host',
+    );
 
     /**
      * Website\Domain constructor.
@@ -39,6 +45,6 @@ class Domain extends AbstractFilter implements FilterInterface
      */
     public function validate(): bool
     {
-        return filter_var($this->values[0], FILTER_VALIDATE_DOMAIN);
+        return $this->checkWhetherHostIsLive($this->values[0]);
     }
 }

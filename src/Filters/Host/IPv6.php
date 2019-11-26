@@ -1,21 +1,18 @@
 <?php
 
-namespace Mediadevs\Validator\Filters\Website;
+namespace Mediadevs\Validator\Filters\Host;
 
-use Mediadevs\Validator\Traits\WebsiteTrait;
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 
-class ReachableAddress extends AbstractFilter implements FilterInterface
+class IPv6 extends AbstractFilter implements FilterInterface
 {
-    use WebsiteTrait;
-
     /**
      * The identifier for this filter.
      *
      * @var string
      */
-    protected $identifier = 'reachable_address';
+    protected $identifier = 'ipv6';
 
     /**
      * The aliases for this filter.
@@ -23,12 +20,11 @@ class ReachableAddress extends AbstractFilter implements FilterInterface
      * @var array
      */
     protected $aliases = array(
-        'website_live',
-        'test_host',
+        'ipv6_address',
     );
 
     /**
-     * Website\Domain constructor.
+     * Website\IPv6 constructor.
      *
      * @param array $values
      * @param array $parameters
@@ -45,6 +41,6 @@ class ReachableAddress extends AbstractFilter implements FilterInterface
      */
     public function validate(): bool
     {
-        return $this->checkWhetherHostIsLive($this->values[0]);
+        return filter_var($this->values[0], FILTER_VALIDATE_IP, FILTER_FLAG_IPV6);
     }
 }

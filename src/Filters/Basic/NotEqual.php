@@ -1,18 +1,18 @@
 <?php
 
-namespace Mediadevs\Validator\Filters\Website;
+namespace Mediadevs\Validator\Filters\Basic;
 
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 
-class IPv6 extends AbstractFilter implements FilterInterface
+class NotEqual extends AbstractFilter implements FilterInterface
 {
     /**
      * The identifier for this filter.
      *
      * @var string
      */
-    protected $identifier = 'ipv6';
+    protected $identifier = 'not_equal';
 
     /**
      * The aliases for this filter.
@@ -20,11 +20,11 @@ class IPv6 extends AbstractFilter implements FilterInterface
      * @var array
      */
     protected $aliases = array(
-        'ipv6_address',
+        'not_equal_to',
     );
 
     /**
-     * Website\IPv6 constructor.
+     * Basic\NotEqual constructor.
      *
      * @param array $values
      * @param array $parameters
@@ -41,6 +41,6 @@ class IPv6 extends AbstractFilter implements FilterInterface
      */
     public function validate(): bool
     {
-        return filter_var($this->values[0], FILTER_VALIDATE_IP, FILTER_FLAG_IPV6);
+        return $this->values[0] != $this->parameters[0];
     }
 }

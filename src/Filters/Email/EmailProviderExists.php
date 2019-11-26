@@ -3,14 +3,14 @@
 namespace Mediadevs\Validator\Filters\Email;
 
 use Mediadevs\Validator\Traits\EmailTrait;
-use Mediadevs\Validator\Traits\WebsiteTrait;
+use Mediadevs\Validator\Traits\HostTrait;
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 
 class EmailProviderExists extends AbstractFilter implements FilterInterface
 {
     use EmailTrait;
-    use WebsiteTrait;
+    use HostTrait;
 
     /**
      * The identifier for this filter.

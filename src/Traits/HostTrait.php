@@ -2,7 +2,7 @@
 
 namespace Mediadevs\Validator\Traits;
 
-trait WebsiteTrait
+trait HostTrait
 {
     /**
      * Pinging the hostname to see if it is live / an actual working hostname.

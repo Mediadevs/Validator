@@ -21,6 +21,7 @@ class MaximumLength extends AbstractFilter implements FilterInterface
      */
     protected $aliases = array(
         'max_length',
+        'maxlen',
     );
 
     /**

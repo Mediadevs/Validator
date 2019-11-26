@@ -21,6 +21,7 @@ class Between extends AbstractFilter implements FilterInterface
      */
     protected $aliases = array(
         'numeric_between',
+        'num_between',
     );
 
     /**
