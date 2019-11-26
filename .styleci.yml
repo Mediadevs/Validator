@@ -1,1 +1,4 @@
 preset: recommended
+length_ordered_imports: true
+no_trailing_comma_in_singleline_array: true
+normalize_index_brace: false
