@@ -7,13 +7,14 @@ use Mediadevs\Validator\Factories\FilterFactory;
 class Validator
 {
     /**
-     * The validation results will be stored in here
+     * The validation results will be stored in here.
+     *
      * @var array
      */
     private $results = array();
 
     /**
-     * Validating all the values and applying all the assigned filters
+     * Validating all the values and applying all the assigned filters.
      *
      * @param array $request
      * @param array $configuration
@@ -22,15 +23,15 @@ class Validator
      */
     public function validate(array $request, array $configuration = array()): array
     {
-        $factory    = new FilterFactory();
-        $arguments  = new Arguments();
+        $factory = new FilterFactory();
+        $arguments = new Arguments();
 
         // Parsing through all the fields
         foreach ($arguments->getArguments($configuration) as $config) {
             // Assigning the variables for the factory
-            $filter     = $config['filter'];
+            $filter = $config['filter'];
             $thresholds = $config['thresholds'];
-            $field      = $config['field'];
+            $field = $config['field'];
 
             // Making sure $values is an array
             $values = is_array($request[$field]) ? $request[$field] : array($request[$field]);
@@ -40,11 +41,11 @@ class Validator
 
             // Creating a validation config for the current operation
             $this->results[] = [
-                'valid'         => (bool)   $results,
+                'valid'         => (bool) $results,
                 'field'         => (string) $field,
                 'filter'        => (string) $filter,
-                'values'        => (array)  $values,
-                'thresholds'    => (array)  $thresholds,
+                'values'        => (array) $values,
+                'thresholds'    => (array) $thresholds,
             ];
         }
 

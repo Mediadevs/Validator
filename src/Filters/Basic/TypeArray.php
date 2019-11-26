@@ -20,7 +20,7 @@ class TypeArray extends AbstractFilter implements FilterInterface
      * @var array
      */
     protected $aliases = array(
-        'arr'
+        'arr',
     );
 
     /**

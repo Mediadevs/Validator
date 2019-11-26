@@ -2,8 +2,8 @@
 
 namespace Mediadevs\Validator\Filters\Email;
 
-use Mediadevs\Validator\Traits\EmailTrait;
 use Mediadevs\Validator\Traits\HostTrait;
+use Mediadevs\Validator\Traits\EmailTrait;
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 
