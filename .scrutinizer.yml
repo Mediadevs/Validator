@@ -1,4 +1,4 @@
-     filter:
+filter:
     excluded_paths: [tests/*]
 
 checks:
