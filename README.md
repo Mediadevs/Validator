@@ -43,54 +43,56 @@ Mediadevs\Validator\Validator::validate($clean, [
  */
 ``` 
 ### Validation filters
-| filter | aliases | functionality | arguments | returns | 
+| Filter | Aliases | Functionality | Arguments | Category |
 |---:|---|:---:|---|:---|
-| `required` | | Whether the field is set and is not empty.| `false` | `boolean` |
-| `numeric` | `num` | Whether the value of the field is **numeric**. | `false` | `boolean` |
-| `float` | | Whether the value of the field is a **float**. | `false` | `boolean` |
-| `boolean` | `bool` | Whether the value of the field is a **boolean**. | `false` | `boolean` |
-| `integer` | `int` | Whether the value of the field is an **integer**. | `false` | `boolean` |
-| `null` | | Whether the value of the field is **null**. | `false` | `boolean` |
-| `string` | | Whether the value of the field is a **string**. | `false` | `boolean` |
-| `array` | | Whether the value of the field is an **array**. | `false` | `boolean` |
-| `before_date` | | Whether the value of the field is before the threshold date. | `true` | `boolean` |
-| `after_date` | | Whether the value of the field is after the threshold date. | `true` | `boolean` |
-| `between_dates` | | Whether the value of the field between the two threshold dates. | `true` | `boolean` |
-| `starts_with` | | Whether the value of the field starts with the threshold substring. | `true` | `boolean` |
-| `ends_with` | | Whether the value of the field ends with the threshold substring. | `true` | `boolean` |
-| `contains` | | Whether the value of the field contains the threshold substring. | `true` | `boolean` |
-| `regular_expresion` | `expression` / `regex` | Whether the value of the field matches the regular expression threshold pattern.  | `true` | `boolean` |
-| `exact_length` | `exact` | Whether the value of the field matches the exact threshold length. |  `true` | `boolean` |
-| `minimum_length` | `min_length` / `minlen` | Whether the value of the field has the minimal required threshold length. |`true` | `boolean` |
-| `maximum_length` | `max_length` / `maxlen` | Whether the value of the field has less then the maximal required threshold length. | `true` | `boolean` |
-| `email` | | Whether the value of the field is an email. | `false` | `boolean` |
-| `url` | | Whether the value of the field is an url.|  `false` | `boolean` |
-| `domain` | | Whether the value of the field is a domain name.|  `false` | `boolean` |
-| `ip_address` | `ip` | Whether the value of the field is an IP address. |  `false` | `boolean` |
-| `ipv4_address` | `ipv4` | Whether the value of the field is an IPv4 address. |  `false` | `boolean` |
-| `ipv6_address` | `ipv6` | Whether the value of the field is an IPv6 address. |  `false` | `boolean` |
-| `mac_address` | `mac` | Whether the value of the field is an MAC address |  `false` | `boolean` |
-| `between` | | Whether the value of the field between two values. | `true` | `boolean` |
-| `minimum` | `min` | Whether the value of the field has the minimum worth of the threshold. | `true` | `boolean` |
-| `maximum` | `max` | Whether the value of the field has less than the maximum worth of the threshold.| `true` | `boolean` |
-| `equals_to` | `equals` / `equal_to` / `equal` | Whether the value of the field equals the worth of the threshold. | `true` | `boolean` |
-| `not_equal` | `not_equal_to` | Whether the value of the field does not equal the worth of the threshold. | `true` | `boolean` |
-| `greater_than` | `gt` | Whether the value of the field is greater than the threshold. | `true` | `boolean` |
-| `greater_than_or_equal_to` | `gte` | Whether the value of the field is greater or equal to the threshold. | `true` | `boolean` |
-| `less_than` | `lt` | Whether the value of the field is lesser than the threshold. | `true` | `boolean` |
-| `less_than_or_equal_to` | `lte` | Whether the value of the field is lesser or equal to the threshold. | `true` | `boolean` |
-| `allowed_extensions` | | Whether the file has an allowed extension. | `true` | `boolean` |
-| `allowed_mime_types` | | Whether the file has an allowed mime-type. | `true` | `boolean` |
-| `max_file_size` | `max_size` | Whether the file is lesser or equal to the maximal file size. | `true` | `boolean` |
-| `allowed_email_providers` | `allowed_providers` | Whether the domain of the email address is from an allowed / whitelisted provider. | `true` | `boolean` |
-| `blocked_email_providers` | `blocked_providers` | Whether the domain of the email address is from an blocked / blacklisted provider. | `true` | `boolean` |
-| `credit_card` | `cc` | Whether the creditcard which the user has entered is a valid one. | `false` | `boolean` |
-| `iban` | | Whether the iban which the user has entered is a valid one. | `false` | `boolean` |
+| `equal` | `equals` `equal_to` `equals_to` | Whether the value of the field equals the value of the threshold. | `true` | **Basic** |
+| `not_equal` | `not_equal_to` | Whether the value of the field does not equal the value of the threshold. | `true` | **Basic** |
+| `regular_expression` | `regex` `expression` | Whether the value of the field matches the regular expression threshold pattern.  | `true` | **Basic** |
+| `required` | `req` | Whether the field is set and is not empty.| `false` | **Basic** |
+| `array` | `arr` | Whether the value of the field is an array. | `false` | **Basic** |
+| `boolean` | `bool` | Whether the value of the field is a boolean. | `false` | **Basic** |
+| `float` | | Whether the value of the field is a float. | `false` | **Basic** |
+| `integer` | `int` | Whether the value of the field is an integer. | `false` | **Basic** |
+| `null` | | Whether the value of the field is null**. | `false` | **Basic** |
+| `numeric` | `num` | Whether the value of the field is numeric. | `false` | **Basic** |
+| `string` | `str` | Whether the value of the field is a string. | `false` | **Basic** |
+| `date_after` | `after_date` `pre_date` | Whether the value of the field is after the threshold date. | `true` |  **Date** |
+| `date_before` | `before_date` `post_date` | Whether the value of the field is before the threshold date. | `true` | **Date** |
+| `date_between` | `between_dates` | Whether the value of the field between the two threshold dates. | `true` | **Date** |
+| `allowed_email_providers` | `allowed_providers` `email_allowed` `provider_allowed` `email_provider_allowed` `email_whitelist` | Whether the domain of the email address is from an allowed / whitelisted provider. | `true` | **Email** |
+| `blocked_email_providers` | `blocked_providers` `email_blocked` `provider_blocked` `email_provider_blocked` `email_blacklist` | Whether the domain of the email address is from an blocked / blacklisted provider. | `true` | **Email** |
+| `email` | `valid_email` `email_valid` | Whether the value of the field is an email. | `false` | **Email** |
+| `email_provider_exist` | `provider_exists` | Whether the provider of the email exists and is a reachable host. | `false` | **Email** |
+| `allowed_file_extensions` | `allowed_extensions` `file_extensions` | Whether the file has an allowed extension. | `true` | **File** |
+| `allowed_file_mime_type` | `allowed_mime_type` `allowed_file_type`  `file_mime_type` | Whether the file has an allowed mime-type. | `true` | **File** |
+| `maximum_file_size` | `max_file_size` `maximum_size`  `file_size`  `max_size` | Whether the file is lesser or equal to the maximal file size. | `true` | **File** |
+| `between` | `numeric_between` `num_between` | Whether the numeric value is between the two numeric threshold values. The order of the numeric threshold values is not important. | `true` | **Numeric** |
+| `greater_than` | `gt` | Whether the value of the field is greater than the threshold. | `true` | **Numeric** |
+| `greater_than_or_equal_to` | `gte` | Whether the value of the field is greater or equal to the threshold. | `true` | **Numeric** |
+| `less_than` | `lt` | Whether the value of the field is lesser than the threshold. | `true` | **Numeric** |
+| `less_than_or_equal_to` | `lte` | Whether the value of the field is lesser or equal to the threshold. | `true` | **Numeric** |
+| `maximum` | `max` | Whether the value of the field has less than the maximum value of the threshold.| `true` | **Numeric** |
+| `minimum` | `min` | Whether the value of the field has the minimum value of the threshold. | `true` | **Numeric** |
+| `credit_card` | `cc` | Whether the credit card which the user has entered is valid. | `false` | **Payment** |
+| `iban` | | Whether the IBan number which the user has entered is valid. | `false` | **Payment** |
+| `contains` | | Whether the value of the field contains the threshold substring. | `true` | **String** |
+| `ends_with` | `ends` | Whether the value of the field ends with the threshold substring. | `true` | **String** |
+| `exact_length` | `exact` | Whether the value of the field matches the exact threshold length. | `true` | **String** |
+| `maximum_length` | `max_length` `maxlen` | Whether the string length of the field has less characters then the maximal required threshold length. | `true` | **String** |
+| `minimum_length` | `min_length` `minlen` | Whether the string length of the field has the minimal required threshold length. |`true` | **String** |
+| `starts_with` | `starts` | Whether the value of the field starts with the threshold substring. | `true` | **String** |
+| `domain` | | Whether the value of the field is a domain name.| `false` | **Host** |
+| `ip` | `ip_address` | Whether the value of the field is an IP address. | `false` | **Host** |
+| `ipv4` | `ipv4_address` | Whether the value of the field is an IPv4 address. | `false` | **Host** |
+| `ipv6` | `ipv6_address` | Whether the value of the field is an IPv6 address. | `false` | **Host** |
+| `mac` | `mac_address` | Whether the value of the field is an MAC address | `false` | **Host** |
+| `reachable_address` | `website_live` `test_host` | Whether the entered domain name / ip address is reachable. | `false` | **Host** |
+| `url` | | Whether the value of the field is an url. | `false` | **Host** |
 
-## Create your own validation or sanitization filter
-Creating a custom validation or sanitization filter is not difficult, it is in essence a fairly streamlined and simple 
-process. This library is also structured to have each filter as a standalone class, all the classes will be registered in
-its designated registry configuration file. Every filter can have an infinite amount of aliases (as long as the alias is unique).
+## Create your own validation filter
+Creating a custom validation filter is not difficult, I have tried to make it as simple and streamlined as possible. 
+This library is also structured to have each filter as a standalone class, all the classes will be registered in
+the service provider. Every filter can have an infinite amount of aliases (as long as the alias or the identifier is unique).
 
 ### Register from outside the library
 ```php
