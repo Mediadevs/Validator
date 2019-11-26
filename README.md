@@ -18,16 +18,16 @@ Not everything has been tested yet, use on own risk.
 Via Composer
 
 ``` bash
-$ composer require mediadevs/form-assist
+$ composer require mediadevs/validator
 ```
 
 Via GIT
 ``` bash
 HTTPS:
-git clone https://github.com/mediadevs/form-assist.git
+git clone https://github.com/mediadevs/validator.git
 
 SSH:
-git clone git@github.com:mediadevs/form-assist.git
+git clone git@github.com:mediadevs/validator.git
 ```
 
 ## Usage
@@ -232,17 +232,17 @@ If you discover any security related issues, please email contact@mediadevs.nl i
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/mediadevs/form-assist.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/mediadevs/validator.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/mediadevs/form-assist/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/mediadevs/form-assist.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/mediadevs/form-assist.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/mediadevs/form-assist.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/mediadevs/validator/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/mediadevs/validator.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/mediadevs/validator.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/mediadevs/validator.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/mediadevs/form-assist
-[link-travis]: https://travis-ci.org/mediadevs/form-assist
-[link-scrutinizer]: https://scrutinizer-ci.com/g/mediadevs/form-assist/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/mediadevs/form-assist
-[link-downloads]: https://packagist.org/packages/mediadevs/form-assist
+[link-packagist]: https://packagist.org/packages/mediadevs/validator
+[link-travis]: https://travis-ci.org/mediadevs/validator
+[link-scrutinizer]: https://scrutinizer-ci.com/g/mediadevs/validator/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/mediadevs/validator
+[link-downloads]: https://packagist.org/packages/mediadevs/validator
 [link-author]: https://github.com/mikevandiepen
 [link-contributors]: ../../contributors
