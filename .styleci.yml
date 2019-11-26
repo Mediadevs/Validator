@@ -1,7 +1,9 @@
 preset: recommended
-length_ordered_imports: true
-no_trailing_comma_in_singleline_array: true
-normalize_index_brace: false
-phpdoc_align: true
-phpdoc_indent: true
-phpdoc_order: true
+enabled:
+    - phpdoc_align
+    - phpdoc_indent
+    - phpdoc_order
+    - length_ordered_imports
+    - no_trailing_comma_in_singleline_array
+disabled:
+    - normalize_index_brace
