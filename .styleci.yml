@@ -1,9 +1,8 @@
 preset: recommended
 enabled:
-    - phpdoc_align
-    - phpdoc_indent
-    - phpdoc_order
     - length_ordered_imports
     - no_trailing_comma_in_singleline_array
 disabled:
     - normalize_index_brace
+    - alpha_ordered_imports
+    - short_array_syntax
