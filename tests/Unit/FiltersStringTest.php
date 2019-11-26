@@ -121,5 +121,4 @@ final class FiltersStringTest extends TestCase
         $assertsFalse = (new \Mediadevs\Validator\Filters\String\StartsWith([$invalid], [$threshold]))->validate();
         $this->assertFalse($assertsFalse);
     }
-
 }
