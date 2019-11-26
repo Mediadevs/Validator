@@ -9,6 +9,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/mediadevs/validator/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mediadevs/validator/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mediadevs/validator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mediadevs/validator/?branch=master)
 [![Minimum PHP Version](https://img.shields.io/badge/php-_%5E7.1-8892BF.svg)](https://github.com/symfony/symfony)
+[![StyleCI](https://github.styleci.io/repos/222317005/shield?branch=master)](https://github.styleci.io/repos/222317005)
 
 ## Be aware!
 Not everything has been tested yet, use on own risk.
