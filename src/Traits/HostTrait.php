@@ -41,7 +41,6 @@ trait HostTrait
 
             // Closing curl
             curl_close($curlHandle);
-
         } else {
             return false;
         }

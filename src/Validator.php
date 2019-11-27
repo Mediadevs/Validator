@@ -2,6 +2,7 @@
 
 namespace Mediadevs\Validator;
 
+use Mediadevs\Validator\Helpers\Arguments;
 use Mediadevs\Validator\Factories\FilterFactory;
 
 class Validator
