@@ -23,7 +23,7 @@ trait HostTrait
         $curlHandle = curl_init($host);
 
         // Validating whether the curl handle can reach the host, else returning false.
-        if ($curlHandle) {
+        if ($curlHandle !== false) {
             // Calling the host for a response
             curl_setopt_array($curlHandle, array(
                 CURLOPT_HEADER          => true,
