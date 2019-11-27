@@ -76,7 +76,34 @@ final class BasicTest extends TestCase
     public function testRequired()
     {
         // Testing valid
+        /*
+         * Test string
+         */
         $valid = 'Hello World!';
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Basic\Required([$valid]))->validate();
+        $this->assertTrue($assertsTrue);
+        /*
+         * Test bool
+         */
+        $valid = false;
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Basic\Required([$valid]))->validate();
+        $this->assertTrue($assertsTrue);
+        /*
+         * Test numeric
+         */
+        $valid = 0;
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Basic\Required([$valid]))->validate();
+        $this->assertTrue($assertsTrue);
+        /*
+         * Test float
+         */
+        $valid = 0.0;
+        $assertsTrue = (new \Mediadevs\Validator\Filters\Basic\Required([$valid]))->validate();
+        $this->assertTrue($assertsTrue);
+        /*
+         * Test numeric string
+         */
+        $valid = '0';
         $assertsTrue = (new \Mediadevs\Validator\Filters\Basic\Required([$valid]))->validate();
         $this->assertTrue($assertsTrue);
 
