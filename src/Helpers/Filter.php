@@ -12,7 +12,7 @@ class Filter extends Singleton
     private static $filters = array();
 
     /**
-     * Registering the filter inside the $filters array
+     * Registering the filter inside the $filters array.
      *
      * @param array $filters
      *
