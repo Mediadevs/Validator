@@ -26,7 +26,7 @@
 //  set-up the translation string as the following:
 //
 //  return [
-//      'filter_name' => [
+//      \Vendor\Package\Namespace\MyCustomFilter::class => [
 //          'default'   => '',
 //          'en_US'     => '',
 //          'en_UK'     => '',
@@ -49,7 +49,7 @@
 
 return [
     /*----[ Basic validation ]----------------------------------------------------------------------------------------*/
-    'equal'                     => [
+    \Mediadevs\Validator\Filters\Basic\Equal::class                     => [
         'default'   => 'Field: {%attribute%} must be equal to {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must be equal to {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must be equal to {%threshold%}. Your value: {%value%}.',
@@ -64,7 +64,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'not_equal'                 => [
+    \Mediadevs\Validator\Filters\Basic\NotEqual::class                  => [
         'default'   => 'Field: {%attribute%} must not be equal to {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must not be equal to {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must not be equal to {%threshold%}. Your value: {%value%}.',
@@ -79,7 +79,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'regular_expression'        => [
+    \Mediadevs\Validator\Filters\Basic\RegularExpression::class         => [
         'default'   => 'Field: {%attribute%} must match the right pattern.',
         'en_US'     => 'Field: {%attribute%} must match the right pattern.',
         'en_UK'     => 'Field: {%attribute%} must match the right pattern.',
@@ -94,7 +94,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'required'                  => [
+    \Mediadevs\Validator\Filters\Basic\Required::class                  => [
         'default'   => 'Field: {%attribute%} is required!',
         'en_US'     => 'Field: {%attribute%} is required!',
         'en_UK'     => 'Field: {%attribute%} is required!',
@@ -109,7 +109,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'array'                     => [
+    \Mediadevs\Validator\Filters\Basic\TypeArray::class                 => [
         'default'   => 'Field: {%attribute%} must be an array!',
         'en_US'     => 'Field: {%attribute%} must be an array!',
         'en_UK'     => 'Field: {%attribute%} must be an array!',
@@ -124,7 +124,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'boolean'                   => [
+    \Mediadevs\Validator\Filters\Basic\TypeBoolean::class               => [
         'default'   => 'Field: {%attribute%} must be true or false!',
         'en_US'     => 'Field: {%attribute%} must be true or false!',
         'en_UK'     => 'Field: {%attribute%} must be true or false!',
@@ -139,7 +139,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'float'                     => [
+    \Mediadevs\Validator\Filters\Basic\TypeFloat::class                 => [
         'default'   => 'Field: {%attribute%} must be a float!',
         'en_US'     => 'Field: {%attribute%} must be a float!',
         'en_UK'     => 'Field: {%attribute%} must be a float!',
@@ -154,7 +154,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'integer'                   => [
+    \Mediadevs\Validator\Filters\Basic\TypeInteger::class               => [
         'default'   => 'Field: {%attribute%} must be an integer!',
         'en_US'     => 'Field: {%attribute%} must be an integer!',
         'en_UK'     => 'Field: {%attribute%} must be an integer!',
@@ -169,7 +169,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'null'                      => [
+    \Mediadevs\Validator\Filters\Basic\TypeNull::class                  => [
         'default'   => 'Field: {%attribute%} must be null!',
         'en_US'     => 'Field: {%attribute%} must be null!',
         'en_UK'     => 'Field: {%attribute%} must be null!',
@@ -184,7 +184,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'numeric'                   => [
+    \Mediadevs\Validator\Filters\Basic\TypeNumeric::class               => [
         'default'   => 'Field: {%attribute%} must be a numeric value!',
         'en_US'     => 'Field: {%attribute%} must be a numeric value!',
         'en_UK'     => 'Field: {%attribute%} must be a numeric value!',
@@ -199,7 +199,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'string'                    => [
+    \Mediadevs\Validator\Filters\Basic\TypeString::class                => [
         'default'   => 'Field: {%attribute%} must be a string!',
         'en_US'     => 'Field: {%attribute%} must be a string!',
         'en_UK'     => 'Field: {%attribute%} must be a string!',
@@ -216,7 +216,7 @@ return [
     ],
 
     /*----[ Date validation ]-----------------------------------------------------------------------------------------*/
-    'date_after'                => [
+    \Mediadevs\Validator\Filters\Date\After::class                      => [
         'default'   => 'Field: {%attribute%} must be later then {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must be later then {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must be later then {%threshold%}. Your value: {%value%}.',
@@ -231,7 +231,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'date_before'               => [
+    \Mediadevs\Validator\Filters\Date\Before::class                     => [
         'default'   => 'Field: {%attribute%} must be earlier then {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must be earlier then {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must be earlier then {%threshold%}. Your value: {%value%}.',
@@ -246,7 +246,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'date_between'              => [
+    \Mediadevs\Validator\Filters\Date\Between::class                    => [
         'default'   => 'Field: {%attribute%} must be between {%threshold_1%} and {%threshold_2%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must be between {%threshold_1%} and {%threshold_2%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must be between {%threshold_1%} and {%threshold_2%}. Your value: {%value%}.',
@@ -263,7 +263,7 @@ return [
     ],
 
     /*----[ Email validation ]----------------------------------------------------------------------------------------*/
-    'allowed_email_providers'   => [
+    \Mediadevs\Validator\Filters\Email\AllowedEmailProviders::class     => [
         'default'   => 'Sorry, we only allow email addresses from these provider(s): {%threshold_list%}.',
         'en_US'     => 'Sorry, we only allow email addresses from these provider(s): {%threshold_list%}.',
         'en_UK'     => 'Sorry, we only allow email addresses from these provider(s): {%threshold_list%}.',
@@ -278,7 +278,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'blocked_email_providers'   => [
+    \Mediadevs\Validator\Filters\Email\BlockedEmailProviders::class     => [
         'default'   => 'Sorry, the email provider {%value%} has been blocked!',
         'en_US'     => 'Sorry, the email provider {%value%} has been blocked!',
         'en_UK'     => 'Sorry, the email provider {%value%} has been blocked!',
@@ -293,7 +293,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'email'                     => [
+    \Mediadevs\Validator\Filters\Email\Email::class                     => [
         'default'   => 'Field: {%attribute%} is not a valid email address!',
         'en_US'     => 'Field: {%attribute%} is not a valid email address!',
         'en_UK'     => 'Field: {%attribute%} is not a valid email address!',
@@ -308,7 +308,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'email_provider_exist'      => [
+    \Mediadevs\Validator\Filters\Email\EmailProviderExists::class       => [
         'default'   => 'The email address you have entered does possibly not exist. Provider unreachable.',
         'en_US'     => 'The email address you have entered does possibly not exist. Provider unreachable.',
         'en_UK'     => 'The email address you have entered does possibly not exist. Provider unreachable.',
@@ -325,7 +325,7 @@ return [
     ],
 
     /*----[ File validation ]-----------------------------------------------------------------------------------------*/
-    'allowed_file_extensions'   => [
+    \Mediadevs\Validator\Filters\File\AllowedFileExtensions::class      => [
         'default'   => 'Invalid file type! Your file must be of type {%threshold_list%}. Your file type: {%value%}.',
         'en_US'     => 'Invalid file type! Your file must be of type {%threshold_list%}. Your file type: {%value%}.',
         'en_UK'     => 'Invalid file type! Your file must be of type {%threshold_list%}. Your file type: {%value%}.',
@@ -340,7 +340,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'allowed_file_mime_type'    => [
+    \Mediadevs\Validator\Filters\File\AllowedFileMimeTypes::class       => [
         'default'   => 'Invalid file type! Your file must be of type {%threshold_list%}. Your file type: {%value%}.',
         'en_US'     => 'Invalid file type! Your file must be of type {%threshold_list%}. Your file type: {%value%}.',
         'en_UK'     => 'Invalid file type! Your file must be of type {%threshold_list%}. Your file type: {%value%}.',
@@ -355,7 +355,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'maximum_file_size'         => [
+    \Mediadevs\Validator\Filters\File\MaximumFileSize::class            => [
         'default'   => 'File too large! The size of your file may not be greater than {%threshold%}. File size: {%value%}.',
         'en_US'     => 'File too large! The size of your file may not be greater than {%threshold%}. File size: {%value%}.',
         'en_UK'     => 'File too large! The size of your file may not be greater than {%threshold%}. File size: {%value%}.',
@@ -372,7 +372,7 @@ return [
     ],
 
     /*----[ Host validation ]-----------------------------------------------------------------------------------------*/
-    'domain'                    => [
+    \Mediadevs\Validator\Filters\Host\Domain::class                     => [
         'default'   => 'Field: {%attribute%} must be a valid domain!',
         'en_US'     => 'Field: {%attribute%} must be a valid domain!',
         'en_UK'     => 'Field: {%attribute%} must be a valid domain!',
@@ -387,7 +387,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'ip'                        => [
+    \Mediadevs\Validator\Filters\Host\IP::class                         => [
         'default'   => 'Field: {%attribute%} must be a valid IP address!',
         'en_US'     => 'Field: {%attribute%} must be a valid IP address!',
         'en_UK'     => 'Field: {%attribute%} must be a valid IP address!',
@@ -402,7 +402,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'ipv4'                      => [
+    \Mediadevs\Validator\Filters\Host\IPv4::class                       => [
         'default'   => 'Field: {%attribute%} must be a valid IPv4 address!',
         'en_US'     => 'Field: {%attribute%} must be a valid IPv4 address!',
         'en_UK'     => 'Field: {%attribute%} must be a valid IPv4 address!',
@@ -417,7 +417,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'ipv6'                      => [
+    \Mediadevs\Validator\Filters\Host\IPv6::class                       => [
         'default'   => 'Field: {%attribute%} must be a valid IPv6 address!',
         'en_US'     => 'Field: {%attribute%} must be a valid IPv6 address!',
         'en_UK'     => 'Field: {%attribute%} must be a valid IPv6 address!',
@@ -432,7 +432,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'mac'                       => [
+    \Mediadevs\Validator\Filters\Host\MAC::class                        => [
         'default'   => 'Field: {%attribute%} must be a valid MAC address!',
         'en_US'     => 'Field: {%attribute%} must be a valid MAC address!',
         'en_UK'     => 'Field: {%attribute%} must be a valid MAC address!',
@@ -447,7 +447,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'reachable_address'         => [
+    \Mediadevs\Validator\Filters\Host\ReachableAddress::class           => [
         'default'   => 'Something wen\'t wrong. {%value_1%} is an unreachable address.',
         'en_US'     => 'Something wen\'t wrong. {%value_1%} is an unreachable address.',
         'en_UK'     => 'Something wen\'t wrong. {%value_1%} is an unreachable address.',
@@ -462,7 +462,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'url'                       => [
+    \Mediadevs\Validator\Filters\Host\Url::class                        => [
         'default'   => 'Field: {%attribute%} is not a valid URL address!',
         'en_US'     => 'Field: {%attribute%} is not a valid URL address!',
         'en_UK'     => 'Field: {%attribute%} is not a valid URL address!',
@@ -479,7 +479,7 @@ return [
     ],
 
     /*----[ Numeric validation ]--------------------------------------------------------------------------------------*/
-    'between'                   => [
+    \Mediadevs\Validator\Filters\Numeric\Between::class                 => [
         'default'   => 'Field: {%attribute%} must be between {%threshold_1%} and {%threshold_2%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must be between {%threshold_1%} and {%threshold_2%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must be between {%threshold_1%} and {%threshold_2%}. Your value: {%value%}.',
@@ -494,7 +494,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'greater_than'              => [
+    \Mediadevs\Validator\Filters\Numeric\GreaterThan::class             => [
         'default'   => 'Field: {%attribute%} must be greater than to {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must be greater than to {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must be greater than to {%threshold%}. Your value: {%value%}.',
@@ -509,7 +509,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'greater_than_or_equal_to'  => [
+    \Mediadevs\Validator\Filters\Numeric\GreaterThanOrEqualTo::class    => [
         'default'   => 'Field: {%attribute%} must be greater or equal to {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must be greater or equal to {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must be greater or equal to {%threshold%}. Your value: {%value%}.',
@@ -524,7 +524,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'less_than'                 => [
+    \Mediadevs\Validator\Filters\Numeric\LessThan::class                => [
         'default'   => 'Field: {%attribute%} must be less to {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must be less to {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must be less to {%threshold%}. Your value: {%value%}.',
@@ -539,7 +539,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'less_than_or_equal_to'     => [
+    \Mediadevs\Validator\Filters\Numeric\LessThanOrEqualTo::class       => [
         'default'   => 'Field: {%attribute%} must be lesser than or equal to {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must be lesser than or equal to {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must be lesser than or equal to {%threshold%}. Your value: {%value%}.',
@@ -554,7 +554,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'maximum'                   => [
+    \Mediadevs\Validator\Filters\Numeric\Maximum::class                 => [
         'default'   => 'Field: {%attribute%} must have a maximum worth of {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must have a maximum worth of {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must have a maximum worth of {%threshold%}. Your value: {%value%}.',
@@ -569,7 +569,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'minimum'                   => [
+    \Mediadevs\Validator\Filters\Numeric\Minimum::class                 => [
         'default'   => 'Field: {%attribute%} must have a minimum worth of {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must have a minimum worth of {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must have a minimum worth of {%threshold%}. Your value: {%value%}.',
@@ -586,7 +586,7 @@ return [
     ],
 
     /*----[ Payment validation ]--------------------------------------------------------------------------------------*/
-    'credit_card'               => [
+    \Mediadevs\Validator\Filters\Payment\CreditCard::class              => [
         'default'   => 'Sorry, the credit-card number you have entered is not valid.',
         'en_US'     => 'Sorry, the credit-card number you have entered is not valid.',
         'en_UK'     => 'Sorry, the credit-card number you have entered is not valid.',
@@ -601,7 +601,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'iban'                      => [
+    \Mediadevs\Validator\Filters\Payment\IBAN::class                    => [
         'default'   => 'Sorry, the IBAN number you have entered is not valid.',
         'en_US'     => 'Sorry, the IBAN number you have entered is not valid.',
         'en_UK'     => 'Sorry, the IBAN number you have entered is not valid.',
@@ -618,7 +618,7 @@ return [
     ],
 
     /*----[ String validation ]---------------------------------------------------------------------------------------*/
-    'contains'                  => [
+    \Mediadevs\Validator\Filters\String\Contains::class                 => [
         'default'   => 'Field: {%attribute%} must contain the substring {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must contain the substring {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must contain the substring {%threshold%}. Your value: {%value%}.',
@@ -633,7 +633,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'ends_with'                 => [
+    \Mediadevs\Validator\Filters\String\EndsWith::class                 => [
         'default'   => 'Field: {%attribute%} must ends with {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must ends with {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must ends with {%threshold%}. Your value: {%value%}.',
@@ -648,7 +648,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'exact_length'              => [
+    \Mediadevs\Validator\Filters\String\ExactLength::class              => [
         'default'   => 'Field: {%attribute%} must have an exact length of {%threshold%}.',
         'en_US'     => 'Field: {%attribute%} must have an exact length of {%threshold%.}',
         'en_UK'     => 'Field: {%attribute%} must have an exact length of {%threshold%}.',
@@ -663,7 +663,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'maximum_length'            => [
+    \Mediadevs\Validator\Filters\String\MaximumLength::class            => [
         'default'   => 'Field: {%attribute%} must have a maximum length of {%threshold%}.',
         'en_US'     => 'Field: {%attribute%} must have a maximum length of {%threshold%}.',
         'en_UK'     => 'Field: {%attribute%} must have a maximum length of {%threshold%}.',
@@ -678,7 +678,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'minimum_length'            => [
+    \Mediadevs\Validator\Filters\String\MinimumLength::class            => [
         'default'   => 'Field: {%attribute%} must have a minimum length of {%threshold%}.',
         'en_US'     => 'Field: {%attribute%} must have a minimum length of {%threshold%}.',
         'en_UK'     => 'Field: {%attribute%} must have a minimum length of {%threshold%}.',
@@ -693,7 +693,7 @@ return [
         'ru_RU'     => '',
         'sv_SE'     => '',
     ],
-    'starts_with'               => [
+    \Mediadevs\Validator\Filters\String\StartsWith::class               => [
         'default'   => 'Field: {%attribute%} must start with {%threshold%}. Your value: {%value%}.',
         'en_US'     => 'Field: {%attribute%} must start with {%threshold%}. Your value: {%value%}.',
         'en_UK'     => 'Field: {%attribute%} must start with {%threshold%}. Your value: {%value%}.',
