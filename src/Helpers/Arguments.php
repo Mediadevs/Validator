@@ -5,30 +5,32 @@ namespace Mediadevs\Validator\Helpers;
 class Arguments
 {
     /**
-     * Delimiters, separators and prefixes for parsing the configuration
+     * Delimiters, separators and prefixes for parsing the configuration.
      */
-    private const FILTER_DELIMITER  = '|';
-    private const THRESHOLD_PREFIX  = ':';
-    private const LIST_SEPARATOR    = ',';
-    private const REGEX_DELIMITER   = '/';
+    private const FILTER_DELIMITER = '|';
+    private const THRESHOLD_PREFIX = ':';
+    private const LIST_SEPARATOR = ',';
+    private const REGEX_DELIMITER = '/';
 
     /**
-     * Regular expression patterns for parsing the configuration and extracting the arguments
+     * Regular expression patterns for parsing the configuration and extracting the arguments.
      */
     private const PATTERNS = array(
-      'filter'              => '/(.*)' . self::THRESHOLD_PREFIX . '/',
-      'thresholds'          => '/' . self::THRESHOLD_PREFIX . '(.*)/',
-      'regular_expression'  => '/(?<=\\' . self::REGEX_DELIMITER . ')(.*?)(?=\\' . self::REGEX_DELIMITER . ')/',
+      'filter'              => '/(.*)'.self::THRESHOLD_PREFIX.'/',
+      'thresholds'          => '/'.self::THRESHOLD_PREFIX.'(.*)/',
+      'regular_expression'  => '/(?<=\\'.self::REGEX_DELIMITER.')(.*?)(?=\\'.self::REGEX_DELIMITER.')/',
     );
 
     /**
-     * The filters from the defined registry class
+     * The filters from the defined registry class.
+     *
      * @var array
      */
     private $filters = array();
 
     /**
-     * The filter aliases from the defined registry class
+     * The filter aliases from the defined registry class.
+     *
      * @var array
      */
     private $aliases = array();
@@ -39,10 +41,12 @@ class Arguments
     public function __construct()
     {
     }
+
     /**
      * Extracting all the filters from the configuration
-     * Then we proceed to parse those filters to extract the filters, thresholds, and regular expression patterns
-     * @param array  $configuration
+     * Then we proceed to parse those filters to extract the filters, thresholds, and regular expression patterns.
+     *
+     * @param array $configuration
      *
      * @return array
      */
@@ -53,8 +57,8 @@ class Arguments
         foreach ($configuration as $field => $filters) {
             // Parsing through the applied filters
             foreach (explode(self::FILTER_DELIMITER, $filters) as $filter) {
-                $filterName         = $this->filterArguments($filter, self::PATTERNS['filter']);
-                $filterThresholds   = $this->filterArguments($filter, self::PATTERNS['thresholds']);
+                $filterName = $this->filterArguments($filter, self::PATTERNS['filter']);
+                $filterThresholds = $this->filterArguments($filter, self::PATTERNS['thresholds']);
 
                 // Whether the filter is a regular expression
                 if ($this->filterIsRegularExpression($filterName)) {
@@ -67,15 +71,17 @@ class Arguments
                 $arguments[] = [
                     'field'         => $field,
                     'filter'        => $filter,
-                    'thresholds'    => $thresholds
+                    'thresholds'    => $thresholds,
                 ];
             }
         }
 
         return $arguments;
     }
+
     /**
-     * Extracting the filter name from the arguments
+     * Extracting the filter name from the arguments.
+     *
      * @param string $arguments
      * @param string $pattern
      *
@@ -97,7 +103,8 @@ class Arguments
     }
 
     /**
-     * Extracting the filter threshold(s) from the arguments
+     * Extracting the filter threshold(s) from the arguments.
+     *
      * @param string $thresholds
      *
      * @return array
@@ -105,7 +112,7 @@ class Arguments
     private function getThresholds(string $thresholds): array
     {
         $collection = array();
-        $items      = explode(self::LIST_SEPARATOR, $thresholds);
+        $items = explode(self::LIST_SEPARATOR, $thresholds);
 
         // Parsing through all thresholds (If there are any) and assigning the correct type to it.
         if (count($items) > 0) {
@@ -119,6 +126,7 @@ class Arguments
 
     /**
      * Determines whether the filter is "regular_expression".
+     *
      * @param string $filter
      *
      * @return bool
@@ -134,7 +142,8 @@ class Arguments
     }
 
     /**
-     * If the filter is a regular expression it will handle the thresholds the right way and return clean results
+     * If the filter is a regular expression it will handle the thresholds the right way and return clean results.
+     *
      * @param string $thresholds
      *
      * @return array
@@ -158,6 +167,7 @@ class Arguments
 
     /**
      * Determines which type the threshold is and assigning the right type to it.
+     *
      * @param string $threshold
      *
      * @return string

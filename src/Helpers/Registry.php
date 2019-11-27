@@ -5,12 +5,13 @@ namespace Mediadevs\Validator\Helpers;
 class Registry extends Singleton
 {
     /**
-     * The registry types for this library, these are de default properties for each filter class
+     * The registry types for this library, these are de default properties for each filter class.
      */
     public const REGISTRY_TYPES = array('filters', 'aliases', 'messages');
 
     /**
-     * All the registered classes will be stored in here
+     * All the registered classes will be stored in here.
+     *
      * @var array
      */
     private static $registry = array(
@@ -19,11 +20,11 @@ class Registry extends Singleton
     );
 
     /**
-     * Registering the class in the $data array
+     * Registering the class in the $data array.
      *
      * @param string $type
      * @param string $index
-     * @param        $data ($data has no strict type, it can be either an array or a string)
+     * @param        $data  ($data has no strict type, it can be either an array or a string)
      *
      * @return void
      */
@@ -51,7 +52,7 @@ class Registry extends Singleton
     }
 
     /**
-     * Registering the filters inside the $data array
+     * Registering the filters inside the $data array.
      *
      * @param string $index
      * @param        $data
@@ -66,7 +67,7 @@ class Registry extends Singleton
     }
 
     /**
-     * Registering the filters inside the $data array
+     * Registering the filters inside the $data array.
      *
      * @param string $index
      * @param        $data
@@ -86,7 +87,7 @@ class Registry extends Singleton
     }
 
     /**
-     * Registering the filters inside the $data array
+     * Registering the filters inside the $data array.
      *
      * @param string $index
      * @param        $data
@@ -101,7 +102,7 @@ class Registry extends Singleton
     }
 
     /**
-     * Collecting the registry based upon the given target
+     * Collecting the registry based upon the given target.
      *
      * @param string $type
      * @param string $index
@@ -142,7 +143,7 @@ class Registry extends Singleton
     }
 
     /**
-     * Validating whether registry contains the given type
+     * Validating whether registry contains the given type.
      *
      * @param string $type
      *
@@ -159,7 +160,7 @@ class Registry extends Singleton
     }
 
     /**
-     * Validating whether the data contains the given index
+     * Validating whether the data contains the given index.
      *
      * @param string $type
      * @param string $index
@@ -176,7 +177,7 @@ class Registry extends Singleton
     }
 
     /**
-     * Validating whether the data contains the given value
+     * Validating whether the data contains the given value.
      *
      * @param string $type
      * @param string $value
@@ -196,7 +197,7 @@ class Registry extends Singleton
     }
 
     /**
-     * Validating whether the given index has a value
+     * Validating whether the given index has a value.
      *
      * @param string $type
      * @param string $index
@@ -213,7 +214,7 @@ class Registry extends Singleton
     }
 
     /**
-     * Collecting the index by the given value
+     * Collecting the index by the given value.
      *
      * @param string $type
      * @param string $value
@@ -231,7 +232,7 @@ class Registry extends Singleton
     }
 
     /**
-     * Collecting multiple values based on the given index
+     * Collecting multiple values based on the given index.
      *
      * @param string $type
      * @param string $index
