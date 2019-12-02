@@ -51,7 +51,7 @@ final class UrlTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Host\Url;
+        $this->subject = new \Mediadevs\Validator\Filters\Host\Url(array(), array());
     }
 
     /**

@@ -51,7 +51,7 @@ final class ExactLengthTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\String\ExactLength;
+        $this->subject = new \Mediadevs\Validator\Filters\String\ExactLength(array(), array());
     }
 
     /**

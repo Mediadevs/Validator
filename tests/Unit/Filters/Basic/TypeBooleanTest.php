@@ -51,7 +51,7 @@ final class TypeBooleanTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeBoolean;
+        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeBoolean(array(), array());
     }
 
     /**

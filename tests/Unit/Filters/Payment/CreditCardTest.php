@@ -51,7 +51,7 @@ final class CreditCardTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Payment\CreditCard;
+        $this->subject = new \Mediadevs\Validator\Filters\Payment\CreditCard(array(), array());
     }
 
     /**

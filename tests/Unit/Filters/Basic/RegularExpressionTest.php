@@ -51,7 +51,7 @@ final class RegularExpressionTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Basic\RegularExpression;
+        $this->subject = new \Mediadevs\Validator\Filters\Basic\RegularExpression(array(), array());
     }
 
     /**

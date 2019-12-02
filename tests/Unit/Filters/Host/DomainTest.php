@@ -51,7 +51,7 @@ final class DomainTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Host\Domain;
+        $this->subject = new \Mediadevs\Validator\Filters\Host\Domain(array(), array());
     }
 
     /**

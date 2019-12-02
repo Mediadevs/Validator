@@ -51,7 +51,7 @@ final class BeforeTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Date\Before;
+        $this->subject = new \Mediadevs\Validator\Filters\Date\Before(array(), array());
     }
 
     /**

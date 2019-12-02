@@ -51,7 +51,7 @@ final class MinimumTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Numeric\Minimum;
+        $this->subject = new \Mediadevs\Validator\Filters\Numeric\Minimum(array(), array());
     }
 
     /**

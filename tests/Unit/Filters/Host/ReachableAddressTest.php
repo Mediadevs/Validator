@@ -51,7 +51,7 @@ final class ReachableAddressTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Host\ReachableAddress;
+        $this->subject = new \Mediadevs\Validator\Filters\Host\ReachableAddress(array(), array());
     }
 
     /**

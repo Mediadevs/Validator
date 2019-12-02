@@ -51,7 +51,7 @@ final class TypeArrayTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeArray;
+        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeArray(array(), array());
     }
 
     /**

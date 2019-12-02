@@ -51,7 +51,7 @@ final class AllowedEmailProvidersTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Email\AllowedEmailProviders;
+        $this->subject = new \Mediadevs\Validator\Filters\Email\AllowedEmailProviders(array(), array());
     }
 
     /**

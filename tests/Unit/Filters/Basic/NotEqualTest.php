@@ -51,7 +51,7 @@ final class NotEqualTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Basic\NotEqual;
+        $this->subject = new \Mediadevs\Validator\Filters\Basic\NotEqual(array(), array());
     }
 
     /**

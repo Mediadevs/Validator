@@ -51,7 +51,7 @@ final class LessThanOrEqualToTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Numeric\LessThanOrEqualTo;
+        $this->subject = new \Mediadevs\Validator\Filters\Numeric\LessThanOrEqualTo(array(), array());
     }
 
     /**

@@ -51,7 +51,7 @@ final class MaximumFileSizeTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\File\MaximumFileSize;
+        $this->subject = new \Mediadevs\Validator\Filters\File\MaximumFileSize(array(), array());
     }
 
     /**

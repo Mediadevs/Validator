@@ -51,7 +51,7 @@ final class BlockedEmailProvidersTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Email\BlockedEmailProviders;
+        $this->subject = new \Mediadevs\Validator\Filters\Email\BlockedEmailProviders(array(), array());
     }
 
     /**

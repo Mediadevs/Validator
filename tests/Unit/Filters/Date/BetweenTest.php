@@ -52,7 +52,7 @@ final class BetweenTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Date\Between;
+        $this->subject = new \Mediadevs\Validator\Filters\Date\Between(array(), array());
     }
 
     /**

@@ -51,7 +51,7 @@ final class TypeIntegerTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeInteger;
+        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeInteger(array(), array());
     }
 
     /**

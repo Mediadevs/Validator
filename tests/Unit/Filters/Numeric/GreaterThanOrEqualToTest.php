@@ -51,7 +51,7 @@ final class GreaterThanOrEqualToTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Numeric\GreaterThanOrEqualTo;
+        $this->subject = new \Mediadevs\Validator\Filters\Numeric\GreaterThanOrEqualTo(array(), array());
     }
 
     /**

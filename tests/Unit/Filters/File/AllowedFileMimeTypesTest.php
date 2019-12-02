@@ -51,7 +51,7 @@ final class AllowedFileMimeTypesTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\File\AllowedFileMimeTypes;
+        $this->subject = new \Mediadevs\Validator\Filters\File\AllowedFileMimeTypes(array(), array());
     }
 
     /**

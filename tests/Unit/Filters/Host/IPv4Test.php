@@ -51,7 +51,7 @@ final class IPv4Test extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Host\IPv4();
+        $this->subject = new \Mediadevs\Validator\Filters\Host\IPv4(array(), array());
     }
 
     /**

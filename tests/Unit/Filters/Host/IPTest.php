@@ -51,7 +51,7 @@ final class IPTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Host\IP;
+        $this->subject = new \Mediadevs\Validator\Filters\Host\IP(array(), array());
     }
 
     /**

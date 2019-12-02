@@ -51,7 +51,7 @@ final class MACTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Host\MAC;
+        $this->subject = new \Mediadevs\Validator\Filters\Host\MAC(array(), array());
     }
 
     /**

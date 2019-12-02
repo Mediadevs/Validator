@@ -51,7 +51,7 @@ final class IPv6Test extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Host\IPv6;
+        $this->subject = new \Mediadevs\Validator\Filters\Host\IPv6(array(), array());
     }
 
     /**

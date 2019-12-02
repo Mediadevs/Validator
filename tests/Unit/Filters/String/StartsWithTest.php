@@ -51,7 +51,7 @@ final class StartsWithTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\String\StartsWith;
+        $this->subject = new \Mediadevs\Validator\Filters\String\StartsWith(array(), array());
     }
 
     /**

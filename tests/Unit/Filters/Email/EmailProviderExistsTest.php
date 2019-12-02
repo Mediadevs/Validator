@@ -53,7 +53,7 @@ final class EmailProviderExistsTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Email\EmailProviderExists;
+        $this->subject = new \Mediadevs\Validator\Filters\Email\EmailProviderExists(array(), array());
     }
 
     /**

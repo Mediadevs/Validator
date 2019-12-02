@@ -51,7 +51,7 @@ final class TypeFloatTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeFloat;
+        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeFloat(array(), array());
     }
 
     /**

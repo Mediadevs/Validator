@@ -51,7 +51,7 @@ final class MaximumLengthTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\String\MaximumLength;
+        $this->subject = new \Mediadevs\Validator\Filters\String\MaximumLength(array(), array());
     }
 
     /**

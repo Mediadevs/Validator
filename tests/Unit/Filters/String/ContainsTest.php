@@ -51,7 +51,7 @@ final class ContainsTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\String\Contains;
+        $this->subject = new \Mediadevs\Validator\Filters\String\Contains(array(), array());
     }
 
     /**

@@ -51,7 +51,7 @@ final class AllowedFileExtensionsTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\File\AllowedFileExtensions;
+        $this->subject = new \Mediadevs\Validator\Filters\File\AllowedFileExtensions(array(), array());
     }
 
     /**
