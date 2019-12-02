@@ -1,18 +1,19 @@
 <?php
 
-namespace Mediadevs\Validator\Tests\Unit\Filters\Email;
+namespace Mediadevs\Validator\Tests\Unit\Filters\Numeric;
 
 use Exception;
 use PHPUnit\Framework\TestCase;
 use Mediadevs\Validator\Filters\FilterInterface;
 
 /**
- * @test Whether the given string is a valid email address.
+ * @test Whether the numeric value is between the two numeric threshold values.
+ *       The order of the numeric threshold values is not important.
  *
- * Class EmailTest
- * @package Mediadevs\Validator\Tests\Unit\Filters\Email
+ * Class BetweenTest
+ * @package Mediadevs\Validator\Tests\Unit\Filters\Numeric
  */
-final class EmailTest extends TestCase
+final class BetweenTest extends TestCase
 {
     /**
      * The filter test subject
@@ -51,7 +52,7 @@ final class EmailTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Email\BlockedEmailProviders;
+        $this->subject = new \Mediadevs\Validator\Filters\Numeric\Between;
     }
 
     /**

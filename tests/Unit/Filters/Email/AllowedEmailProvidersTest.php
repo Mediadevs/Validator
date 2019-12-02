@@ -1,6 +1,6 @@
 <?php
 
-namespace Mediadevs\Validator\Tests\Unit\Filters\Date;
+namespace Mediadevs\Validator\Tests\Unit\Filters\Email;
 
 use Exception;
 use PHPUnit\Framework\TestCase;

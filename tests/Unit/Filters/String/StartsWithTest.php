@@ -1,18 +1,18 @@
 <?php
 
-namespace Mediadevs\Validator\Tests\Unit\Filters\Email;
+namespace Mediadevs\Validator\Tests\Unit\Filters\String;
 
 use Exception;
 use PHPUnit\Framework\TestCase;
 use Mediadevs\Validator\Filters\FilterInterface;
 
 /**
- * @test Whether the given string is a valid email address.
+ * @test Whether the string starts with the given threshold.
  *
- * Class EmailTest
- * @package Mediadevs\Validator\Tests\Unit\Filters\Email
+ * Class StartsWithTest
+ * @package Mediadevs\Validator\Tests\Unit\Filters\String
  */
-final class EmailTest extends TestCase
+final class StartsWithTest extends TestCase
 {
     /**
      * The filter test subject
@@ -51,7 +51,7 @@ final class EmailTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Email\BlockedEmailProviders;
+        $this->subject = new \Mediadevs\Validator\Filters\String\StartsWith;
     }
 
     /**

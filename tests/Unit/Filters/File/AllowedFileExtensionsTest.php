@@ -1,18 +1,18 @@
 <?php
 
-namespace Mediadevs\Validator\Tests\Unit\Filters\Email;
+namespace Mediadevs\Validator\Tests\Unit\Filters\File;
 
 use Exception;
 use PHPUnit\Framework\TestCase;
 use Mediadevs\Validator\Filters\FilterInterface;
 
 /**
- * @test Whether the given string is a valid email address.
+ * @test Whether the file extension is in the list of allowed extensions.
  *
- * Class EmailTest
- * @package Mediadevs\Validator\Tests\Unit\Filters\Email
+ * Class AllowedFileExtensionsTest
+ * @package Mediadevs\Validator\Tests\Unit\Filters\File
  */
-final class EmailTest extends TestCase
+final class AllowedFileExtensionsTest extends TestCase
 {
     /**
      * The filter test subject
@@ -51,7 +51,7 @@ final class EmailTest extends TestCase
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Email\BlockedEmailProviders;
+        $this->subject = new \Mediadevs\Validator\Filters\File\AllowedFileExtensions;
     }
 
     /**
