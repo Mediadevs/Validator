@@ -35,7 +35,6 @@ final class BetweenTest extends TestCase
     protected function setUp(): void
     {
         /**
-         * TODO: Enter data for the fixtures
          * @var $fixtures
          */
         $this->fixtures = array(

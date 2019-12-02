@@ -34,7 +34,6 @@ final class TypeArrayTest extends TestCase
     protected function setUp(): void
     {
         /**
-         * TODO: Enter data for the fixtures
          * @var $fixtures array
          */
         $this->fixtures = array(
