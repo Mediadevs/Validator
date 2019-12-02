@@ -35,23 +35,23 @@ final class TypeBooleanTest extends TestCase
     {
         /**
          * TODO: Enter data for the fixtures
-         * @var $fixtures
+         * @var $fixtures array
          */
         $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
-                'values'        => array(),
+                'values'        => array(true),
                 'thresholds'    => array(),
             ),
             // Invalid fixtures these should return (FALSE) after validation
             'invalid'   => array(
-                'values'        => array(),
+                'values'        => array(''),
                 'thresholds'    => array(),
             )
         );
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeBoolean(array(), array());
+        $this->subject = \Mediadevs\Validator\Filters\Basic\TypeBoolean::class;
     }
 
     /**
@@ -66,7 +66,7 @@ final class TypeBooleanTest extends TestCase
         // Iterating through all the valid options
         foreach ($this->fixtures['valid']['values'] as $valid) {
             $this->assertTrue(
-                ($this->subject)($valid, $this->fixtures['valid']['thresholds'])->validate()
+                (new $this->subject([$valid], $this->fixtures['valid']['thresholds']))->validate()
             );
         }
     }
@@ -83,7 +83,7 @@ final class TypeBooleanTest extends TestCase
         // Iterating through all the invalid options
         foreach ($this->fixtures['invalid']['values'] as $invalid) {
             $this->assertFalse(
-                ($this->subject)($invalid, $this->fixtures['invalid']['thresholds'])->validate()
+                (new $this->subject([$invalid], $this->fixtures['invalid']['thresholds']))->validate()
             );
         }
     }
