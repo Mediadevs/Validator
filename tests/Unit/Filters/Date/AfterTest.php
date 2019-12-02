@@ -40,13 +40,13 @@ final class AfterTest extends TestCase
         $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
-                'values'        => array(),
-                'thresholds'    => array(),
+                'values'        => array(strtotime('-1 year', time())),
+                'thresholds'    => array(time()),
             ),
             // Invalid fixtures these should return (FALSE) after validation
             'invalid'   => array(
-                'values'        => array(),
-                'thresholds'    => array(),
+                'values'        => array(strtotime('+1 year', time())),
+                'thresholds'    => array(time()),
             )
         );
 

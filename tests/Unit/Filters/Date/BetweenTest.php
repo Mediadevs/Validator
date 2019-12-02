@@ -41,13 +41,19 @@ final class BetweenTest extends TestCase
         $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
-                'values'        => array(),
-                'thresholds'    => array(),
+                'values'        => array(time()),
+                'thresholds'    => array(
+                    strtotime('-1 year', time()),
+                    strtotime('+1 year', time())
+                ),
             ),
             // Invalid fixtures these should return (FALSE) after validation
             'invalid'   => array(
-                'values'        => array(),
-                'thresholds'    => array(),
+                'values'        => array(time()),
+                'thresholds'    => array(
+                    strtotime('+1 year', time()),
+                    strtotime('+2 years', time())
+                ),
             )
         );
 
