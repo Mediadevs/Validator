@@ -40,12 +40,12 @@ final class RequiredTest extends TestCase
         $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
-                'values'        => array(),
+                'values'        => array('Hello World!', false, 0, 0.0, '0'),
                 'thresholds'    => array(),
             ),
             // Invalid fixtures these should return (FALSE) after validation
             'invalid'   => array(
-                'values'        => array(),
+                'values'        => array(''),
                 'thresholds'    => array(),
             )
         );
