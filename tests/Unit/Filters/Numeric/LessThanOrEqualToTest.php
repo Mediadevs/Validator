@@ -34,19 +34,18 @@ final class LessThanOrEqualToTest extends TestCase
     protected function setUp(): void
     {
         /**
-         * TODO: Enter data for the fixtures
          * @var $fixtures
          */
         $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
-                'values'        => array(),
-                'thresholds'    => array(),
+                'values'        => array(5, 10),
+                'thresholds'    => array(10),
             ),
             // Invalid fixtures these should return (FALSE) after validation
             'invalid'   => array(
-                'values'        => array(),
-                'thresholds'    => array(),
+                'values'        => array(15),
+                'thresholds'    => array(10),
             )
         );
 
