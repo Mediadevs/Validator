@@ -34,18 +34,17 @@ final class MACTest extends TestCase
     protected function setUp(): void
     {
         /**
-         * TODO: Enter data for the fixtures
          * @var $fixtures
          */
         $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
-                'values'        => array(),
+                'values'        => array('00:00:00:a1:2b:cc'),
                 'thresholds'    => array(),
             ),
             // Invalid fixtures these should return (FALSE) after validation
             'invalid'   => array(
-                'values'        => array(),
+                'values'        => array(''),
                 'thresholds'    => array(),
             )
         );

@@ -34,18 +34,17 @@ final class IPv6Test extends TestCase
     protected function setUp(): void
     {
         /**
-         * TODO: Enter data for the fixtures
          * @var $fixtures
          */
         $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
-                'values'        => array(),
+                'values'        => array('2001:0db8:0000:0000:0000:8a2e:0370:7334'),
                 'thresholds'    => array(),
             ),
             // Invalid fixtures these should return (FALSE) after validation
             'invalid'   => array(
-                'values'        => array(),
+                'values'        => array(''),
                 'thresholds'    => array(),
             )
         );
