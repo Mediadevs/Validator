@@ -15,44 +15,6 @@ use Mediadevs\Validator\Filters\FilterInterface;
 final class TypeIntegerTest extends TestCase
 {
     /**
-     * The filter test subject
-     * @var FilterInterface
-     */
-    private $subject;
-
-    /**
-     * The input which should return valid (TRUE)
-     * @var array
-     */
-    private $valid = array(
-        10
-    );
-
-    /**
-     * The input which should return invalid (FALSE)
-     * @var array
-     */
-    private $invalid = array(
-        ''
-    );
-
-    /**
-     * The thresholds which will be used for validation
-     * @var array
-     */
-    private $threshold = array();
-
-    /**
-     * Setting up the subject class for this tests
-     *
-     * @return void
-     */
-    protected function setUp(): void
-    {
-        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeInteger;
-    }
-
-    /**
      * @test Expects the results returned to be (TRUE)
      *
      * @throws Exception
@@ -60,9 +22,9 @@ final class TypeIntegerTest extends TestCase
     public function testValid()
     {
         // Iterating through all the valid options
-        foreach ($this->valid as $valid) {
+        foreach ($this->fixtures['valid']['values'] as $valid) {
             $this->assertTrue(
-                ($this->subject)([$valid], $this->threshold)->validate()
+                ($this->subject)($valid, $this->fixtures['valid']['thresholds'])->validate()
             );
         }
     }
@@ -75,9 +37,9 @@ final class TypeIntegerTest extends TestCase
     public function testInvalid()
     {
         // Iterating through all the invalid options
-        foreach ($this->invalid as $invalid) {
+        foreach ($this->fixtures['invalid']['values'] as $invalid) {
             $this->assertFalse(
-                ($this->subject)([$invalid], $this->threshold)->validate()
+                ($this->subject)($invalid, $this->fixtures['invalid']['thresholds'])->validate()
             );
         }
     }

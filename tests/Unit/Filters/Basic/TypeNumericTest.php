@@ -21,26 +21,21 @@ final class TypeNumericTest extends TestCase
     private $subject;
 
     /**
-     * The input which should return valid (TRUE)
+     * The fixtures for this validation filter test
      * @var array
      */
-    private $valid = array(
-        0
+    private $fixtures = array(
+        // Valid fixtures these should return (TRUE) after validation
+        'valid'     => array(
+            'values'        => array(),
+            'thresholds'    => array(),
+        ),
+        // Invalid fixtures these should return (FALSE) after validation
+        'invalid'   => array(
+            'values'        => array(),
+            'thresholds'    => array(),
+        )
     );
-
-    /**
-     * The input which should return invalid (FALSE)
-     * @var array
-     */
-    private $invalid = array(
-        ''
-    );
-
-    /**
-     * The thresholds which will be used for validation
-     * @var array
-     */
-    private $threshold = array();
 
     /**
      * Setting up the subject class for this tests
@@ -49,6 +44,23 @@ final class TypeNumericTest extends TestCase
      */
     protected function setUp(): void
     {
+        // These values should pass the validation filter
+        $this->fixtures['valid']['values'] = [
+
+        ];
+        $this->fixtures['valid']['thresholds'] = [
+
+        ];
+
+        // These values should not pass the validation filter
+        $this->fixtures['invalid']['values'] = [
+
+        ];
+        $this->fixtures['invalid']['thresholds'] = [
+
+        ];
+
+        // The filter which will be applied in this test case
         $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeNumeric;
     }
 
@@ -60,9 +72,9 @@ final class TypeNumericTest extends TestCase
     public function testValid()
     {
         // Iterating through all the valid options
-        foreach ($this->valid as $valid) {
+        foreach ($this->fixtures['valid']['values'] as $valid) {
             $this->assertTrue(
-                ($this->subject)([$valid], $this->threshold)->validate()
+                ($this->subject)($valid, $this->fixtures['valid']['thresholds'])->validate()
             );
         }
     }
@@ -75,9 +87,9 @@ final class TypeNumericTest extends TestCase
     public function testInvalid()
     {
         // Iterating through all the invalid options
-        foreach ($this->invalid as $invalid) {
+        foreach ($this->fixtures['invalid']['values'] as $invalid) {
             $this->assertFalse(
-                ($this->subject)([$invalid], $this->threshold)->validate()
+                ($this->subject)($invalid, $this->fixtures['invalid']['thresholds'])->validate()
             );
         }
     }

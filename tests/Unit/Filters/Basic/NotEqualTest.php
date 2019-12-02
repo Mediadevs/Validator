@@ -21,27 +21,20 @@ final class NotEqualTest extends TestCase
     private $subject;
 
     /**
-     * The input which should return valid (TRUE)
+     * The fixtures for this validation filter test
      * @var array
      */
-    private $valid = array(
-        1
-    );
-
-    /**
-     * The input which should return invalid (FALSE)
-     * @var array
-     */
-    private $invalid = array(
-        10
-    );
-
-    /**
-     * The thresholds which will be used for validation
-     * @var array
-     */
-    private $threshold = array(
-        10
+    private $fixtures = array(
+        // Valid fixtures these should return (TRUE) after validation
+        'valid'     => array(
+            'values'        => array(),
+            'thresholds'    => array(),
+        ),
+        // Invalid fixtures these should return (FALSE) after validation
+        'invalid'   => array(
+            'values'        => array(),
+            'thresholds'    => array(),
+        )
     );
 
     /**
@@ -51,6 +44,23 @@ final class NotEqualTest extends TestCase
      */
     protected function setUp(): void
     {
+        // These values should pass the validation filter
+        $this->fixtures['valid']['values'] = [
+
+        ];
+        $this->fixtures['valid']['thresholds'] = [
+
+        ];
+
+        // These values should not pass the validation filter
+        $this->fixtures['invalid']['values'] = [
+
+        ];
+        $this->fixtures['invalid']['thresholds'] = [
+
+        ];
+
+        // The filter which will be applied in this test case
         $this->subject = new \Mediadevs\Validator\Filters\Basic\NotEqual;
     }
 
@@ -61,9 +71,12 @@ final class NotEqualTest extends TestCase
      */
     public function testValid()
     {
-        $this->assertTrue(
-            ($this->subject)($this->valid, $this->threshold)->validate()
-        );
+        // Iterating through all the valid options
+        foreach ($this->fixtures['valid']['values'] as $valid) {
+            $this->assertTrue(
+                ($this->subject)($valid, $this->fixtures['valid']['thresholds'])->validate()
+            );
+        }
     }
 
     /**
@@ -73,8 +86,11 @@ final class NotEqualTest extends TestCase
      */
     public function testInvalid()
     {
-        $this->assertFalse(
-            ($this->subject)($this->invalid, $this->threshold)->validate()
-        );
+        // Iterating through all the invalid options
+        foreach ($this->fixtures['invalid']['values'] as $invalid) {
+            $this->assertFalse(
+                ($this->subject)($invalid, $this->fixtures['invalid']['thresholds'])->validate()
+            );
+        }
     }
 }

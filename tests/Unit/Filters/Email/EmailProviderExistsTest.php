@@ -1,18 +1,20 @@
 <?php
 
-namespace Mediadevs\Validator\Tests\Unit\Filters\Basic;
+namespace Mediadevs\Validator\Tests\Unit\Filters\Date;
 
 use Exception;
 use PHPUnit\Framework\TestCase;
 use Mediadevs\Validator\Filters\FilterInterface;
 
 /**
- * @test Whether the value type is a boolean.
+ * @test Whether the given email provider exists, the provider will be pinged
+ *       the email will be noted as valid when the correct http code is
+ *       returned.
  *
- * Class TypeBooleanTest
- * @package Mediadevs\Validator\Tests\Unit\Filters\Basic
+ * Class EmailProviderExistsTest
+ * @package Mediadevs\Validator\Tests\Unit\Filters\Email
  */
-final class TypeBooleanTest extends TestCase
+final class EmailProviderExistsTest extends TestCase
 {
     /**
      * The filter test subject
@@ -46,22 +48,22 @@ final class TypeBooleanTest extends TestCase
     {
         // These values should pass the validation filter
         $this->fixtures['valid']['values'] = [
-
+            /** TODO: Add valid values */
         ];
         $this->fixtures['valid']['thresholds'] = [
-
+            /** TODO: Add valid thresholds */
         ];
 
         // These values should not pass the validation filter
         $this->fixtures['invalid']['values'] = [
-
+            /** TODO: Add invalid values */
         ];
         $this->fixtures['invalid']['thresholds'] = [
-
+            /** TODO: Add invalid thresholds */
         ];
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeBoolean;
+        $this->subject = new \Mediadevs\Validator\Filters\Email\EmailProviderExists;
     }
 
     /**

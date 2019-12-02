@@ -1,18 +1,18 @@
 <?php
 
-namespace Mediadevs\Validator\Tests\Unit\Filters\Basic;
+namespace Mediadevs\Validator\Tests\Unit\Filters\Date;
 
 use Exception;
 use PHPUnit\Framework\TestCase;
 use Mediadevs\Validator\Filters\FilterInterface;
 
 /**
- * @test Whether the value type is a boolean.
+ * @test Whether the date is past the threshold date.
  *
- * Class TypeBooleanTest
- * @package Mediadevs\Validator\Tests\Unit\Filters\Basic
+ * Class AfterTest
+ * @package Mediadevs\Validator\Tests\Unit\Filters\Date
  */
-final class TypeBooleanTest extends TestCase
+final class AfterTest extends TestCase
 {
     /**
      * The filter test subject
@@ -61,7 +61,7 @@ final class TypeBooleanTest extends TestCase
         ];
 
         // The filter which will be applied in this test case
-        $this->subject = new \Mediadevs\Validator\Filters\Basic\TypeBoolean;
+        $this->subject = new \Mediadevs\Validator\Filters\Date\After;
     }
 
     /**
