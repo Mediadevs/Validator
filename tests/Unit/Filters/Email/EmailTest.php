@@ -40,18 +40,18 @@ final class EmailTest extends TestCase
         $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
-                'values'        => array(),
+                'values'        => array('test@mediadevs.nl'),
                 'thresholds'    => array(),
             ),
             // Invalid fixtures these should return (FALSE) after validation
             'invalid'   => array(
-                'values'        => array(),
+                'values'        => array('test-at-mediadevs.nl'),
                 'thresholds'    => array(),
             )
         );
 
         // The filter which will be applied in this test case
-        $this->subject = \Mediadevs\Validator\Filters\Email\BlockedEmailProviders::class;
+        $this->subject = \Mediadevs\Validator\Filters\Email\Email::class;
     }
 
     /**

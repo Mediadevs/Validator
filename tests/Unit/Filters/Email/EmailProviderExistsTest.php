@@ -42,12 +42,12 @@ final class EmailProviderExistsTest extends TestCase
         $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
-                'values'        => array(),
+                'values'        => array('test@mediadevs.nl'),
                 'thresholds'    => array(),
             ),
             // Invalid fixtures these should return (FALSE) after validation
             'invalid'   => array(
-                'values'        => array(),
+                'values'        => array('test-at-mediadevs.nl'),
                 'thresholds'    => array(),
             )
         );
