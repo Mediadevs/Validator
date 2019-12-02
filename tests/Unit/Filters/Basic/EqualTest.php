@@ -58,8 +58,10 @@ final class EqualTest extends TestCase
      * @test Expects the results returned to be (TRUE)
      *
      * @throws Exception
+     *
+     * @return void
      */
-    public function testValid()
+    public function testValid(): void
     {
         // Iterating through all the valid options
         foreach ($this->fixtures['valid']['values'] as $valid) {
@@ -73,8 +75,10 @@ final class EqualTest extends TestCase
      * @test Expects the results returned to be (FALSE)
      *
      * @throws Exception
+     *
+     * @return void
      */
-    public function testInvalid()
+    public function testInvalid(): void
     {
         // Iterating through all the invalid options
         foreach ($this->fixtures['invalid']['values'] as $invalid) {

@@ -9,12 +9,12 @@ interface TestFilterInterface
      *
      * @return void
      */
-    public function testValid();
+    public function testValid(): void;
 
     /**
      * @test tests if the filter returns false if the data is incorrect.
      *
      * @return void
      */
-    public function testInvalid();
+    public function testInvalid(): void;
 }
