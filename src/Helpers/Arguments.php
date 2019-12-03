@@ -22,25 +22,11 @@ class Arguments
     );
 
     /**
-     * The filters from the defined registry class.
-     *
-     * @var array
-     */
-    private $filters = array();
-
-    /**
      * The filter aliases from the defined registry class.
      *
      * @var array
      */
     private $aliases = array();
-
-    /**
-     * Arguments constructor.
-     */
-    public function __construct()
-    {
-    }
 
     /**
      * Extracting all the filters from the configuration
@@ -59,18 +45,12 @@ class Arguments
             foreach (explode(self::FILTER_DELIMITER, $filters) as $filter) {
                 $filterName = $this->filterArguments($filter, self::PATTERNS['filter']);
                 $filterThresholds = $this->filterArguments($filter, self::PATTERNS['thresholds']);
-
-                // Whether the filter is a regular expression
-                if ($this->filterIsRegularExpression($filterName)) {
-                    $thresholds = $this->getPatternsFromThresholds($filterThresholds);
-                } else {
-                    $thresholds = $this->getThresholds($filterThresholds);
-                }
+                $thresholds = $this->getThresholds($filterThresholds);
 
                 // Extracting data from the configuration and storing it inside the arguments array
                 $arguments[] = [
                     'field'         => $field,
-                    'filter'        => $filter,
+                    'filter'        => $filterName,
                     'thresholds'    => $thresholds,
                 ];
             }
@@ -118,47 +98,6 @@ class Arguments
         if (count($items) > 0) {
             foreach ($items as $threshold) {
                 $collection[] = $this->setCorrectThresholdType($threshold);
-            }
-        }
-
-        return $collection;
-    }
-
-    /**
-     * Determines whether the filter is "regular_expression".
-     *
-     * @param string $filter
-     *
-     * @return bool
-     */
-    private function filterIsRegularExpression(string $filter): bool
-    {
-        $identifier = 'regular_expression';
-        // Instantiating the ValidationRegistry
-        $aliases = $this->getAliasesByFilter($identifier, $this->aliases);
-
-        // Validating whether the filter name matches any of the aliases or "regular_expression" it self.
-        return $filter === $identifier || in_array($filter, $aliases);
-    }
-
-    /**
-     * If the filter is a regular expression it will handle the thresholds the right way and return clean results.
-     *
-     * @param string $thresholds
-     *
-     * @return array
-     */
-    private function getPatternsFromThresholds(string $thresholds): array
-    {
-        $collection = array();
-
-        // Checking if there are any patterns for this filters
-        if (strpos($thresholds, ':')) {
-            preg_match(self::PATTERNS['regular_expression'], $thresholds, $patterns);
-
-            // Parsing through the patterns and storing them inside the thresholds array.
-            foreach (explode(self::LIST_SEPARATOR, $patterns) as $pattern) {
-                $collection['thresholds'][] = (string) $pattern;
             }
         }
 
