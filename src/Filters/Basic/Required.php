@@ -63,13 +63,13 @@ class Required extends AbstractFilter implements FilterInterface
                 return true;
             }
 
-            // Validating whether the value is set and is not empty
-            if (!empty($this->values[0])) {
+            // Validating whether the value of the field has not the length of 0
+            if (strlen($this->values[0]) !== 0) {
                 return true;
             }
 
-            // Validating whether the value of the field has not the length of 0
-            if (strlen($this->values[0]) !== 0) {
+            // Validating whether the value is set and is not empty
+            if (!empty($this->values[0])) {
                 return true;
             }
         }
