@@ -42,7 +42,7 @@ trait HostTrait
             // Closing curl
             curl_close($curlHandle);
         } else {
-            return false;
+            $status = 500;
         }
 
         // Validating whether the http status is inside the allowed statuses array (Whether the page is live or not)
