@@ -57,6 +57,7 @@ final class EmailProviderExistsTest extends TestCase
 
     /**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [Email\EmailProviderExists] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -74,6 +75,7 @@ final class EmailProviderExistsTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [Email\EmailProviderExists] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *

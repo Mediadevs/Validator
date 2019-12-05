@@ -55,6 +55,7 @@ final class EmailTest extends TestCase
 
     /**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [Email\Email] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -72,6 +73,7 @@ final class EmailTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [Email\Email] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *
