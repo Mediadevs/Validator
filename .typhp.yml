@@ -1,10 +1,10 @@
 project:
     directories:
-        - '/src'
-        - '/tests'
+        - 'src'
+        - 'tests'
     exclude:
         directories:
-            - '/.github'
-            - '/config'
-            - '/examples'
-            - '/guides'
+            - '.github'
+            - 'config'
+            - 'examples'
+            - 'guides'
