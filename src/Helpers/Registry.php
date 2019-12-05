@@ -2,6 +2,8 @@
 
 namespace Mediadevs\Validator\Helpers;
 
+use phpDocumentor\Reflection\Types\Mixed_;
+
 class Registry extends Singleton
 {
     /**
@@ -24,7 +26,7 @@ class Registry extends Singleton
      *
      * @param string $type
      * @param string $index
-     * @param        $data  ($data has no strict type, it can be either an array or a string)
+     * @param mixed  $data  ($data has no strict type, it can be either an array or a string)
      *
      * @return void
      */
@@ -55,7 +57,7 @@ class Registry extends Singleton
      * Registering the filters inside the $data array.
      *
      * @param string $index
-     * @param        $data
+     * @param mixed  $data
      *
      * @return void
      */
@@ -70,7 +72,7 @@ class Registry extends Singleton
      * Registering the filters inside the $data array.
      *
      * @param string $index
-     * @param        $data
+     * @param mixed  $data
      *
      * @return void
      */
@@ -90,7 +92,7 @@ class Registry extends Singleton
      * Registering the filters inside the $data array.
      *
      * @param string $index
-     * @param        $data
+     * @param mixed  $data
      *
      * @return void
      */

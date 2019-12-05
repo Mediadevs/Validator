@@ -9,8 +9,10 @@ final class RegistryTest extends TestCase
 {
     /**
      * Whether registering a new filter works.
+     *
+     * @return void
      */
-    public function testNewRegistry()
+    public function testNewRegistry(): void
     {
         Registry::getInstance();
 

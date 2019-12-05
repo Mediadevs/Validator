@@ -32,8 +32,10 @@ class Singleton
 
     /**
      * @throws Exception
+     *
+     * @return void
      */
-    public function __wakeup()
+    public function __wakeup(): void
     {
         throw new Exception('Cannot unserialize singleton');
     }
@@ -41,7 +43,7 @@ class Singleton
     /**
      * The method you use to get the Singleton's instance.
      */
-    public static function getInstance()
+    public static function getInstance(): self
     {
         $subclass = static::class;
 
