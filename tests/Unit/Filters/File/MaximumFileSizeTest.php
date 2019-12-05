@@ -54,8 +54,9 @@ final class MaximumFileSizeTest extends TestCase
         $this->subject = \Mediadevs\Validator\Filters\File\MaximumFileSize::class;
     }
 
-    /**
+/**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [File\MaximumFileSize] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -73,6 +74,7 @@ final class MaximumFileSizeTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [File\MaximumFileSize] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *
