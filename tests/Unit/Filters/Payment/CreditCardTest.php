@@ -54,8 +54,9 @@ final class CreditCardTest extends TestCase
         $this->subject = \Mediadevs\Validator\Filters\Payment\CreditCard::class;
     }
 
-    /**
+/**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [Payment\CreditCard] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -73,6 +74,7 @@ final class CreditCardTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [Payment\CreditCard] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *
