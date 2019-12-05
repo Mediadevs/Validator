@@ -36,9 +36,8 @@ final class BetweenTest extends TestCase
      */
     protected function setUp(): void
     {
-        /**
-         * @var $fixtures
-         */
+        parent::setUp();
+
         $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
@@ -96,5 +95,17 @@ final class BetweenTest extends TestCase
                 (new $this->subject([$invalid], $this->fixtures['invalid']['thresholds']))->validate()
             );
         }
+    }
+
+    /**
+     * Tearing down the test and clearing cache.
+     *
+     * @return void
+     */
+    protected function tearDown(): void
+    {
+        unset($this->subject, $this->fixtures);
+
+        parent::tearDown();
     }
 }

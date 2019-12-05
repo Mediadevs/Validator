@@ -5,3 +5,4 @@ disabled:
     - normalize_index_brace
     - alpha_ordered_imports
     - short_array_syntax
+    - phpdoc_no_package

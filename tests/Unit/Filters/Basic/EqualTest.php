@@ -37,9 +37,6 @@ final class EqualTest extends TestCase
     {
         parent::setUp();
 
-        /**
-         * @var $fixtures
-         */
         $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
