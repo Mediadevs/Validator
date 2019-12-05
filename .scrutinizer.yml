@@ -30,12 +30,13 @@ build:
             - composer require nunomaduro/phpinsights:^1.11.1 --dev
             - composer require php-coveralls/php-coveralls:^2.0 --dev
     nodes:
-        tests:
-            override:
-                - php-scrutinizer-run
-                - vendor/bin/typhp
-                - vendor/bin/phpinsights
-                -   command: vendor/bin/phpunit --coverage-text --coverage-clover clover.xml --testdox-html --testdox-text
-                    coverage:
-                        file: clover.xml
-                        format: php-clover
+        analysis:
+            tests:
+                override:
+                    - php-scrutinizer-run
+                    - vendor/bin/typhp
+                    - vendor/bin/phpinsights
+                    -   command: vendor/bin/phpunit --coverage-text --coverage-clover clover.xml --testdox-html --testdox-text
+                        coverage:
+                            file: clover.xml
+                            format: php-clover
