@@ -15,24 +15,28 @@ use Mediadevs\Validator\Filters\FilterInterface;
 final class EqualTest extends TestCase
 {
     /**
-     * The filter test subject
+     * The filter test subject.
+     *
      * @var FilterInterface
      */
     private $subject;
 
     /**
-     * The fixtures for this validation filter test
+     * The fixtures for this validation filter test.
+     *
      * @var array
      */
     private $fixtures = array();
 
     /**
-     * Setting up the subject class for this tests
+     * Setting up the subject class for this tests.
      *
      * @return void
      */
     protected function setUp(): void
     {
+        parent::setUp();
+
         /**
          * @var $fixtures
          */
@@ -54,7 +58,7 @@ final class EqualTest extends TestCase
     }
 
     /**
-     * @test Expects the results returned to be (TRUE)
+     * @test Expects the results returned to be (TRUE).
      * @testdox Whether [Basic\Equal] will pass the validation with the correct input.
      *
      * @throws Exception
@@ -71,8 +75,8 @@ final class EqualTest extends TestCase
         }
     }
 
-    /**
-     * @test Expects the results returned to be (FALSE)
+     /**
+     * @test Expects the results returned to be (FALSE).
      * @testdox Whether [Basic\Equal] will fail the validation with the incorrect input.
      *
      * @throws Exception
@@ -87,5 +91,17 @@ final class EqualTest extends TestCase
                 (new $this->subject([$invalid], $this->fixtures['invalid']['thresholds']))->validate()
             );
         }
+    }
+
+    /**
+     * Tearing down the test and clearing cache.
+     *
+     * @return void
+     */
+    protected function tearDown(): void
+    {
+        unset($this->subject, $this->fixtures);
+
+        parent::tearDown();
     }
 }

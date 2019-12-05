@@ -15,19 +15,21 @@ use Mediadevs\Validator\Filters\FilterInterface;
 final class IPv4Test extends TestCase
 {
     /**
-     * The filter test subject
+     * The filter test subject.
+     *
      * @var FilterInterface
      */
     private $subject;
 
     /**
-     * The fixtures for this validation filter test
+     * The fixtures for this validation filter test.
+     *
      * @var array
      */
     private $fixtures = array();
 
     /**
-     * Setting up the subject class for this tests
+     * Setting up the subject class for this tests.
      *
      * @return void
      */
@@ -54,7 +56,7 @@ final class IPv4Test extends TestCase
     }
 
 /**
-     * @test Expects the results returned to be (TRUE)
+     * @test Expects the results returned to be (TRUE).
      * @testdox Whether [Host\IPv4] will pass the validation with the correct input.
      *
      * @throws Exception
@@ -72,7 +74,7 @@ final class IPv4Test extends TestCase
     }
 
     /**
-     * @test Expects the results returned to be (FALSE)
+     * @test Expects the results returned to be (FALSE).
      * @testdox Whether [Host\IPv4] will fail the validation with the incorrect input.
      *
      * @throws Exception
