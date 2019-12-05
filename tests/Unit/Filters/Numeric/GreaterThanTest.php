@@ -53,8 +53,9 @@ final class GreaterThanTest extends TestCase
         $this->subject = \Mediadevs\Validator\Filters\Numeric\GreaterThan::class;
     }
 
-    /**
+/**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [Numeric\GreaterThan] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -72,6 +73,7 @@ final class GreaterThanTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [Numeric\GreaterThan] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *

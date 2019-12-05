@@ -53,8 +53,9 @@ final class LessThanOrEqualToTest extends TestCase
         $this->subject = \Mediadevs\Validator\Filters\Numeric\LessThanOrEqualTo::class;
     }
 
-    /**
+/**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [Numeric\LessThanOrEqualTo] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -72,6 +73,7 @@ final class LessThanOrEqualToTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [Numeric\LessThanOrEqualTo] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *

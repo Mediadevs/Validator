@@ -53,8 +53,9 @@ final class MaximumTest extends TestCase
         $this->subject = \Mediadevs\Validator\Filters\Numeric\Maximum::class;
     }
 
-    /**
+/**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [Numeric\Maximum] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -72,6 +73,7 @@ final class MaximumTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [Numeric\Maximum] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *
