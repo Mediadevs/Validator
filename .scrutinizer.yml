@@ -28,12 +28,12 @@ build:
             version: 7.1
     dependencies:
         before:
-            - composer require phpunit/phpunit:^7.0 --dev
-            - composer require "phpstan/phpstan:>0.11.0 --dev
-            - composer require php-coveralls/php-coveralls:^2.0 --dev
+            - composer require phpunit/phpunit:7 --dev
+            - composer require phpstan/phpstan:^0.11.0 --dev
+            - composer require require seferov/typhp:^0.2.0 --dev
             - composer require squizlabs/php_codesniffer:3.* --dev
             - composer require nunomaduro/phpinsights:^1.11.1 --dev
-            - composer require require seferov/typhp:^0.2.0 --dev
+            - composer require php-coveralls/php-coveralls:^2.0 --dev
     nodes:
         analysis:
             tests:
