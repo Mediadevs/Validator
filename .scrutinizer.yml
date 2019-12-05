@@ -33,7 +33,7 @@ build:
         analysis:
             tests:
                 override:
-                    - scrutinizer-run
+                    - php-scrutinizer-run
                     - vendor/bin/typhp
                     - vendor/bin/phpinsights
                     -   command: vendor/bin/phpunit --result-file=clover.xml --coverage-text --coverage-clover=coverage.clover --testdox-html --testdox-text
