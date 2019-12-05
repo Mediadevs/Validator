@@ -55,6 +55,7 @@ final class AfterTest extends TestCase
 
     /**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [Date\After] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -72,6 +73,7 @@ final class AfterTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [Date\After] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *
