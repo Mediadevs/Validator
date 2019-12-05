@@ -53,8 +53,9 @@ final class EndsWithTest extends TestCase
         $this->subject = \Mediadevs\Validator\Filters\String\EndsWith::class;
     }
 
-    /**
+/**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [String\EndsWith] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -72,6 +73,7 @@ final class EndsWithTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [String\EndsWith] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *
