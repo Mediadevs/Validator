@@ -53,8 +53,9 @@ final class IPv4Test extends TestCase
         $this->subject = \Mediadevs\Validator\Filters\Host\IPv4::class;
     }
 
-    /**
+/**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [Host\IPv4] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -72,6 +73,7 @@ final class IPv4Test extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [Host\IPv4] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *

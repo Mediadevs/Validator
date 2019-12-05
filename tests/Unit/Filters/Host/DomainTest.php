@@ -53,8 +53,9 @@ final class DomainTest extends TestCase
         $this->subject = \Mediadevs\Validator\Filters\Host\Domain::class;
     }
 
-    /**
+/**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [Host\Domain] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -72,6 +73,7 @@ final class DomainTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [Host\Domain] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *

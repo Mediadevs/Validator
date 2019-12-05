@@ -53,8 +53,9 @@ final class ReachableAddressTest extends TestCase
         $this->subject = \Mediadevs\Validator\Filters\Host\ReachableAddress::class;
     }
 
-    /**
+/**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [Host\ReachableAddress] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -72,6 +73,7 @@ final class ReachableAddressTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [Host\ReachableAddress] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *

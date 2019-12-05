@@ -53,8 +53,9 @@ final class IPTest extends TestCase
         $this->subject = \Mediadevs\Validator\Filters\Host\IP::class;
     }
 
-    /**
+/**
      * @test Expects the results returned to be (TRUE)
+     * @testdox Whether [Host\IP] will pass the validation with the correct input.
      *
      * @throws Exception
      *
@@ -72,6 +73,7 @@ final class IPTest extends TestCase
 
     /**
      * @test Expects the results returned to be (FALSE)
+     * @testdox Whether [Host\IP] will fail the validation with the incorrect input.
      *
      * @throws Exception
      *
