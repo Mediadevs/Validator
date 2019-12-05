@@ -36,7 +36,7 @@ build:
                     - php-scrutinizer-run
                     - vendor/bin/typhp
                     - vendor/bin/phpinsights
-                    -   command: vendor/bin/phpunit --result-file=clover.xml --coverage-text --coverage-clover=coverage.clover --testdox-html --testdox-text
+                    -   command: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover --testdox-html --testdox-text
                         analysis:
                             file: clover.xml
                             format: "general-checkstyle"
