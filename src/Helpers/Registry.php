@@ -2,8 +2,6 @@
 
 namespace Mediadevs\Validator\Helpers;
 
-use phpDocumentor\Reflection\Types\Mixed_;
-
 class Registry extends Singleton
 {
     /**

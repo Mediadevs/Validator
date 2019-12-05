@@ -15,6 +15,7 @@
 /.styleci.yml               export-ignore
 /.travis.yml                export-ignore
 /.typhp.yml                 export-ignore
+/phpcs.xml                  export-ignore
 
 # Markdown files
 /PULL_REQUEST_TEMPLATE.md   export-ignore
