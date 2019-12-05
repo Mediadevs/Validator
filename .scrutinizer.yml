@@ -33,9 +33,8 @@ build:
         analysis:
             tests:
                 override:
-                    - vendor/bin/typhp
                     - vendor/bin/phpinsights
-                    - php-scrutinizer-run
+                    - vendor/bin/typhp
                     -   command: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover --testdox-html --testdox-text
                         coverage:
                             file: clover.xml
