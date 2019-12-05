@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the string starts with the given threshold.
  *
  * Class StartsWithTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\String
  */
 final class StartsWithTest extends TestCase
@@ -47,14 +48,14 @@ final class StartsWithTest extends TestCase
             'invalid'   => array(
                 'values'        => array('Bye Moon!'),
                 'thresholds'    => array('Hel'),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\String\StartsWith::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [String\StartsWith] will pass the validation with the correct input.
      *

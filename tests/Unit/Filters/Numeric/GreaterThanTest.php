@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the value is greater than the threshold.
  *
  * Class GreaterThanTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Numeric
  */
 final class GreaterThanTest extends TestCase
@@ -47,14 +48,14 @@ final class GreaterThanTest extends TestCase
             'invalid'   => array(
                 'values'        => array(5),
                 'thresholds'    => array(10),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\Numeric\GreaterThan::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [Numeric\GreaterThan] will pass the validation with the correct input.
      *

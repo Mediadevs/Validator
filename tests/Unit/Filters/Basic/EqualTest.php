@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the value is equal to the threshold.
  *
  * Class EqualTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Basic
  */
 final class EqualTest extends TestCase
@@ -47,7 +48,7 @@ final class EqualTest extends TestCase
             'invalid'   => array(
                 'values'        => array(1),
                 'thresholds'    => array(10),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
@@ -72,7 +73,7 @@ final class EqualTest extends TestCase
         }
     }
 
-     /**
+    /**
      * @test Expects the results returned to be (FALSE).
      * @testdox Whether [Basic\Equal] will fail the validation with the incorrect input.
      *

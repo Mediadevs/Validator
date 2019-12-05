@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the email is in the list of allowed providers.
  *
  * Class AllowedEmailProvidersTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Email
  */
 final class AllowedEmailProvidersTest extends TestCase
@@ -53,7 +54,7 @@ final class AllowedEmailProvidersTest extends TestCase
                     'hotmail.com',
                     'gmail.com',
                 ),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

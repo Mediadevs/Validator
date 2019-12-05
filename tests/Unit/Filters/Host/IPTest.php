@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the string is a valid ip address.
  *
  * Class IPTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Host
  */
 final class IPTest extends TestCase
@@ -47,14 +48,14 @@ final class IPTest extends TestCase
             'invalid'   => array(
                 'values'        => array(''),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\Host\IP::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [Host\IP] will pass the validation with the correct input.
      *

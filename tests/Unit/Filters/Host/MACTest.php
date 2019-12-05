@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the string is a valid mac address.
  *
  * Class MACTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Host
  */
 final class MACTest extends TestCase
@@ -47,14 +48,14 @@ final class MACTest extends TestCase
             'invalid'   => array(
                 'values'        => array(''),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\Host\MAC::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [Host\MAC] will pass the validation with the correct input.
      *

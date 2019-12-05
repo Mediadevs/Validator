@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the string is a valid ipv4 address.
  *
  * Class IPv4Test
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Host
  */
 final class IPv4Test extends TestCase
@@ -47,14 +48,14 @@ final class IPv4Test extends TestCase
             'invalid'   => array(
                 'values'        => array(''),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\Host\IPv4::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [Host\IPv4] will pass the validation with the correct input.
      *

@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the string ends with the given threshold.
  *
  * Class EndsWithTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\String
  */
 final class EndsWithTest extends TestCase
@@ -47,14 +48,14 @@ final class EndsWithTest extends TestCase
             'invalid'   => array(
                 'values'        => array('Hello Moon!'),
                 'thresholds'    => array('rld!'),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\String\EndsWith::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [String\EndsWith] will pass the validation with the correct input.
      *

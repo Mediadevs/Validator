@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the string contains the threshold.
  *
  * Class ContainsTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\String
  */
 final class ContainsTest extends TestCase
@@ -47,14 +48,14 @@ final class ContainsTest extends TestCase
             'invalid'   => array(
                 'values'        => array('Hello Moon!'),
                 'thresholds'    => array('Wor'),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\String\Contains::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [String\Contains] will pass the validation with the correct input.
      *

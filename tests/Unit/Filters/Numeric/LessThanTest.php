@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the value is less than the threshold.
  *
  * Class LessThanTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Numeric
  */
 final class LessThanTest extends TestCase
@@ -47,14 +48,14 @@ final class LessThanTest extends TestCase
             'invalid'   => array(
                 'values'        => array(15),
                 'thresholds'    => array(10),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\Numeric\LessThan::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [Numeric\LessThan] will pass the validation with the correct input.
      *

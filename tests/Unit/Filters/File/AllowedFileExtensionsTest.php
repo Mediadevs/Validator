@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the file extension is in the list of allowed extensions.
  *
  * Class AllowedFileExtensionsTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\File
  */
 final class AllowedFileExtensionsTest extends TestCase
@@ -47,7 +48,7 @@ final class AllowedFileExtensionsTest extends TestCase
             'invalid'   => array(
                 'values'        => array(),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

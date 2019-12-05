@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the date is before the threshold date.
  *
  * Class BeforeTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Date
  */
 final class BeforeTest extends TestCase
@@ -47,7 +48,7 @@ final class BeforeTest extends TestCase
             'invalid'   => array(
                 'values'        => array(strtotime('-1 year', time())),
                 'thresholds'    => array(time()),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

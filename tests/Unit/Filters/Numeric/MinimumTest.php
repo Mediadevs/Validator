@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the value is more than the minimum threshold.
  *
  * Class MinimumTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Numeric
  */
 final class MinimumTest extends TestCase
@@ -47,14 +48,14 @@ final class MinimumTest extends TestCase
             'invalid'   => array(
                 'values'        => array(5),
                 'thresholds'    => array(10),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\Numeric\Minimum::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [Numeric\Minimum] will pass the validation with the correct input.
      *

@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the email is in the list of blocked providers.
  *
  * Class BlockedEmailProvidersTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Email
  */
 final class BlockedEmailProvidersTest extends TestCase
@@ -53,7 +54,7 @@ final class BlockedEmailProvidersTest extends TestCase
                 'thresholds'    => array(
                     'mediadevs.nl',
                 ),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

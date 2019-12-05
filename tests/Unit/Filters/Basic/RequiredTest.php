@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the field is set.
  *
  * Class RequiredTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Basic
  */
 final class RequiredTest extends TestCase
@@ -47,7 +48,7 @@ final class RequiredTest extends TestCase
             'invalid'   => array(
                 'values'        => array(''),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
