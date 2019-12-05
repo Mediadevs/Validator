@@ -29,6 +29,7 @@ build:
             - composer require squizlabs/php_codesniffer:3.* --dev
             - composer require nunomaduro/phpinsights:^1.11.1 --dev
             - composer require php-coveralls/php-coveralls:^2.0 --dev
+            - composer require sempro/phpunit-pretty-print:^1.2.1 --dev
     tests:
         override:
             - php-scrutinizer-run
