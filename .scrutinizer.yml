@@ -41,7 +41,7 @@ build:
                     - php-scrutinizer-run
                     -   command: vendor/bin/typhp
                     -   command: vendor/bin/phpinsights
-                    -   command: vendor/bin/phpunit --coverage-clover=clover.xml
+                    -   command: vendor/bin/phpunit --coverage-clover=clover.xml --testdox-html --testdox-text
                         coverage:
                             file: clover.xml
                             format: php-clover
