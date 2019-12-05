@@ -11,6 +11,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  *       The order of the Threshold date is not important.
  *
  * Class BetweenTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Date
  */
 final class BetweenTest extends TestCase
@@ -44,7 +45,7 @@ final class BetweenTest extends TestCase
                 'values'        => array(time()),
                 'thresholds'    => array(
                     strtotime('-1 year', time()),
-                    strtotime('+1 year', time())
+                    strtotime('+1 year', time()),
                 ),
             ),
             // Invalid fixtures these should return (FALSE) after validation
@@ -52,9 +53,9 @@ final class BetweenTest extends TestCase
                 'values'        => array(time()),
                 'thresholds'    => array(
                     strtotime('+1 year', time()),
-                    strtotime('+2 years', time())
+                    strtotime('+2 years', time()),
                 ),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

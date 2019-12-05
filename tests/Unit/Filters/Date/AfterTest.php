@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the date is past the threshold date.
  *
  * Class AfterTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Date
  */
 final class AfterTest extends TestCase
@@ -34,7 +35,8 @@ final class AfterTest extends TestCase
      * @return void
      */
     protected function setUp(): void
-    {$this->fixtures = array(
+    {
+        $this->fixtures = array(
             // Valid fixtures these should return (TRUE) after validation
             'valid'     => array(
                 'values'        => array(strtotime('-1 year', time())),
@@ -44,7 +46,7 @@ final class AfterTest extends TestCase
             'invalid'   => array(
                 'values'        => array(strtotime('+1 year', time())),
                 'thresholds'    => array(time()),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

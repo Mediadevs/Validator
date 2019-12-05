@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the value type is an array.
  *
  * Class TypeArrayTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Basic
  */
 final class TypeArrayTest extends TestCase
@@ -47,7 +48,7 @@ final class TypeArrayTest extends TestCase
             'invalid'   => array(
                 'values'        => array(''),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

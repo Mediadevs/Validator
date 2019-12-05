@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the file mime type is in the list of allowed mime types.
  *
  * Class AllowedFileMimeTypesTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\File
  */
 final class AllowedFileMimeTypesTest extends TestCase
@@ -47,7 +48,7 @@ final class AllowedFileMimeTypesTest extends TestCase
             'invalid'   => array(
                 'values'        => array(),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

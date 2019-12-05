@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the value is not equal to the threshold.
  *
  * Class NotEqualTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Basic
  */
 final class NotEqualTest extends TestCase
@@ -47,7 +48,7 @@ final class NotEqualTest extends TestCase
             'invalid'   => array(
                 'values'        => array(10),
                 'thresholds'    => array(10),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

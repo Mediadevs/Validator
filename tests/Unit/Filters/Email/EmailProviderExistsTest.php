@@ -12,6 +12,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  *       returned.
  *
  * Class EmailProviderExistsTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Email
  */
 final class EmailProviderExistsTest extends TestCase
@@ -49,7 +50,7 @@ final class EmailProviderExistsTest extends TestCase
             'invalid'   => array(
                 'values'        => array('test-at-mediadevs.nl'),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

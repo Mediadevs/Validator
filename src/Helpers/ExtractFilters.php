@@ -8,18 +8,21 @@ class ExtractFilters
 {
     /**
      * The target filter will be instantiated and stored in here.
+     *
      * @var FilterInterface
      */
     private $subject;
 
     /**
      * The identifiers and aliases for this filter.
+     *
      * @var array
      */
     private $filters = array();
 
     /**
      * The response messages for the filters.
+     *
      * @var array
      */
     private $messages = array();
@@ -44,7 +47,6 @@ class ExtractFilters
      */
     private function handleAliases(array $aliases): void
     {
-
     }
 
     /**
@@ -56,7 +58,6 @@ class ExtractFilters
      */
     private function handleFilters(array $filters): void
     {
-
     }
 
     /**
@@ -68,6 +69,5 @@ class ExtractFilters
      */
     private function handleMessages(array $messages): void
     {
-
     }
 }

@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the given string is a valid email address.
  *
  * Class EmailTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Email
  */
 final class EmailTest extends TestCase
@@ -47,7 +48,7 @@ final class EmailTest extends TestCase
             'invalid'   => array(
                 'values'        => array('test-at-mediadevs.nl'),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

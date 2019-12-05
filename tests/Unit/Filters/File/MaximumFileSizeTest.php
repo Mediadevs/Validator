@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the file size is smaller than the maximum size.
  *
  * Class MaximumFileSizeTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\File
  */
 final class MaximumFileSizeTest extends TestCase
@@ -47,14 +48,14 @@ final class MaximumFileSizeTest extends TestCase
             'invalid'   => array(
                 'values'        => array(),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\File\MaximumFileSize::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [File\MaximumFileSize] will pass the validation with the correct input.
      *

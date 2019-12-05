@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the value type is numeric.
  *
  * Class TypeNumericTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Basic
  */
 final class TypeNumericTest extends TestCase
@@ -47,7 +48,7 @@ final class TypeNumericTest extends TestCase
             'invalid'   => array(
                 'values'        => array(''),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
@@ -102,4 +103,3 @@ final class TypeNumericTest extends TestCase
         parent::tearDown();
     }
 }
-

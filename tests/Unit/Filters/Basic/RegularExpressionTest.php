@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the value matches the regular expression pattern.
  *
  * Class RegularExpressionTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Basic
  */
 final class RegularExpressionTest extends TestCase
@@ -47,7 +48,7 @@ final class RegularExpressionTest extends TestCase
             'invalid'   => array(
                 'values'        => array('1234567890'),
                 'thresholds'    => array('/[A-z].*/'),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the string contains more characters than given threshold.
  *
  * Class MinimumLengthTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\String
  */
 final class MinimumLengthTest extends TestCase
@@ -47,14 +48,14 @@ final class MinimumLengthTest extends TestCase
             'invalid'   => array(
                 'values'        => array('Hello Moon!'),
                 'thresholds'    => array(12),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\String\MinimumLength::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [String\MinimumLength] will pass the validation with the correct input.
      *

@@ -10,6 +10,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  * @test Whether the value type is null.
  *
  * Class TypeNullTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Basic
  */
 final class TypeNullTest extends TestCase
@@ -47,7 +48,7 @@ final class TypeNullTest extends TestCase
             'invalid'   => array(
                 'values'        => array(0),
                 'thresholds'    => array(),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case

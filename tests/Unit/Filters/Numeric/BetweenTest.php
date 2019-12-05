@@ -11,6 +11,7 @@ use Mediadevs\Validator\Filters\FilterInterface;
  *       The order of the numeric threshold values is not important.
  *
  * Class BetweenTest
+ *
  * @package Mediadevs\Validator\Tests\Unit\Filters\Numeric
  */
 final class BetweenTest extends TestCase
@@ -48,14 +49,14 @@ final class BetweenTest extends TestCase
             'invalid'   => array(
                 'values'        => array(15),
                 'thresholds'    => array(1, 10),
-            )
+            ),
         );
 
         // The filter which will be applied in this test case
         $this->subject = \Mediadevs\Validator\Filters\Numeric\Between::class;
     }
 
-/**
+    /**
      * @test Expects the results returned to be (TRUE).
      * @testdox Whether [Numeric\Between] will pass the validation with the correct input.
      *
