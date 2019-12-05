@@ -11,9 +11,6 @@
 [![Minimum PHP Version](https://img.shields.io/badge/php-_%5E7.2-8892BF.svg)](https://github.com/symfony/symfony)
 [![StyleCI](https://github.styleci.io/repos/222317005/shield?branch=master)](https://github.styleci.io/repos/222317005)
 
-## Be aware!
-Not everything has been tested yet, use on own risk.
-
 ## Install
 
 Via Composer
@@ -132,7 +129,8 @@ Mediadevs\Validator\Helpers\Registry::getInstance();
 
 // Registering one of the test classes
 Mediadevs\Validator\Helpers\Registry::register([
-    \Vendor\Package\Namespace\CustomFilters\YourCustomFilter::class,
+    \Vendor\Package\Namespace\CustomFilters\MyFirstCustomFilter::class,
+    \Vendor\Package\Namespace\CustomFilters\MySecondCustomFitler::class,
 ]);
 ```
 
@@ -164,7 +162,8 @@ class FilterProvider
      */
     public $providers = array(
         /*----[ Custom validation ]-----------------------------------------------------------------------------------*/
-        \Vendor\Package\Namespace\CustomFilters\YourCustomFilter::class,
+        \Vendor\Package\Namespace\CustomFilters\MyFirstCustomFilter::class,
+        \Vendor\Package\Namespace\CustomFilters\MySecondCustomFilter::class,
     );
 }
 ```
@@ -176,7 +175,6 @@ class FilterProvider
 
 #### Step six
 Congratulations, you made your own filter! Now publish it to the world to use it!!
-
 
 ## TODO:
 - **New validation filters**
@@ -190,8 +188,6 @@ Congratulations, you made your own filter! Now publish it to the world to use it
 - **Translations**
     - Swedish translation
     - German translation
-- **Contributing**
-    - Write guides on how to contribute to the library
 - **General**
     - Make code more accessible for older versions of PHP
     - Work on implementation for several library's (Symphony, Laravel, Yii, CackePHP, etc..)
@@ -227,7 +223,7 @@ If you discover any security related issues, please email contact@mediadevs.nl i
 ## Credits
 
 - [Mike van Diepen](https://github.com/mikevandiepen)
-- [All Contributors]()
+- [All Contributors](https://github.com/Mediadevs/Validator/graphs/contributors)
 
 ## License
 
@@ -246,4 +242,3 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-code-quality]: https://scrutinizer-ci.com/g/mediadevs/validator
 [link-downloads]: https://packagist.org/packages/mediadevs/validator
 [link-author]: https://github.com/mikevandiepen
-[link-contributors]: ../../contributors
