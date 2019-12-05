@@ -37,6 +37,6 @@ build:
                     - vendor/bin/typhp
                     - vendor/bin/phpinsights
                     -   command: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover --testdox-html --testdox-text
-                        analysis:
+                        coverage:
                             file: clover.xml
-                            format: "general-checkstyle"
+                            format: php-clover
