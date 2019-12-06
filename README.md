@@ -72,13 +72,6 @@ Mediadevs\Validator\Validator::validate($clean, [
 | `email` | `valid_email` `email_valid` | Whether the value of the field is an email. | `false` | **Email** |
 | `email_provider_exist` | `provider_exists` | Whether the provider of the email exists and is a reachable host. | `false` | **Email** |
 
-##### File
-| Filter | Aliases | Functionality | Arguments | Category |
-|---:|---|:---:|---|:---|
-| `allowed_file_extensions` | `allowed_extensions` `file_extensions` | Whether the file has an allowed extension. | `true` | **File** |
-| `allowed_file_mime_type` | `allowed_mime_type` `allowed_file_type`  `file_mime_type` | Whether the file has an allowed mime-type. | `true` | **File** |
-| `maximum_file_size` | `max_file_size` `maximum_size`  `file_size`  `max_size` | Whether the file is lesser or equal to the maximal file size. | `true` | **File** |
-
 ##### Host
 | Filter | Aliases | Functionality | Arguments | Category |
 |---:|---|:---:|---|:---|
@@ -100,12 +93,6 @@ Mediadevs\Validator\Validator::validate($clean, [
 | `less_than_or_equal_to` | `lte` | Whether the value of the field is lesser or equal to the threshold. | `true` | **Numeric** |
 | `maximum` | `max` | Whether the value of the field has less than the maximum value of the threshold.| `true` | **Numeric** |
 | `minimum` | `min` | Whether the value of the field has the minimum value of the threshold. | `true` | **Numeric** |
-
-##### Payment
-| Filter | Aliases | Functionality | Arguments | Category |
-|---:|---|:---:|---|:---|
-| `credit_card` | `cc` | Whether the credit card which the user has entered is valid. | `false` | **Payment** |
-| `iban` | | Whether the IBan number which the user has entered is valid. | `false` | **Payment** |
 
 ##### String
 | Filter | Aliases | Functionality | Arguments | Category |

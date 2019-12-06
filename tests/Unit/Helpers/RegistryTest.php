@@ -12,13 +12,13 @@ final class RegistryTest extends TestCase
      *
      * @return void
      */
-    public function testNewRegistry(): void
-    {
-        Registry::getInstance();
-
-        // Registering one of the test classes
-        Registry::register([
-            \Mediadevs\Validator\Examples\OptionA\Filters\FilterExample::class,
-        ]);
-    }
+//    public function testNewRegistry(): void
+//    {
+//        Registry::getInstance();
+//
+//        // Registering one of the test classes
+//        Registry::register([
+//            \Mediadevs\Validator\Examples\OptionA\Filters\FilterExample::class,
+//        ]);
+//    }
 }
