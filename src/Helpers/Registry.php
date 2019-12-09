@@ -26,11 +26,12 @@ class Registry
      * Loading all the classes from \Services\FilterProvider and parsing the filters to collect the configuration
      * Using te previously collected configuration to generate a registry which can be used for validation.
      *
-     * @return bool
      * @throws ReflectionException
      */
-    public function load(): bool
+    public function __construct()
     {
+        FilterProvider::getInstance();
+
         // Parsing through all the providers
        foreach (FilterProvider::collect() as $provider) {
            $filter = new ExtractFilters($provider);
@@ -39,8 +40,6 @@ class Registry
            $this->registry['filters'] += $filter->getFilters();
            $this->registry['messages'] += $filter->getMessages();
        }
-
-       return true;
     }
 
     /**

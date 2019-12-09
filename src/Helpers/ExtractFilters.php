@@ -40,6 +40,7 @@ class ExtractFilters
 
         // Handling the attributes
         $class = (new ClassParser())->parse($subject);
+
         $identifier = $class->getIdentifier();
         $aliases = $class->getAliases();
         $message = $class->getMessage();
