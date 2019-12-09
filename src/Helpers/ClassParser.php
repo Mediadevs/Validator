@@ -30,14 +30,14 @@ class ClassParser
         $filter = (new $namespace(array(), array()));
 
         // Validating whether all the properties exist.
-        $hasIdentifier  = $this->hasProperty($filter, 'identifier');
-        $hasAliases     = $this->hasProperty($filter, 'aliases');
-        $hasMessage     = $this->hasProperty($filter, 'message');
+        $hasIdentifier = $this->hasProperty($filter, 'identifier');
+        $hasAliases = $this->hasProperty($filter, 'aliases');
+        $hasMessage = $this->hasProperty($filter, 'message');
 
         // Validating whether the properties exist.
         if ($hasIdentifier && $hasAliases) {
-            $collection['identifiers']  = $this->getProperty($filter, 'identifier');
-            $collection['aliases']      = $this->getProperty($filter, 'identifier');
+            $collection['identifiers'] = $this->getProperty($filter, 'identifier');
+            $collection['aliases'] = $this->getProperty($filter, 'identifier');
 
             // This only comes in action when it is a custom filter.
             if ($hasMessage) {
@@ -53,9 +53,9 @@ class ClassParser
      *
      * @param string $namespace
      *
-     * @return string
-     *
      * @throws ReflectionException
+     *
+     * @return string
      */
     private function getFileName(string $namespace): string
     {
@@ -71,7 +71,7 @@ class ClassParser
      */
     private function loadFile(string $filename)
     {
-        return (require_once($filename));
+        return require_once $filename;
     }
 
     /**

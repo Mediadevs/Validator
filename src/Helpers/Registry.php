@@ -31,7 +31,6 @@ class Registry
         // the registry will look like this: 'filters -> 'identifier' => class;
     }
 
-
     /**
      * Registering the class in the $data array.
      *
