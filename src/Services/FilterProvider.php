@@ -65,7 +65,7 @@ class FilterProvider extends Singleton
     );
 
     /**
-     * Registering a new filter into this Service Provider
+     * Registering a new filter into this Service Provider.
      *
      * @param array $filters
      *
