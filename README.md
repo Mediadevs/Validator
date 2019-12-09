@@ -112,10 +112,10 @@ the service provider. Every filter can have an infinite amount of aliases (as lo
 ### Register from outside the library
 ```php
 <?php
-Mediadevs\Validator\Helpers\Registry::getInstance();
+Mediadevs\Validator\Services\FilterProvider::getInstance();
 
 // Registering one of the test classes
-Mediadevs\Validator\Helpers\Registry::register([
+Mediadevs\Validator\Services\FilterProvider::register([
     \Vendor\Package\Namespace\CustomFilters\MyFirstCustomFilter::class,
     \Vendor\Package\Namespace\CustomFilters\MySecondCustomFitler::class,
 ]);
@@ -147,7 +147,7 @@ class FilterProvider
      *
      * @var array
      */
-    public $providers = array(
+    private $providers = array(
         /*----[ Custom validation ]-----------------------------------------------------------------------------------*/
         \Vendor\Package\Namespace\CustomFilters\MyFirstCustomFilter::class,
         \Vendor\Package\Namespace\CustomFilters\MySecondCustomFilter::class,
