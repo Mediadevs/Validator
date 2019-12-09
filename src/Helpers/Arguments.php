@@ -16,9 +16,9 @@ class Arguments
      * Regular expression patterns for parsing the configuration and extracting the arguments.
      */
     private const PATTERNS = array(
-      'filter'              => '/(.*)'.self::THRESHOLD_PREFIX.'/',
-      'thresholds'          => '/'.self::THRESHOLD_PREFIX.'(.*)/',
-      'regular_expression'  => '/(?<=\\'.self::REGEX_DELIMITER.')(.*?)(?=\\'.self::REGEX_DELIMITER.')/',
+      'filter'              => '/(.*)' . self::THRESHOLD_PREFIX . '/',
+      'thresholds'          => '/' . self::THRESHOLD_PREFIX . '(.*)/',
+      'regular_expression'  => '/(?<=\\' . self::REGEX_DELIMITER . ')(.*?)(?=\\' . self::REGEX_DELIMITER . ')/',
     );
 
     /**

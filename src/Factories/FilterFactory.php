@@ -15,8 +15,9 @@ class FilterFactory
      * @param array  $values
      * @param array  $thresholds
      *
-     * @return bool
      * @throws ReflectionException
+     *
+     * @return bool
      */
     public function build(string $filter, array $values, array $thresholds = array()): bool
     {
