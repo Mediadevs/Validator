@@ -12,7 +12,7 @@ class FilterProvider extends Singleton
      *
      * @var array
      */
-    public static $providers = array(
+    private static $providers = array(
         /*----[ Basic validation ]------------------------------------------------------------------------------------*/
         \Mediadevs\Validator\Filters\Basic\Equal::class,
         \Mediadevs\Validator\Filters\Basic\NotEqual::class,
@@ -74,5 +74,15 @@ class FilterProvider extends Singleton
     public static function register(array $filters): void
     {
         self::$providers = array_merge(self::$providers, $filters);
+    }
+
+    /**
+     * Collecting all the filters from this provider.
+     *
+     * @return array
+     */
+    public static function collect(): array
+    {
+        return self::$providers;
     }
 }

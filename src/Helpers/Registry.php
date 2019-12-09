@@ -2,6 +2,9 @@
 
 namespace Mediadevs\Validator\Helpers;
 
+use ReflectionException;
+use Mediadevs\Validator\Services\FilterProvider;
+
 class Registry
 {
     /**
@@ -24,93 +27,20 @@ class Registry
      * Using te previously collected configuration to generate a registry which can be used for validation.
      *
      * @return bool
+     * @throws ReflectionException
      */
     public function load(): bool
     {
-        // If the loading went successfully; return true, else; return false.
-        // the registry will look like this: 'filters -> 'identifier' => class;
-    }
+        // Parsing through all the providers
+       foreach (FilterProvider::collect() as $provider) {
+           $filter = new ExtractFilters($provider);
 
-    /**
-     * Registering the class in the $data array.
-     *
-     * @param string $type
-     * @param string $index
-     * @param mixed  $data  ($data has no strict type, it can be either an array or a string)
-     *
-     * @return void
-     */
-    public function register(string $type, string $index, $data): void
-    {
-        if (self::isValidType($type)) {
-            // Which type should be handled, the types are simple the required properties for a filter
-            switch ($type) {
-                // 'identifiers'
-                case self::REGISTRY_TYPES[0]:
-                    self::handleIdentifier($index, $data);
-                    break;
+           // Registering the properties
+           $this->registry['filters'] += $filter->getFilters();
+           $this->registry['messages'] += $filter->getMessages();
+       }
 
-                // 'aliases'
-                case self::REGISTRY_TYPES[1]:
-                    self::handleAliases($index, $data);
-                    break;
-
-                // 'messages'
-                case self::REGISTRY_TYPES[2]:
-                    self::handleMessages($index, $data);
-                    break;
-            }
-        }
-    }
-
-    /**
-     * Registering the filters inside the $data array.
-     *
-     * @param string $index
-     * @param mixed  $data
-     *
-     * @return void
-     */
-    private function handleIdentifier(string $index, $data): void
-    {
-        $registry = array($index => $data);
-
-        $this->registry[self::REGISTRY_TYPES[0]] = array_merge($this->registry[self::REGISTRY_TYPES[0]], $registry);
-    }
-
-    /**
-     * Registering the filters inside the $data array.
-     *
-     * @param string $index
-     * @param mixed  $data
-     *
-     * @return void
-     */
-    private function handleAliases(string $index, $data): void
-    {
-        $registry = array();
-
-        // Parsing through the data (in this case the aliases) and assigning the correct class to it.
-        foreach ($data as $alias) {
-            $registry[$alias] = self::getRegistry(self::REGISTRY_TYPES[1], $index);
-        }
-
-        $this->registry[self::REGISTRY_TYPES[0]] = array_merge($this->registry[self::REGISTRY_TYPES[0]], $registry);
-    }
-
-    /**
-     * Registering the filters inside the $data array.
-     *
-     * @param string $index
-     * @param mixed  $data
-     *
-     * @return void
-     */
-    private function handleMessages(string $index, $data): void
-    {
-        $registry = array($index => $data);
-
-        $this->registry[self::REGISTRY_TYPES[2]] = array_merge($this->registry[self::REGISTRY_TYPES[2]], $registry);
+       return true;
     }
 
     /**

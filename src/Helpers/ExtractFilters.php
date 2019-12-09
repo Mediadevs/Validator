@@ -2,26 +2,26 @@
 
 namespace Mediadevs\Validator\Helpers;
 
-use Mediadevs\Validator\Filters\FilterInterface;
+use ReflectionException;
 
 class ExtractFilters
 {
     /**
-     * The target filter will be instantiated and stored in here.
+     * The full namespace for the filter which is going to be parsed.
      *
-     * @var FilterInterface
+     * @var string
      */
     private $subject;
 
     /**
-     * The identifiers and aliases for this filter.
+     * The filters for this validation provider.
      *
      * @var array
      */
     private $filters = array();
 
     /**
-     * The response messages for the filters.
+     * The messages for this validation provider.
      *
      * @var array
      */
@@ -31,11 +31,38 @@ class ExtractFilters
      * ExtractFilters constructor.
      *
      * @param string $subject
+     *
+     * @throws ReflectionException
      */
     public function __construct(string $subject)
     {
-        // Instantiating the target filter and passing empty arrays to avoid conflict.
-        $this->subject = new $subject(array(), array());
+        $this->subject = $subject;
+
+        // Handling the attributes
+        $class = (new ClassParser())->parse($subject);
+        $identifier = $class->getIdentifier();
+        $aliases = $class->getAliases();
+        $message = $class->getMessage();
+
+        if ($identifier && $aliases) {
+            $this->handleIdentifier($identifier);
+            $this->handleAliases($aliases);
+            $this->handleMessages($identifier, $aliases, $message);
+        }
+    }
+
+    /**
+     * This parses the identifier and prepares it for the validation.
+     *
+     * @param string $identifier
+     *
+     * @return void
+     */
+    private function handleIdentifier(string $identifier): void
+    {
+        $this->filters += [$identifier => $this->subject];
+
+         return;
     }
 
     /**
@@ -47,27 +74,51 @@ class ExtractFilters
      */
     private function handleAliases(array $aliases): void
     {
-    }
+        foreach ($aliases as $alias) {
+            $this->filters += [$alias => $this->subject];
+        }
 
-    /**
-     * This parses the filters and prepares them for the validation.
-     *
-     * @param array $filters
-     *
-     * @return void
-     */
-    private function handleFilters(array $filters): void
-    {
+        return;
     }
 
     /**
      * This handles the messages and registers them.
      *
-     * @param array $messages
+     * @param string $identifier
+     * @param array  $aliases
+     * @param array  $messages
      *
      * @return void
      */
-    private function handleMessages(array $messages): void
+    private function handleMessages(string $identifier, array $aliases, array $messages): void
     {
+        $this->messages += [$identifier => $messages];
+
+        // Parsing through the aliases and creating an response message for each alias
+        foreach ($aliases as $alias) {
+            $this->messages += [$alias => $messages];
+        }
+
+        return;
+    }
+
+    /**
+     * Returning filters and the parsed aliases which have been prepared.
+     *
+     * @return array
+     */
+    public function getFilters(): array
+    {
+        return $this->filters;
+    }
+
+    /**
+     * Returning messages for this filter.
+     *
+     * @return array
+     */
+    public function getMessages(): array
+    {
+        return $this->messages;
     }
 }

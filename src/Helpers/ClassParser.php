@@ -9,19 +9,37 @@ use Mediadevs\Validator\Filters\FilterInterface;
 class ClassParser
 {
     /**
+     * The identifier for this filter.
+     *
+     * @var string
+     */
+    private $identifier;
+
+    /**
+     * The aliases for this filter.
+     *
+     * @var array
+     */
+    private $aliases = array();
+
+    /**
+     * The message / responses for this filter.
+     *
+     * @var array
+     */
+    private $message = array();
+
+    /**
      * Parsing the filter to collect it's properties and configuration.
      *
      * @param string $namespace
      *
      * @throws ReflectionException
      *
-     * @return array
+     * @return self
      */
-    public function parse(string $namespace): array
+    public function parse(string $namespace): self
     {
-        // Results will be stored in here
-        $collection = array();
-
         // Collecting the classname and instantiating the class
         $filename = $this->getFileName($namespace);
         $this->loadFile($filename);
@@ -36,16 +54,16 @@ class ClassParser
 
         // Validating whether the properties exist.
         if ($hasIdentifier && $hasAliases) {
-            $collection['identifiers'] = $this->getProperty($filter, 'identifier');
-            $collection['aliases'] = $this->getProperty($filter, 'identifier');
+            $this->identifier = $this->getProperty($filter, 'identifier');
+            $this->aliases = $this->getProperty($filter, 'aliases');
 
             // This only comes in action when it is a custom filter.
             if ($hasMessage) {
-                $collection['message'] = $this->getProperty($filter, 'message');
+                $this->message = $this->getProperty($filter, 'message');
             }
         }
 
-        return $collection;
+        return $this;
     }
 
     /**
@@ -98,5 +116,35 @@ class ClassParser
     private function getProperty(FilterInterface $filter, string $property)
     {
         return $filter->getProperty($property);
+    }
+
+    /**
+     * Collecting the identifier from this filter.
+     *
+     * @return string
+     */
+    public function getIdentifier(): string
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * Collecting the aliases from this filter.
+     *
+     * @return array
+     */
+    public function getAliases(): array
+    {
+        return $this->aliases;
+    }
+
+    /**
+     * Collecting the message from this filter.
+     *
+     * @return array
+     */
+    public function getMessage(): array
+    {
+        return $this->message;
     }
 }
