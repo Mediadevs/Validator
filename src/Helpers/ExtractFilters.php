@@ -44,7 +44,7 @@ class ExtractFilters
         $aliases = $class->getAliases();
         $message = $class->getMessage();
 
-        if ($identifier && $aliases) {
+        if ($identifier && !empty($aliases)) {
             $this->handleIdentifier($identifier);
             $this->handleAliases($aliases);
             $this->handleMessages($identifier, $aliases, $message);
