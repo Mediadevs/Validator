@@ -35,11 +35,6 @@ class FilterProvider
         \Mediadevs\Validator\Filters\Email\Email::class,
         \Mediadevs\Validator\Filters\Email\EmailProviderExists::class,
 
-        /*----[ File validation ]-------------------------------------------------------------------------------------*/
-        \Mediadevs\Validator\Filters\File\AllowedFileExtensions::class,
-        \Mediadevs\Validator\Filters\File\AllowedFileMimeTypes::class,
-        \Mediadevs\Validator\Filters\File\MaximumFileSize::class,
-
         /*----[ Host validation ]-------------------------------------------------------------------------------------*/
         \Mediadevs\Validator\Filters\Host\Domain::class,
         \Mediadevs\Validator\Filters\Host\IP::class,
@@ -57,10 +52,6 @@ class FilterProvider
         \Mediadevs\Validator\Filters\Numeric\LessThanOrEqualTo::class,
         \Mediadevs\Validator\Filters\Numeric\Maximum::class,
         \Mediadevs\Validator\Filters\Numeric\Minimum::class,
-
-        /*----[ Payment validation ]----------------------------------------------------------------------------------*/
-        \Mediadevs\Validator\Filters\Payment\CreditCard::class,
-        \Mediadevs\Validator\Filters\Payment\IBAN::class,
 
         /*----[ String validation ]-----------------------------------------------------------------------------------*/
         \Mediadevs\Validator\Filters\String\Contains::class,
