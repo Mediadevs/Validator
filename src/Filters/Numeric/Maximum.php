@@ -2,11 +2,14 @@
 
 namespace Mediadevs\Validator\Filters\Numeric;
 
+use Mediadevs\Validator\Traits\ParsableTrait;
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 
 class Maximum extends AbstractFilter implements FilterInterface
 {
+    use ParsableTrait;
+
     /**
      * The identifier for this filter.
      *

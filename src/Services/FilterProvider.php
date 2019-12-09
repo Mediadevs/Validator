@@ -2,7 +2,9 @@
 
 namespace Mediadevs\Validator\Services;
 
-class FilterProvider
+use Mediadevs\Validator\Helpers\Singleton;
+
+class FilterProvider extends Singleton
 {
     /**
      * The filters / providers for the Validator package
@@ -10,7 +12,7 @@ class FilterProvider
      *
      * @var array
      */
-    public $providers = array(
+    public static $providers = array(
         /*----[ Basic validation ]------------------------------------------------------------------------------------*/
         \Mediadevs\Validator\Filters\Basic\Equal::class,
         \Mediadevs\Validator\Filters\Basic\NotEqual::class,
@@ -61,4 +63,16 @@ class FilterProvider
         \Mediadevs\Validator\Filters\String\MinimumLength::class,
         \Mediadevs\Validator\Filters\String\StartsWith::class,
     );
+
+    /**
+     * Registering a new filter into this Service Provider
+     *
+     * @param array $filters
+     *
+     * @return void
+     */
+    public static function register(array $filters): void
+    {
+        self::$providers = array_merge(self::$providers, $filters);
+    }
 }

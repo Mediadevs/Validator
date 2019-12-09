@@ -2,11 +2,14 @@
 
 namespace Mediadevs\Validator\Examples\OptionB\Filters;
 
+use Mediadevs\Validator\Traits\ParsableTrait;
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 
 class FilterExample extends AbstractFilter implements FilterInterface
 {
+    use ParsableTrait;
+
     /**
      * The identifier for this filter.
      *

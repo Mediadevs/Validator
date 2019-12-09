@@ -3,12 +3,16 @@
 namespace Mediadevs\Validator\Filters\Host;
 
 use Mediadevs\Validator\Traits\HostTrait;
+use Mediadevs\Validator\Traits\ParsableTrait;
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 
 class ReachableAddress extends AbstractFilter implements FilterInterface
 {
     use HostTrait;
+    use ParsableTrait;
+
+    /**;
 
     /**
      * The identifier for this filter.

@@ -2,12 +2,14 @@
 
 namespace Mediadevs\Validator\Filters\Basic;
 
+use Mediadevs\Validator\Traits\ParsableTrait;
 use Mediadevs\Validator\Filters\AbstractFilter;
 use Mediadevs\Validator\Filters\FilterInterface;
 use Mediadevs\Validator\Traits\RegularExpresionTrait;
 
 class RegularExpression extends AbstractFilter implements FilterInterface
 {
+    use ParsableTrait;
     use RegularExpresionTrait;
 
     /**
