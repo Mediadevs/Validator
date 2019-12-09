@@ -62,8 +62,6 @@ class ExtractFilters
     private function handleIdentifier(string $identifier): void
     {
         $this->filters += [$identifier => $this->subject];
-
-         return;
     }
 
     /**
@@ -78,8 +76,6 @@ class ExtractFilters
         foreach ($aliases as $alias) {
             $this->filters += [$alias => $this->subject];
         }
-
-        return;
     }
 
     /**
@@ -99,8 +95,6 @@ class ExtractFilters
         foreach ($aliases as $alias) {
             $this->messages += [$alias => $messages];
         }
-
-        return;
     }
 
     /**

@@ -33,13 +33,13 @@ class Registry
         FilterProvider::getInstance();
 
         // Parsing through all the providers
-       foreach (FilterProvider::collect() as $provider) {
-           $filter = new ExtractFilters($provider);
+        foreach (FilterProvider::collect() as $provider) {
+            $filter = new ExtractFilters($provider);
 
-           // Registering the properties
-           $this->registry['filters'] += $filter->getFilters();
-           $this->registry['messages'] += $filter->getMessages();
-       }
+            // Registering the properties
+            $this->registry['filters'] += $filter->getFilters();
+            $this->registry['messages'] += $filter->getMessages();
+        }
     }
 
     /**
