@@ -2,6 +2,7 @@
 
 namespace Mediadevs\Validator\Factories;
 
+use ReflectionException;
 use Mediadevs\Validator\Validation;
 use Mediadevs\Validator\Helpers\Registry;
 
@@ -15,11 +16,12 @@ class FilterFactory
      * @param array  $thresholds
      *
      * @return bool
+     * @throws ReflectionException
      */
     public function build(string $filter, array $values, array $thresholds = array()): bool
     {
         // Loading the Registry
-        $class = (new Registry)->getRegistry('filter', $filter);
+        $class = (new Registry())->getRegistry('filter', $filter);
 
         // Executing the sanitization for the called sanitization class.
         return (bool) (new Validation(

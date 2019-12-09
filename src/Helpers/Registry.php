@@ -55,20 +55,20 @@ class Registry
         $targetIndex = null;
 
         // Whether the type exists inside the $data array
-        if (self::hasType($type)) {
+        if ($this->hasType($type)) {
 
             // Whether the $data array has the given index
-            if (self::hasIndex($type, $index)) {
+            if ($this->hasIndex($type, $index)) {
                 $targetIndex = $index;
             }
 
             // In this case the $data array has no index of $index, now we'll try to reverse search by value
-            if (self::hasValue($type, $index)) {
-                $targetIndex = self::getIndexByValue($type, $index);
+            if ($this->hasValue($type, $index)) {
+                $targetIndex = $this->getIndexByValue($type, $index);
             }
         }
 
-        return self::getValuesByIndex($type, $targetIndex);
+        return $this->getValuesByIndex($type, $targetIndex);
     }
 
     /**
@@ -93,7 +93,7 @@ class Registry
     public function hasType(string $type): bool
     {
         // Whether the given type is a valid one.
-        if (self::isValidType($type)) {
+        if ($this->isValidType($type)) {
             return (bool) array_key_exists($type, $this->registry) ? true : false;
         }
 
@@ -110,7 +110,7 @@ class Registry
      */
     public function hasIndex(string $type, string $index): bool
     {
-        if (self::hasType($type)) {
+        if ($this->hasType($type)) {
             return (bool) array_key_exists($index, $this->registry[$type]) ? true : false;
         }
 
@@ -127,7 +127,7 @@ class Registry
      */
     public function hasValue(string $type, string $value): bool
     {
-        if (self::hasType($type)) {
+        if ($this->hasType($type)) {
             // Reversing the data array; ['key' => 'value'] will now be ['value' => 'key']
             $reverseData = array_flip($this->registry[$type]);
 
@@ -147,7 +147,7 @@ class Registry
      */
     public function indexHasValue(string $type, string $index): bool
     {
-        if (self::hasType($type) && self::hasIndex($type, $index)) {
+        if ($this->hasType($type) && $this->hasIndex($type, $index)) {
             return (bool) !empty($this->registry[$type][$index]) ? true : false;
         }
 
@@ -164,7 +164,7 @@ class Registry
      */
     public function getIndexByValue(string $type, string $value)
     {
-        if (self::hasType($type) && self::hasValue($type, $value)) {
+        if ($this->hasType($type) && $this->hasValue($type, $value)) {
             // Reversing the data array; ['key' => 'value'] will now be ['value' => 'key']
             $reverseData = array_flip($this->registry[$type]);
 
@@ -182,7 +182,7 @@ class Registry
      */
     public function getValuesByIndex(string $type, string $index)
     {
-        if (self::hasType($type) && self::hasIndex($type, $index) && self::indexHasValue($type, $index)) {
+        if ($this->hasType($type) && $this->hasIndex($type, $index) && $this->indexHasValue($type, $index)) {
             return $this->registry[$type][$index];
         }
     }
