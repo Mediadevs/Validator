@@ -17,3 +17,4 @@ script:
 
 after_script:
     - php vendor/bin/ocular code-coverage:upload --format=php-clover clover.xml
+    - bash <(curl -s https://codecov.io/bash) -t 826813e7-0cd1-4dfb-9f0f-b5aabc056d0f
