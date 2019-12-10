@@ -36,7 +36,7 @@ build:
             - phpcs-run
             - vendor/bin/typhp
             - vendor/bin/phpinsights
-            -   command: vendor/bin/phpunit --coverage-text --coverage-clover clover.xml
+            -   command: vendor/bin/phpunit --coverage-text --coverage-clover coverage.xml
                 coverage:
-                    file: clover.xml
+                    file: coverage.xml
                     format: php-clover

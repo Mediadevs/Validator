@@ -1,5 +1,4 @@
 language: php
-
 php:
     - 7.2
     - 7.3
@@ -13,8 +12,8 @@ before_script:
     - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
 
 script:
-    - vendor/bin/phpunit --coverage-text --coverage-clover=clover.xml
+    - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
 
 after_script:
-    - php vendor/bin/ocular code-coverage:upload --format=php-clover clover.xml
+    - php vendor/bin/ocular code-coverage:upload --format=php-clover coverage.xml
     - bash <(curl -s https://codecov.io/bash) -t 826813e7-0cd1-4dfb-9f0f-b5aabc056d0f
