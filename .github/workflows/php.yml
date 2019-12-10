@@ -10,14 +10,6 @@ jobs:
         runs-on: ${{ matrix.platform }}
         steps:
             -   uses: actions/checkout@v1
-            -   uses: codecov/codecov-action@v1
-                with:
-                    token: ${{ secrets.826813e7-0cd1-4dfb-9f0f-b5aabc056d0f }}
-                    file: ./coverage.xml
-                    flags: unittests
-                    name: codecov-umbrella
-                    yml: ./codecov.yml
-                    fail_ci_if_error: true
             -   name: PHPCodeSniffer
                 uses: rtCamp/action-phpcs-inspection@v1.0.0
             -   name: PHP Insights Action
