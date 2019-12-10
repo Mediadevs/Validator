@@ -8,7 +8,7 @@ jobs:
     runs-on: [ubuntu-latest, macos-latest, windows-latest]
 
     steps:
-        -   uses: actions/checkout@master
+        -   uses: actions/checkout@v1
         -   uses: codecov/codecov-action@v1
         with:
             token: ${{ secrets.826813e7-0cd1-4dfb-9f0f-b5aabc056d0f }}
