@@ -24,7 +24,7 @@ build:
     dependencies:
         before:
             - composer require phpunit/phpunit:8 --dev
-            - composer require seferov/typhp:^0.2.0 --dev
+            - composer require mikevandiepen/typhp:2.1.0 --dev
             - composer require phpstan/phpstan:^0.11.0 --dev
             - composer require squizlabs/php_codesniffer:3.* --dev
             - composer require nunomaduro/phpinsights:^1.11.1 --dev
