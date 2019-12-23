@@ -24,17 +24,17 @@ build:
     dependencies:
         before:
             - composer require phpunit/phpunit:8 --dev
-            - composer require mikevandiepen/typhp:2.1.0 --dev
             - composer require phpstan/phpstan:^0.11.0 --dev
+            - composer require mikevandiepen/typhp:^0.2.2 --dev
             - composer require squizlabs/php_codesniffer:3.* --dev
             - composer require nunomaduro/phpinsights:^1.11.1 --dev
             - composer require php-coveralls/php-coveralls:^2.0 --dev
             - composer require sempro/phpunit-pretty-print:^1.2.1 --dev
     tests:
         override:
-            - php-scrutinizer-run
             - phpcs-run
             - vendor/bin/typhp
+            - php-scrutinizer-run
             - vendor/bin/phpinsights
             -   command: vendor/bin/phpunit --coverage-text --coverage-clover coverage.xml
                 coverage:
